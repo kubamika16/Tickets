@@ -15,9 +15,6 @@ const concertsArray = []
 
 const pricesArray = []
 
-const allData = []
-console.log(allData)
-
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -41,13 +38,31 @@ async function printResults() {
   await functions.filesIntoArray(pricesArray, 'prices')
   await functions.filesIntoArray(concertsArray, 'concerts')
   //   console.log(concertsArray[0])
-  //   console.log(pricesArray[0])
+  // console.log(pricesArray[0])
   //   console.log(functions.findMinPrice(data))
 
-  functions.mergeArray(concertsArray, pricesArray, allData)
-  console.log(allData[0])
+  // Use the map method to create a new array with modified objects
+  const modifiedPricesArray = pricesArray.map(function (arg) {
+    // Modify the properties of the current object and return it
+    return { minPrice: functions.findMinPrice(arg) }
+  })
+
+  // Code to find available tickets and cheapest ticket
+  for (let i = 0; i < concertsArray.length; i++) {
+    if (pricesArray[i] != undefined) {
+      concertsArray[i].availableTickets = functions.remainingTickets(
+        pricesArray[i],
+      )
+      concertsArray[i].minPrice = functions.findMinPrice(pricesArray[i])
+    }
+  }
+
+  console.log('Concerts Array', concertsArray[0])
 }
 
 printResults()
 
-// Dodać informacje na temat
+// Stworzę nową tablicę o nazwie "finalPriceArray"
+// Tablica będzie wynikiem pracy na tablicy "pricesArray"
+// Najpierw zacznę od jednego, pierwszego rekordu
+// Wywołam funkcję która weźmie obiekt i zwróci z niego minimalną cenę biletu, oraz ogólną liczbę biletów

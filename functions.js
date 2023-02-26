@@ -23,7 +23,7 @@ const filesIntoArray = async (array, folder) => {
       }
     }
 
-    console.log(`The ${folder} folder has ${array.length} elements.`)
+    // console.log(`The ${folder} folder has ${array.length} elements.`)
   } catch (err) {
     console.error(err)
   }
@@ -58,11 +58,15 @@ function findMinPrice(data) {
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// MERGE TWO ARRAYS INTO ONE SINGLE ARRAY
-const mergeArray = function (array1, array2, destinationArray) {
-  for (let i = 0; i < array1.length; i++) {
-    destinationArray.push(Object.assign({}, array1[i], array2[i]))
-  }
+// FUNCTION THAT FINDS OUT THE REMAINING AMOUNT OF TICKETS
+const remainingTickets = function (data) {
+  let remaining = 0
+
+  data.forEach((arg) => {
+    const number = Number(arg['# of tickets (>=0)'])
+    remaining += number
+  })
+  return remaining
 }
 
-module.exports = { findMinPrice, filesIntoArray, mergeArray }
+module.exports = { findMinPrice, filesIntoArray, remainingTickets }
