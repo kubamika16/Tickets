@@ -7,6 +7,7 @@ const path = require('path')
 const { addAbortSignal } = require('stream')
 const functions = require('./functions')
 const puppeteer = require('puppeteer')
+const csv = require('csv-parser')
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -18,10 +19,47 @@ const pricesArray = []
 
 const linksArray = []
 
+// Directory to a folder with prices
+const pricesDirectory = './prices'
+const pricesFilenames = functions.sortFilesByCreationDate(pricesDirectory)
+
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 // Results
+
+const convertCSVToJSON = async (folderPath, filenames) => {
+  const results = []
+  for (const filename of filenames) {
+    if (path.extname(filename) === '.csv') {
+      const filePath = path.join(folderPath, filename)
+      const fileData = fs.readFileSync(filePath, 'utf-8')
+      const jsonArray = []
+      await new Promise((resolve, reject) => {
+        fs.createReadStream(filePath)
+          .pipe(csv())
+          .on('data', (data) => jsonArray.push(data))
+          .on('end', () => {
+            const jsonFilename =
+              path.basename(filename, path.extname(filename)) + '.json'
+            const jsonPath = path.join(folderPath, jsonFilename)
+            fs.writeFileSync(jsonPath, JSON.stringify(jsonArray, null, 2))
+            results.push(jsonPath)
+            resolve()
+          })
+          .on('error', (err) => {
+            reject(err)
+          })
+      })
+    }
+  }
+  console.log('Conversion complete:', results)
+}
+
+convertCSVToJSON(pricesDirectory, pricesFilenames)
+
+// functions.fileNameSave(pricesDirectory, pricesFilenames)
+
 async function printResults() {
   console.log('---------------------------------------------------------')
   console.log('---------------------------------------------------------')
@@ -49,9 +87,7 @@ async function printResults() {
     }
   }
 
-  console.log('Concerts Array', concertsArray[0])
-
-  console.log(linksArray)
+  // console.log('Concerts Array', concertsArray)
 }
 
 printResults()

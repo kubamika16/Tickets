@@ -3,7 +3,7 @@ const path = require('path')
 const puppeteer = require('puppeteer')
 
 //////////////////////////////////////////////////////////////////////////////
-// READ FILES FROM FOLDR AND PUT IT IN AN ARRAY
+// READ FILES FROM FOLDR AND PUT IT IN AN ARRAY (SORTED)
 const filesIntoArray = async (array, folder) => {
   try {
     const files = await new Promise((resolve, reject) => {
@@ -96,9 +96,44 @@ async function openWebsites(websites) {
   await browser.close()
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// FUNCTION THAT SAVES FILE NAMES IN THE ARRAY
+const fileNameSave = function (directory, array) {
+  fs.readdir(directory, (err, files) => {
+    if (err) {
+      console.error(err)
+      return
+    }
+
+    files.forEach((file) => {
+      if (file.endsWith('.csv')) {
+        array.push(file)
+      }
+    })
+
+    console.log(array)
+  })
+}
+
+// Sort out files in the folder by date of creation
+const sortFilesByCreationDate = (folderPath) => {
+  const files = fs.readdirSync(folderPath)
+
+  return files
+    .filter((file) => !file.startsWith('.'))
+    .map((file) => ({
+      name: file,
+      time: fs.statSync(path.join(folderPath, file)).ctime.getTime(),
+    }))
+    .sort((a, b) => b.time - a.time)
+    .map((file) => file.name)
+}
+
 module.exports = {
   findMinPrice,
   filesIntoArray,
   remainingTickets,
   openWebsites,
+  fileNameSave,
+  sortFilesByCreationDate,
 }
