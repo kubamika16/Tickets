@@ -1,0 +1,56 @@
+[
+  {
+    "Section": "GA2",
+    "# of tickets (>=0)": "250",
+    "Price Range": "$35.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "3",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA2",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$35.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC4",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "MEZZ2",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$179.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC7",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC6",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  }
+]
