@@ -16,9 +16,23 @@ const filesIntoArray = async (array, folder) => {
       })
     })
 
-    for (const file of files) {
-      if (path.extname(file) === '.json') {
-        let rawData = fs.readFileSync(`./${folder}/${file}`)
+    // Sort files by creation time
+    const sortedFiles = await Promise.all(
+      files.map(async (file) => {
+        const filePath = path.join(folder, file)
+        const { birthtime } = await fs.promises.stat(filePath)
+        return { name: file, birthtime }
+      }),
+    ).then((filesWithBirthtimes) =>
+      filesWithBirthtimes.sort(
+        (a, b) => a.birthtime.getTime() - b.birthtime.getTime(),
+      ),
+    )
+
+    // Push files into array in sorted order
+    for (const file of sortedFiles) {
+      if (path.extname(file.name) === '.json') {
+        let rawData = fs.readFileSync(`./${folder}/${file.name}`)
         let data = JSON.parse(rawData)
         array.push(data)
       }

@@ -17,6 +17,13 @@ const concertsArray = []
 const pricesArray = []
 
 const linksArray = []
+const websites = [
+  'https://www.google.com',
+  'https://www.facebook.com',
+  'https://www.youtube.com',
+  'https://www.twitter.com',
+  'https://www.linkedin.com',
+]
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -72,12 +79,7 @@ async function printResults() {
 
   console.log('Concerts Array', concertsArray[0])
 
-  functions.openWebsites(linksArray)
+  console.log(linksArray)
 }
 
 printResults()
-
-// Stworzę nową tablicę o nazwie "finalPriceArray"
-// Tablica będzie wynikiem pracy na tablicy "pricesArray"
-// Najpierw zacznę od jednego, pierwszego rekordu
-// Wywołam funkcję która weźmie obiekt i zwróci z niego minimalną cenę biletu, oraz ogólną liczbę biletów
