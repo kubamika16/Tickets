@@ -59,11 +59,13 @@ const convertCSVToJSON = async (folderPath, filenames) => {
   console.log('Conversion complete:', results)
 }
 
-const files = fs.readdirSync(folderPath)
+// const files = fs.readdirSync(pricesDirectory)
 // Check if there are any CSV files in the directory
-if (files.some((file) => path.extname(file) === '.csv')) {
-  const pricesFilenames = files.filter((file) => path.extname(file) === '.csv')
-  convertCSVToJSON(pricesDirectory, pricesFilenames)
+if (pricesFilenames.some((file) => path.extname(file) === '.csv')) {
+  const pricesFilenamesFiltered = pricesFilenames.filter(
+    (file) => path.extname(file) === '.csv',
+  )
+  convertCSVToJSON(pricesDirectory, pricesFilenamesFiltered)
 } else {
   console.log('No CSV files found in directory')
 }

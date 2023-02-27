@@ -1,3 +1,12 @@
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+// ONLY FOR GOOGLE CHROME
+
+// FUNCTION THAT OPENS LINKS
+// links.forEach((link) => {
+//   window.open(link, '_blank')
+// })
+
 const fs = require('fs')
 const path = require('path')
 const puppeteer = require('puppeteer')
@@ -56,14 +65,16 @@ function findMinPrice(data) {
     const price = item['Price Range']
 
     // Check if the value starts with a "$" symbol
-    if (price.startsWith('$')) {
-      // If it does, extract the numeric value by slicing off the "$" symbol and converting it to a float
-      const priceValue = parseFloat(price.slice(1))
+    if (typeof price !== 'undefined') {
+      if (price.startsWith('$')) {
+        // If it does, extract the numeric value by slicing off the "$" symbol and converting it to a float
+        const priceValue = parseFloat(price.slice(1))
 
-      // Check if the numeric value is less than the current minimum price
-      if (priceValue < minPrice) {
-        // If it is, update the minimum price
-        minPrice = priceValue
+        // Check if the numeric value is less than the current minimum price
+        if (priceValue < minPrice) {
+          // If it is, update the minimum price
+          minPrice = priceValue
+        }
       }
     }
   })
@@ -82,18 +93,6 @@ const remainingTickets = function (data) {
     remaining += number
   })
   return remaining
-}
-
-//////////////////////////////////////////////////////////////////////////////
-// FUNCTION THAT OPENS LINKS
-async function openWebsites(websites) {
-  const browser = await puppeteer.launch()
-  const page = await browser.newPage()
-  for (let i = 0; i < websites.length; i++) {
-    await page.goto(websites[i])
-    await page.waitForTimeout(1000) // wait for a second
-  }
-  await browser.close()
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -133,7 +132,6 @@ module.exports = {
   findMinPrice,
   filesIntoArray,
   remainingTickets,
-  openWebsites,
   fileNameSave,
   sortFilesByCreationDate,
 }
