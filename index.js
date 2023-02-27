@@ -6,6 +6,7 @@ const fs = require('fs')
 const path = require('path')
 const { addAbortSignal } = require('stream')
 const functions = require('./functions')
+const puppeteer = require('puppeteer')
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -15,10 +16,23 @@ const concertsArray = []
 
 const pricesArray = []
 
+const linksArray = []
+
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 // Functions
+// //////////////////////////////////////////////////////////////////////////////
+// // FUNCTION THAT OPENS LINKS
+// async function openWebsites(websites) {
+//   const browser = await puppeteer.launch()
+//   const page = await browser.newPage()
+//   for (let i = 0; i < websites.length; i++) {
+//     await page.goto(websites[i])
+//     await page.waitForTimeout(1000) // wait for a second
+//   }
+//   await browser.close()
+// }
 
 // Read the JSON file
 let rawData = fs.readFileSync('./prices/csvjson.json')
@@ -32,14 +46,13 @@ let data = JSON.parse(rawData)
 async function printResults() {
   console.log('---------------------------------------------------------')
   console.log('---------------------------------------------------------')
-  console.log('---------------------------------------------------------')
-  console.log('---------------------------------------------------------')
-  console.log('---------------------------------------------------------')
+
   await functions.filesIntoArray(pricesArray, 'prices')
   await functions.filesIntoArray(concertsArray, 'concerts')
-  //   console.log(concertsArray[0])
-  // console.log(pricesArray[0])
-  //   console.log(functions.findMinPrice(data))
+
+  concertsArray.forEach((element) => {
+    linksArray.push(element['url'])
+  })
 
   // Use the map method to create a new array with modified objects
   const modifiedPricesArray = pricesArray.map(function (arg) {
@@ -58,6 +71,8 @@ async function printResults() {
   }
 
   console.log('Concerts Array', concertsArray[0])
+
+  functions.openWebsites(linksArray)
 }
 
 printResults()

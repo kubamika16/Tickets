@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const puppeteer = require('puppeteer')
 
 //////////////////////////////////////////////////////////////////////////////
 // READ FILES FROM FOLDR AND PUT IT IN AN ARRAY
@@ -69,4 +70,21 @@ const remainingTickets = function (data) {
   return remaining
 }
 
-module.exports = { findMinPrice, filesIntoArray, remainingTickets }
+//////////////////////////////////////////////////////////////////////////////
+// FUNCTION THAT OPENS LINKS
+async function openWebsites(websites) {
+  const browser = await puppeteer.launch()
+  const page = await browser.newPage()
+  for (let i = 0; i < websites.length; i++) {
+    await page.goto(websites[i])
+    await page.waitForTimeout(1000) // wait for a second
+  }
+  await browser.close()
+}
+
+module.exports = {
+  findMinPrice,
+  filesIntoArray,
+  remainingTickets,
+  openWebsites,
+}
