@@ -45,7 +45,10 @@ const convertCSVToJSON = async (folderPath, filenames) => {
             const jsonPath = path.join(folderPath, jsonFilename)
             fs.writeFileSync(jsonPath, JSON.stringify(jsonArray, null, 2))
             results.push(jsonPath)
-            resolve()
+            fs.unlink(filePath, (err) => {
+              if (err) reject(err)
+              else resolve()
+            })
           })
           .on('error', (err) => {
             reject(err)
@@ -56,7 +59,14 @@ const convertCSVToJSON = async (folderPath, filenames) => {
   console.log('Conversion complete:', results)
 }
 
-convertCSVToJSON(pricesDirectory, pricesFilenames)
+const files = fs.readdirSync(folderPath)
+// Check if there are any CSV files in the directory
+if (files.some((file) => path.extname(file) === '.csv')) {
+  const pricesFilenames = files.filter((file) => path.extname(file) === '.csv')
+  convertCSVToJSON(pricesDirectory, pricesFilenames)
+} else {
+  console.log('No CSV files found in directory')
+}
 
 // functions.fileNameSave(pricesDirectory, pricesFilenames)
 
@@ -87,7 +97,7 @@ async function printResults() {
     }
   }
 
-  // console.log('Concerts Array', concertsArray)
+  console.log('Concerts Array', concertsArray)
 }
 
 printResults()
