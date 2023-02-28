@@ -59,15 +59,17 @@ const convertCSVToJSON = async (folderPath, filenames) => {
   console.log('Conversion complete:', results)
 }
 
-// const files = fs.readdirSync(pricesDirectory)
-// Check if there are any CSV files in the directory
-if (pricesFilenames.some((file) => path.extname(file) === '.csv')) {
-  const pricesFilenamesFiltered = pricesFilenames.filter(
-    (file) => path.extname(file) === '.csv',
-  )
-  convertCSVToJSON(pricesDirectory, pricesFilenamesFiltered)
-} else {
-  console.log('No CSV files found in directory')
+const CSVtoJSONconvert = async function () {
+  // const files = fs.readdirSync(pricesDirectory)
+  // Check if there are any CSV files in the directory
+  if (pricesFilenames.some((file) => path.extname(file) === '.csv')) {
+    const pricesFilenamesFiltered = pricesFilenames.filter(
+      (file) => path.extname(file) === '.csv',
+    )
+    await convertCSVToJSON(pricesDirectory, pricesFilenamesFiltered)
+  } else {
+    console.log('No CSV files found in directory')
+  }
 }
 
 // functions.fileNameSave(pricesDirectory, pricesFilenames)
@@ -83,19 +85,24 @@ async function printResults() {
     linksArray.push(element['url'])
   })
 
-  // Use the map method to create a new array with modified objects
-  const modifiedPricesArray = pricesArray.map(function (arg) {
-    // Modify the properties of the current object and return it
-    return { minPrice: functions.findMinPrice(arg) }
-  })
+  await CSVtoJSONconvert()
 
-  // Code to find available tickets and cheapest ticket
+  // // Use the map method to create a new array with modified objects
+  // const modifiedPricesArray = pricesArray.map(function (arg) {
+  //   // Modify the properties of the current object and return it
+  //   return { minPrice: functions.findMinPrice(arg) }
+  // })
+
   for (let i = 0; i < concertsArray.length; i++) {
     if (pricesArray[i] != undefined) {
-      concertsArray[i].availableTickets = functions.remainingTickets(
-        pricesArray[i],
-      )
-      concertsArray[i].minPrice = functions.findMinPrice(pricesArray[i])
+      if (pricesArray[i][0].Section !== '') {
+        concertsArray[i].availableTickets = functions.remainingTickets(
+          pricesArray[i],
+        )
+        concertsArray[i].minPrice = functions.findMinPrice(pricesArray[i])
+      } else {
+        concertsArray[i].availableTickets = 0
+      }
     }
   }
 
