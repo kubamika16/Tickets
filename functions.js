@@ -1,15 +1,8 @@
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-// ONLY FOR GOOGLE CHROME
-
-// FUNCTION THAT OPENS LINKS
-// links.forEach((link) => {
-//   window.open(link, '_blank')
-// })
-
 const fs = require('fs')
 const path = require('path')
 const puppeteer = require('puppeteer')
+
+const concertsFileNames = []
 
 //////////////////////////////////////////////////////////////////////////////
 // READ FILES FROM FOLDR AND PUT IT IN AN ARRAY (SORTED)
@@ -37,6 +30,13 @@ const filesIntoArray = async (array, folder) => {
         (a, b) => a.birthtime.getTime() - b.birthtime.getTime(),
       ),
     )
+
+    // Push name of files from "concerts folder". I need it because to overrite JSON file with an object I need a name of file
+    if (folder === 'concerts') {
+      sortedFiles.forEach((element) =>
+        concertsFileNames.push(`./${folder}/${element.name}`),
+      )
+    }
 
     // Push files into array in sorted order
     for (const file of sortedFiles) {
@@ -136,4 +136,5 @@ module.exports = {
   remainingTickets,
   fileNameSave,
   sortFilesByCreationDate,
+  concertsFileNames,
 }

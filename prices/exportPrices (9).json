@@ -1,0 +1,14 @@
+[
+  {
+    "Section": "GENADM",
+    "# of tickets (>=0)": "888",
+    "Price Range": "$25.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "GENADM",
+    "# of tickets (>=0)": "9",
+    "Price Range": "$45 - $77",
+    "Type": "resale"
+  }
+]
