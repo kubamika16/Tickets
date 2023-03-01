@@ -19,6 +19,12 @@ const pricesArray = []
 
 const linksArray = []
 
+// DATE
+const date = new Date()
+const month = date.getMonth() + 1
+const day = date.getDate()
+todaysDate = `${day}/${month}`
+
 // Directory to a folder with prices
 const pricesDirectory = './prices'
 const pricesFilenames = functions.sortFilesByCreationDate(pricesDirectory)
@@ -81,45 +87,61 @@ async function printResults() {
   await functions.filesIntoArray(pricesArray, 'prices')
   await functions.filesIntoArray(concertsArray, 'concerts')
 
+  // ------------------------------------------------------------------------
+  // HERE
+  // Pliki w folderze 'concerts' są już zapisane w formacie JSON.
+  // Plik powinien posiadać jeden z trzech tablic, ponieważ będzie ona dodana w funkcji którą wykorzystuję w Google Chrome
+  // Teraz funkcja która dodaje liczbę dostępnych biletów, cenę biletu i datę sprawdzenia do danego obiektu.
+  // Jeśli występuje już dzisiejsza data, wtedy dane nie powinny dodawać się kolejny raz
+
+  const concert = {
+    name: 'Arca',
+    date: 'Feb 25',
+    url:
+      'https://concerts.livenation.com/arca-los-angeles-california-02-25-2023/event/09005E31DF2854E2',
+    availableTickets: [],
+    minPrice: [],
+    checkingDate: [],
+  }
+  console.log('CONCERT:', concert)
+
   concertsArray.forEach((element) => {
     linksArray.push(element['url'])
   })
 
   await CSVtoJSONconvert()
 
-  // // Use the map method to create a new array with modified objects
-  // const modifiedPricesArray = pricesArray.map(function (arg) {
-  //   // Modify the properties of the current object and return it
-  //   return { minPrice: functions.findMinPrice(arg) }
-  // })
-
+  // Adding data to arrays (availableTickets, minPrice, checkingDate)
   for (let i = 0; i < concertsArray.length; i++) {
-    if (pricesArray[i] != undefined) {
+    // If file exists/if something is undefined, or todays date differs from previous date in the array
+    if (
+      pricesArray[i] != undefined &&
+      todaysDate !==
+        concertsArray[i].checkingDate[concertsArray[i].checkingDate.length - 1]
+    ) {
       if (pricesArray[i][0].Section !== '') {
-        concertsArray[i].availableTickets = functions.remainingTickets(
-          pricesArray[i],
+        concertsArray[i].availableTickets.push(
+          functions.remainingTickets(pricesArray[i]),
         )
-        concertsArray[i].minPrice = functions.findMinPrice(pricesArray[i])
+        concertsArray[i].minPrice.push(functions.findMinPrice(pricesArray[i]))
       } else {
-        concertsArray[i].availableTickets = 0
+        concertsArray[i].availableTickets.push(0)
       }
+      concertsArray[i].checkingDate.push(todaysDate)
     }
   }
 
   console.log('Concerts Array', concertsArray)
+  // console.log('1/3' === '1/3')
 }
 
 printResults()
 
-//Muszę zamienić cenę biletów która jest dodawana do danych o koncertach.
-// Zamiast minPrice: '$30.5' powinna być zwykła liczba (30.5)
-// Pomoże mi to w późniejszym tworzeniu wykresów
-// Dodatkowo sprawdzić czy typeof availableTickets to Number. Jeśli tak to super
-
 // Chciałbym dodać do plików JSON z folderu 'concerts' ceny biletów (na stałe, nie tylko przy włączeniu programu)
 // gdy tworzy się plik JSON w folderze 'concerts' tworzone zostają trzy dodatkowe wartości w obiekcie (jako tablice):
 // availableTickets, minPrice, checkingDate
-// Gdy uruchamiam program dodane zostaną tam wartości.
+// Gdy uruchamiam program, dodane zostaną tam wartości.
+// Program dodaje wartości, ale nie permanentnie. Przy dostępie do GPT dodam wartości z funkcji "Adding data to arrays" (lininki od 114) permanentnie
 
 // Chciałbym usunąć dany rekord gdy już go nie potrzebuję
 // Muszę po prostu usunąć dany plik. Jeśli jest to możliwe, stworzę dodatkową komendę która uruchamia tą funkcję (delete '[NAME OF CONCERT]'). So cool.

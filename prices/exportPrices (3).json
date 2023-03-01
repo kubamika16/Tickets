@@ -1,0 +1,14 @@
+[
+  {
+    "Section": "FLOOR",
+    "# of tickets (>=0)": "100",
+    "Price Range": "$29.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "FLOOR",
+    "# of tickets (>=0)": "8",
+    "Price Range": "$47 - $96",
+    "Type": "resale"
+  }
+]

@@ -80,7 +80,7 @@ function findMinPrice(data) {
   })
 
   // Return the minimum price, formatted as a string with a "$" symbol
-  return '$' + minPrice
+  return minPrice
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -88,7 +88,7 @@ function findMinPrice(data) {
 const remainingTickets = function (data) {
   let remaining = 0
 
-  console.log(data)
+  // console.log(data)
 
   data.forEach((arg) => {
     if (arg.Type !== 'resale') {
@@ -113,8 +113,6 @@ const fileNameSave = function (directory, array) {
         array.push(file)
       }
     })
-
-    console.log(array)
   })
 }
 

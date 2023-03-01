@@ -17,6 +17,9 @@ const eventDetails = {
   name: eventName,
   date: eventMonthDay,
   url: eventUrl,
+  availableTickets: [],
+  minPrice: [],
+  checkingDate: [],
 }
 
 // Convert the object to a JSON string
