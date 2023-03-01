@@ -88,9 +88,13 @@ function findMinPrice(data) {
 const remainingTickets = function (data) {
   let remaining = 0
 
+  console.log(data)
+
   data.forEach((arg) => {
-    const number = Number(arg['# of tickets (>=0)'])
-    remaining += number
+    if (arg.Type !== 'resale') {
+      const number = Number(arg['# of tickets (>=0)'])
+      remaining += number
+    }
   })
   return remaining
 }
