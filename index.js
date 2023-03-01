@@ -111,4 +111,16 @@ async function printResults() {
 
 printResults()
 
-//
+//Muszę zamienić cenę biletów która jest dodawana do danych o koncertach.
+// Zamiast minPrice: '$30.5' powinna być zwykła liczba (30.5)
+// Pomoże mi to w późniejszym tworzeniu wykresów
+// Dodatkowo sprawdzić czy typeof availableTickets to Number. Jeśli tak to super
+
+// Chciałbym dodać do plików JSON z folderu 'concerts' ceny biletów (na stałe, nie tylko przy włączeniu programu)
+// gdy tworzy się plik JSON w folderze 'concerts' tworzone zostają trzy dodatkowe wartości w obiekcie (jako tablice):
+// availableTickets, minPrice, checkingDate
+// Gdy uruchamiam program dodane zostaną tam wartości.
+
+// Chciałbym usunąć dany rekord gdy już go nie potrzebuję
+// Muszę po prostu usunąć dany plik. Jeśli jest to możliwe, stworzę dodatkową komendę która uruchamia tą funkcję (delete '[NAME OF CONCERT]'). So cool.
+// Jeśli plik zostanie usunięty, wtedy przy kolejnym sprawdzaniu biletów program będzie działał w oparciu o pliki w folderze 'concerts'.
