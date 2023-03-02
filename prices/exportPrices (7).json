@@ -50,7 +50,7 @@
   {
     "Section": "BALC2",
     "# of tickets (>=0)": "4",
-    "Price Range": "$92",
+    "Price Range": "$91",
     "Type": "resale"
   },
   {
@@ -160,6 +160,12 @@
     "# of tickets (>=0)": "1",
     "Price Range": "$179.5",
     "Type": "primary"
+  },
+  {
+    "Section": "MEZZ2",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$215",
+    "Type": "resale"
   },
   {
     "Section": "BALC7",

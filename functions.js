@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const puppeteer = require('puppeteer')
+// const puppeteer = require('puppeteer')
+const csv = require('csv-parser')
 
 const concertsFileNames = []
 
@@ -46,8 +47,6 @@ const filesIntoArray = async (array, folder) => {
         array.push(data)
       }
     }
-
-    // console.log(`The ${folder} folder has ${array.length} elements.`)
   } catch (err) {
     console.error(err)
   }
@@ -87,9 +86,6 @@ function findMinPrice(data) {
 // FUNCTION THAT FINDS OUT THE REMAINING AMOUNT OF TICKETS
 const remainingTickets = function (data) {
   let remaining = 0
-
-  // console.log(data)
-
   data.forEach((arg) => {
     if (arg.Type !== 'resale') {
       const number = Number(arg['# of tickets (>=0)'])
@@ -116,6 +112,7 @@ const fileNameSave = function (directory, array) {
   })
 }
 
+//////////////////////////////////////////////////////////////////////////////
 // Sort out files in the folder by date of creation
 const sortFilesByCreationDate = (folderPath) => {
   const files = fs.readdirSync(folderPath)
@@ -130,6 +127,46 @@ const sortFilesByCreationDate = (folderPath) => {
     .map((file) => file.name)
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// CURRENT DATE (f.e 4/3 - fourth of march)
+const dateFunction = function () {
+  const date = new Date()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  return `${day}/${month}`
+}
+
+const convertCSVToJSON = async (folderPath, filenames) => {
+  const results = []
+  for (const filename of filenames) {
+    if (path.extname(filename) === '.csv') {
+      const filePath = path.join(folderPath, filename)
+      const fileData = fs.readFileSync(filePath, 'utf-8')
+      const jsonArray = []
+      await new Promise((resolve, reject) => {
+        fs.createReadStream(filePath)
+          .pipe(csv())
+          .on('data', (data) => jsonArray.push(data))
+          .on('end', () => {
+            const jsonFilename =
+              path.basename(filename, path.extname(filename)) + '.json'
+            const jsonPath = path.join(folderPath, jsonFilename)
+            fs.writeFileSync(jsonPath, JSON.stringify(jsonArray, null, 2))
+            results.push(jsonPath)
+            fs.unlink(filePath, (err) => {
+              if (err) reject(err)
+              else resolve()
+            })
+          })
+          .on('error', (err) => {
+            reject(err)
+          })
+      })
+    }
+  }
+  console.log('Conversion complete:', results)
+}
+
 module.exports = {
   findMinPrice,
   filesIntoArray,
@@ -137,4 +174,6 @@ module.exports = {
   fileNameSave,
   sortFilesByCreationDate,
   concertsFileNames,
+  dateFunction,
+  convertCSVToJSON,
 }
