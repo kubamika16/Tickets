@@ -1,15 +1,15 @@
 [
   {
-    "Section": "BALC",
-    "# of tickets (>=0)": "34",
-    "Price Range": "$50",
-    "Type": "primary"
-  },
-  {
     "Section": "GA2",
     "# of tickets (>=0)": "24",
     "Price Range": "$131 - $232",
     "Type": "resale"
+  },
+  {
+    "Section": "BALC",
+    "# of tickets (>=0)": "18",
+    "Price Range": "$50",
+    "Type": "primary"
   },
   {
     "Section": "BALC",

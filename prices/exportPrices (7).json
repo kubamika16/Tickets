@@ -1,8 +1,8 @@
 [
   {
     "Section": "GA1",
-    "# of tickets (>=0)": "29",
-    "Price Range": "$83 - $163",
+    "# of tickets (>=0)": "31",
+    "Price Range": "$87 - $163",
     "Type": "resale"
   },
   {
@@ -50,7 +50,7 @@
   {
     "Section": "BALC2",
     "# of tickets (>=0)": "4",
-    "Price Range": "$105",
+    "Price Range": "$92",
     "Type": "resale"
   },
   {
@@ -116,14 +116,8 @@
   {
     "Section": "BALC1",
     "# of tickets (>=0)": "4",
-    "Price Range": "$137",
+    "Price Range": "$126",
     "Type": "resale"
-  },
-  {
-    "Section": "BALC4",
-    "# of tickets (>=0)": "2",
-    "Price Range": "$30.5",
-    "Type": "primary"
   },
   {
     "Section": "BALC2",
