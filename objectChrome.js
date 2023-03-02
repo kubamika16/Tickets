@@ -36,12 +36,9 @@ const blob = new Blob([eventDetailsJson], { type: 'application/json' })
 // Create a download link with the blob URL
 const downloadLink = document.createElement('a')
 downloadLink.href = URL.createObjectURL(blob)
-downloadLink.download = 'eventDetails.json'
-
-// Click the download link to prompt the user to download the file
+downloadLink.download = `${eventDetails.name}.json`
 downloadLink.click()
-
-console.log('Event details saved as eventDetails.json')
+console.log(`Event details saved as ${filename}.json`)
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

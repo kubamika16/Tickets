@@ -41,6 +41,7 @@ async function printResults() {
     linksArray.push(element['url'])
   })
   console.log(linksArray)
+  console.log(linksArray.length)
 
   // Function that checks if there are any CSV files in the prices folder. If they are, then it changes them into JSON file
   if (pricesFilenames.some((file) => path.extname(file) === '.csv')) {
@@ -79,8 +80,3 @@ async function printResults() {
 }
 
 printResults()
-
-// DODAĆ nazwę pliku w obiekcie. Będzie łatwiej usunąć dany plik
-// Chciałbym usunąć dany rekord gdy już go nie potrzebuję
-// Muszę po prostu usunąć dany plik. Jeśli jest to możliwe, stworzę dodatkową komendę która uruchamia tą funkcję (delete '[NAME OF CONCERT]'). So cool.
-// Jeśli plik zostanie usunięty, wtedy przy kolejnym sprawdzaniu biletów program będzie działał w oparciu o pliki w folderze 'concerts'.
