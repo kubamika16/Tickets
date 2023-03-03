@@ -8,7 +8,7 @@
   {
     "Section": "GA2",
     "# of tickets (>=0)": "24",
-    "Price Range": "$91 - $114",
+    "Price Range": "$86 - $109",
     "Type": "resale"
   },
   {
@@ -16,11 +16,5 @@
     "# of tickets (>=0)": "18",
     "Price Range": "$189",
     "Type": "primary"
-  },
-  {
-    "Section": "GA1",
-    "# of tickets (>=0)": "5",
-    "Price Range": "$83",
-    "Type": "resale"
   }
 ]

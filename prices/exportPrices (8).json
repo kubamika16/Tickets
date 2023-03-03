@@ -1,7 +1,7 @@
 [
   {
     "Section": "GA2",
-    "# of tickets (>=0)": "408",
+    "# of tickets (>=0)": "406",
     "Price Range": "$150",
     "Type": "primary"
   },
@@ -19,7 +19,7 @@
   },
   {
     "Section": "GA1",
-    "# of tickets (>=0)": "1",
+    "# of tickets (>=0)": "39",
     "Price Range": "$150",
     "Type": "primary"
   }

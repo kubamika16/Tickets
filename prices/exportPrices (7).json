@@ -2,12 +2,12 @@
   {
     "Section": "GA1",
     "# of tickets (>=0)": "31",
-    "Price Range": "$87 - $163",
+    "Price Range": "$91 - $163",
     "Type": "resale"
   },
   {
     "Section": "GA2",
-    "# of tickets (>=0)": "18",
+    "# of tickets (>=0)": "16",
     "Price Range": "$84 - $185",
     "Type": "resale"
   },
@@ -32,7 +32,7 @@
   {
     "Section": "BALC3",
     "# of tickets (>=0)": "4",
-    "Price Range": "$116.5",
+    "Price Range": "$100",
     "Type": "resale"
   },
   {
@@ -45,12 +45,6 @@
     "Section": "BALC2",
     "# of tickets (>=0)": "4",
     "Price Range": "$194",
-    "Type": "resale"
-  },
-  {
-    "Section": "BALC2",
-    "# of tickets (>=0)": "4",
-    "Price Range": "$91",
     "Type": "resale"
   },
   {
@@ -80,13 +74,13 @@
   {
     "Section": "BALC1",
     "# of tickets (>=0)": "4",
-    "Price Range": "$120",
+    "Price Range": "$132",
     "Type": "resale"
   },
   {
     "Section": "BALC1",
     "# of tickets (>=0)": "4",
-    "Price Range": "$135",
+    "Price Range": "$120",
     "Type": "resale"
   },
   {
@@ -120,9 +114,27 @@
     "Type": "resale"
   },
   {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "3",
+    "Price Range": "$135",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$135",
+    "Type": "resale"
+  },
+  {
     "Section": "BALC2",
     "# of tickets (>=0)": "2",
     "Price Range": "$148",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$91",
     "Type": "resale"
   },
   {

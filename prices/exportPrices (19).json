@@ -1,0 +1,26 @@
+[
+  {
+    "Section": "GA",
+    "# of tickets (>=0)": "863",
+    "Price Range": "$37",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA",
+    "# of tickets (>=0)": "16",
+    "Price Range": "$82 - $107",
+    "Type": "resale"
+  },
+  {
+    "Section": "VIP",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$145",
+    "Type": "resale"
+  },
+  {
+    "Section": "VIP",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$65",
+    "Type": "primary"
+  }
+]

@@ -1,14 +1,14 @@
 [
   {
     "Section": "GASEAT",
-    "# of tickets (>=0)": "103",
-    "Price Range": "$30",
+    "# of tickets (>=0)": "67",
+    "Price Range": "$140",
     "Type": "primary"
   },
   {
     "Section": "GASEAT",
-    "# of tickets (>=0)": "76",
-    "Price Range": "$140",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30",
     "Type": "primary"
   }
 ]
