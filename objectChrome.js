@@ -65,8 +65,22 @@ const links = [
   'https://www.ticketmaster.com/k-camp-atlanta-georgia-04-23-2023/event/0E005E55B15136DF',
   'https://www.ticketmaster.com/1017-the-bull-presents-songs-stories-boston-massachusetts-03-27-2023/event/01005E4DF5EF63D4',
   'https://concerts.livenation.com/k-camp-charlotte-north-carolina-04-08-2023/event/2D005E51BC5365C7',
+  'https://concerts.livenation.com/pote-baby-ben-reilly-santa-ana-california-04-18-2023/event/09005E55A4382268',
+  'https://www.ticketmaster.com/hunter-hayes-harrisburg-pennsylvania-05-20-2023/event/02005E50FD96850D',
+  'https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354',
+  'https://concerts.livenation.com/dub-club-presents-sister-nancy-feat-los-angeles-california-04-15-2023/event/09005E47AAEF3220',
+  'https://www.ticketmaster.com/hollywood-casino-greektown-present-george-thorogood-detroit-michigan-07-16-2023/event/08005E51DD9352B0',
 ]
 
-links.forEach((link) => {
-  window.open(link, '_blank')
-})
+async function openLinks() {
+  for (let i = 0; i < links.length; i++) {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        window.open(links[i], '_blank')
+        resolve()
+      }, 7000)
+    })
+  }
+}
+
+openLinks()
