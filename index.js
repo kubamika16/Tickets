@@ -97,4 +97,4 @@ chatGPT = async function (apiKey) {
 
   console.log(response.data.choices[0].text.trim(0))
 }
-chatGPT()
+// chatGPT()
