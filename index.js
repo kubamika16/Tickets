@@ -81,36 +81,6 @@ async function printResults() {
 
 printResults()
 
-const objectArray = [
-  {
-    name: 'Pre- Show Cory Asbury VIP Ticket Add-on',
-    date: 'Apr 14',
-    url:
-      'https://www.ticketmaster.com/pre-show-cory-asbury-vip-ticket-anderson-indiana-04-14-2023/event/05005E39E95A6042',
-    availableTickets: [92, 92],
-    minPrice: [42, 42],
-    checkingDate: ['2/3', '3/3'],
-  },
-  {
-    name: 'Houndmouth',
-    date: 'Apr 23',
-    url:
-      'https://www.ticketmaster.com/houndmouth-asbury-park-new-jersey-04-23-2023/event/00005E2AEB984BA2',
-    availableTickets: [0, 0],
-    minPrice: [71, 71],
-    checkingDate: ['2/3', '3/3'],
-  },
-  {
-    name: 'Snow Tha Product - The Quince I Never Had Tour',
-    date: 'Apr 25',
-    url:
-      'https://www.ticketmaster.com/snow-tha-product-the-quince-i-boston-massachusetts-04-25-2023/event/01005E3BE0737EBA',
-    availableTickets: [89, 47],
-    minPrice: [29.5, 29.5],
-    checkingDate: ['2/3', '3/3'],
-  },
-]
-
 // CHAT GPT
 chatGPT = async function (apiKey) {
   const { Configuration, OpenAIApi } = require('openai')
@@ -120,11 +90,11 @@ chatGPT = async function (apiKey) {
   const openai = new OpenAIApi(configuration)
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `Hello World!`,
+    prompt: `${concertsArray} - out of this array tell me which concert has the cheapest ticket`,
     temperature: 0,
     max_tokens: 3000,
   })
 
   console.log(response.data.choices[0].text.trim(0))
 }
-// chatGPT()
+chatGPT()
