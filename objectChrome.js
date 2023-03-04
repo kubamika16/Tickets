@@ -16,6 +16,7 @@ const eventMonthDay = dateArray[1]
 
 // Get the link to the event page
 const eventUrl = window.location.href
+// s
 
 // Create an object with the event details
 const eventDetails = {
