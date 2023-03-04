@@ -167,6 +167,23 @@ const convertCSVToJSON = async (folderPath, filenames) => {
   console.log('Conversion complete:', results)
 }
 
+// CHAT GPT
+chatGPT = async function (apiKey) {
+  const { Configuration, OpenAIApi } = require('openai')
+  const configuration = new Configuration({
+    apiKey: apiKey,
+  })
+  const openai = new OpenAIApi(configuration)
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Hello World!`,
+    temperature: 1,
+    max_tokens: 3000,
+  })
+
+  console.log(response.data.choices[0].text.trim(0))
+}
+
 module.exports = {
   findMinPrice,
   filesIntoArray,
@@ -176,4 +193,5 @@ module.exports = {
   concertsFileNames,
   dateFunction,
   convertCSVToJSON,
+  chatGPT,
 }

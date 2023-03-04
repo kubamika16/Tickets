@@ -8,6 +8,7 @@ const path = require('path')
 const functions = require('./functions')
 // const puppeteer = require('puppeteer')
 // const csv = require('csv-parser')
+const aws = require('./aws')
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -77,24 +78,10 @@ async function printResults() {
   }
 
   console.log('Concerts Array', concertsArray)
+
+  aws.uploadFilesToS3('./concerts')
 }
 
 printResults()
 
-// CHAT GPT
-chatGPT = async function (apiKey) {
-  const { Configuration, OpenAIApi } = require('openai')
-  const configuration = new Configuration({
-    apiKey: apiKey,
-  })
-  const openai = new OpenAIApi(configuration)
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: `${concertsArray} - out of this array tell me which concert has the cheapest ticket`,
-    temperature: 0,
-    max_tokens: 3000,
-  })
-
-  console.log(response.data.choices[0].text.trim(0))
-}
-// chatGPT()
+functions.chatGPT(process.env.OPEN_AI_API)
