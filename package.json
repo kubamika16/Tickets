@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "aws-sdk": "^2.1328.0",
     "csv-parser": "^3.0.0",
     "openai": "^3.2.1",
     "puppeteer": "^19.7.2"
