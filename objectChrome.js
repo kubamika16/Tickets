@@ -89,7 +89,7 @@ async function openLinks() {
       setTimeout(() => {
         window.open(links[i], '_blank')
         resolve()
-      }, 7000)
+      }, 10000)
     })
   }
 }
