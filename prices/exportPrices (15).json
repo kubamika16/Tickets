@@ -1,0 +1,14 @@
+[
+  {
+    "Section": "GA2",
+    "# of tickets (>=0)": "200",
+    "Price Range": "$30",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA1",
+    "# of tickets (>=0)": "139",
+    "Price Range": "$30",
+    "Type": "primary"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "Section": "GA4",
+    "# of tickets (>=0)": "250",
+    "Price Range": "$53",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA3",
+    "# of tickets (>=0)": "250",
+    "Price Range": "$53",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA2",
+    "# of tickets (>=0)": "250",
+    "Price Range": "$53",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA5",
+    "# of tickets (>=0)": "200",
+    "Price Range": "$53",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA1",
+    "# of tickets (>=0)": "96",
+    "Price Range": "$153",
+    "Type": "primary"
+  },
+  {
+    "Section": "GA1",
+    "# of tickets (>=0)": "92",
+    "Price Range": "$53",
+    "Type": "primary"
+  }
+]
