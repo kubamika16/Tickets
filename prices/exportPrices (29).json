@@ -1,20 +1,14 @@
 [
   {
-    "Section": "GAX2",
-    "# of tickets (>=0)": "496",
-    "Price Range": "$35",
+    "Section": "GA",
+    "# of tickets (>=0)": "659",
+    "Price Range": "$46",
     "Type": "primary"
   },
   {
-    "Section": "GAX1",
-    "# of tickets (>=0)": "275",
-    "Price Range": "$35",
-    "Type": "primary"
-  },
-  {
-    "Section": "GAX3",
-    "# of tickets (>=0)": "263",
-    "Price Range": "$35",
+    "Section": "UPPBAL",
+    "# of tickets (>=0)": "54",
+    "Price Range": "$56",
     "Type": "primary"
   }
 ]

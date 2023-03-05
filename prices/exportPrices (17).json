@@ -1,8 +1,212 @@
 [
   {
-    "Section": "FLOOR",
+    "Section": "GA1",
+    "# of tickets (>=0)": "31",
+    "Price Range": "$91 - $163",
+    "Type": "resale"
+  },
+  {
+    "Section": "GA2",
+    "# of tickets (>=0)": "13",
+    "Price Range": "$84 - $185",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "8",
+    "Price Range": "$201",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$208",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$138",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$95",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$194",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$130",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$87.75",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$88",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$222",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$202",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$132",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$120",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$162",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$114",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$194",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "4",
+    "Price Range": "$126",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "3",
+    "Price Range": "$136",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$90",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$120",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$104",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$148",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$91",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$123",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$138",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$104",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$138",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC1",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$138",
+    "Type": "resale"
+  },
+  {
+    "Section": "MEZZ2",
     "# of tickets (>=0)": "1",
-    "Price Range": "$75",
+    "Price Range": "$179.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "MEZZ2",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$215",
+    "Type": "resale"
+  },
+  {
+    "Section": "BALC7",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC6",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC3",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
+    "Type": "primary"
+  },
+  {
+    "Section": "BALC2",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$30.5",
     "Type": "primary"
   }
 ]

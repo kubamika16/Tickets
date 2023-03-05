@@ -1,8 +1,14 @@
 [
   {
-    "Section": "HELL",
-    "# of tickets (>=0)": "537",
-    "Price Range": "$20",
+    "Section": "GASEAT",
+    "# of tickets (>=0)": "245",
+    "Price Range": "$35",
+    "Type": "primary"
+  },
+  {
+    "Section": "GASEAT",
+    "# of tickets (>=0)": "59",
+    "Price Range": "$140",
     "Type": "primary"
   }
 ]

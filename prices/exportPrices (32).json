@@ -1,56 +1,20 @@
 [
   {
-    "Section": "GA2",
-    "# of tickets (>=0)": "450",
-    "Price Range": "$39.5",
+    "Section": "GAX2",
+    "# of tickets (>=0)": "496",
+    "Price Range": "$35",
     "Type": "primary"
   },
   {
-    "Section": "GA3",
-    "# of tickets (>=0)": "52",
-    "Price Range": "$39.5",
+    "Section": "GAX3",
+    "# of tickets (>=0)": "263",
+    "Price Range": "$35",
     "Type": "primary"
   },
   {
-    "Section": "GA1",
-    "# of tickets (>=0)": "28",
-    "Price Range": "$49.5",
-    "Type": "primary"
-  },
-  {
-    "Section": "GA1",
-    "# of tickets (>=0)": "23",
-    "Price Range": "$39.5",
-    "Type": "primary"
-  },
-  {
-    "Section": "BALC",
-    "# of tickets (>=0)": "6",
-    "Price Range": "$74.5",
-    "Type": "primary"
-  },
-  {
-    "Section": "BALC",
-    "# of tickets (>=0)": "4",
-    "Price Range": "$126.5",
-    "Type": "primary"
-  },
-  {
-    "Section": "BALC",
-    "# of tickets (>=0)": "4",
-    "Price Range": "$161.5",
-    "Type": "primary"
-  },
-  {
-    "Section": "BALC",
-    "# of tickets (>=0)": "4",
-    "Price Range": "$106.5",
-    "Type": "primary"
-  },
-  {
-    "Section": "BALC",
-    "# of tickets (>=0)": "4",
-    "Price Range": "$91.5",
+    "Section": "GAX1",
+    "# of tickets (>=0)": "225",
+    "Price Range": "$35",
     "Type": "primary"
   }
 ]

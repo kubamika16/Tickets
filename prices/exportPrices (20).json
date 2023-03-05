@@ -1,14 +1,14 @@
 [
   {
-    "Section": "GENADM",
-    "# of tickets (>=0)": "820",
-    "Price Range": "$25.5",
-    "Type": "primary"
+    "Section": "GA1",
+    "# of tickets (>=0)": "8",
+    "Price Range": "$250",
+    "Type": "resale"
   },
   {
-    "Section": "GENADM",
-    "# of tickets (>=0)": "9",
-    "Price Range": "$45 - $77",
+    "Section": "GA2",
+    "# of tickets (>=0)": "7",
+    "Price Range": "$246 - $291",
     "Type": "resale"
   }
 ]

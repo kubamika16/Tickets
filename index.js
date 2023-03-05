@@ -37,7 +37,7 @@ async function printResults() {
   await functions.filesIntoArray(pricesArray, 'prices')
   await functions.filesIntoArray(concertsArray, 'concerts')
 
-  // Passing links of concerts for webscraping in Google Chrome
+  // // Passing links of concerts for webscraping in Google Chrome
   concertsArray.forEach((element) => {
     linksArray.push(element['url'])
   })
@@ -84,4 +84,4 @@ async function printResults() {
 
 printResults()
 
-functions.chatGPT(process.env.OPEN_AI_API)
+// functions.chatGPT(process.env.OPEN_AI_API)

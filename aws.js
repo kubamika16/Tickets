@@ -33,6 +33,8 @@ const uploadFilesToS3 = async (folder) => {
         }
 
         //Upload the file to S3
+        // S3 ManagedUpload with callbacks are not supported in AWS SDK for JavaScript (v3).
+        // Please convert to `await client.upload(params, options).promise()`, and re-run aws-sdk-js-codemod.
         s3.upload(params, (err, data) => {
           if (err) throw err
         })

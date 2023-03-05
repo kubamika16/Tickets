@@ -46,10 +46,9 @@ console.log(`Event details saved as ${filename}.json`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 03/03/2023 Data
+// 04/03/2023 Data
 // 33 concerts
 const links = [
-  'https://concerts.livenation.com/k-camp-charlotte-north-carolina-04-08-2023/event/2D005E51BC5365C7',
   'https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354',
   'https://concerts.livenation.com/dub-club-presents-sister-nancy-feat-los-angeles-california-04-15-2023/event/09005E47AAEF3220',
   'https://www.ticketmaster.com/hollywood-casino-greektown-present-george-thorogood-detroit-michigan-07-16-2023/event/08005E51DD9352B0',
@@ -81,6 +80,7 @@ const links = [
   'https://www.ticketmaster.com/jonathan-mcreynolds-my-truth-tour-washington-district-of-columbia-04-23-2023/event/15005E5CE08F4C42',
   'https://www.ticketmaster.com/citywide-new-york-new-york-04-29-2023/event/00005E5702367C0C',
   'https://www.ticketmaster.com/bastille-tucson-arizona-05-24-2023/event/19005E589CFB2553',
+  'https://concerts.livenation.com/not-presents-get-busy-or-die-san-diego-california-05-17-2023/event/0A005E588E6422D7',
   'https://concerts.livenation.com/not-presents-get-busy-or-die-san-diego-california-05-17-2023/event/0A005E588E6422D7',
 ]
 
