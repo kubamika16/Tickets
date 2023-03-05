@@ -25,6 +25,7 @@ const eventDetails = {
   availableTickets: [],
   minPrice: [],
   checkingDate: [],
+  fileCreationDate: new Date(),
 }
 
 // Convert the object to a JSON string
@@ -45,8 +46,8 @@ console.log(`Event details saved as ${filename}.json`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 04/03/2023 Data
-// 33 concerts
+// 05/03/2023 Data
+// 12 concerts
 const links = [
   'https://concerts.livenation.com/not-presents-get-busy-or-die-san-diego-california-05-17-2023/event/0A005E588E6422D7',
   'https://www.ticketmaster.com/not-seattle-washington-05-25-2023/event/0F005E58C19B4987',

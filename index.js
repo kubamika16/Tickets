@@ -79,7 +79,7 @@ async function printResults() {
 
   console.log('Concerts Array', concertsArray)
 
-  aws.uploadFilesToS3('./concerts')
+  // aws.uploadFilesToS3('./concerts')
 }
 
 printResults()
