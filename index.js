@@ -67,9 +67,11 @@ async function printResults() {
           functions.remainingTickets(pricesArray[i]),
         )
         concertsArray[i].minPrice.push(functions.findMinPrice(pricesArray[i]))
+        console.log(`ConcertsArray[${i}]`, concertsArray[i])
 
         // Logic that helps to overrite JSON file with data about tickets
         const updatedJson = JSON.stringify(concertsArray[i])
+        console.log(`updatedJson[${i}]`, updatedJson)
         fs.writeFileSync(functions.concertsFileNames[i], updatedJson, 'utf-8')
       } else {
         concertsArray[i].availableTickets.push(0)

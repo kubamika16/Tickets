@@ -34,9 +34,11 @@ const filesIntoArray = async (array, folder) => {
 
     // Push name of files from "concerts folder". I need it because to overrite JSON file with an object I need a name of file
     if (folder === 'concerts') {
-      sortedFiles.forEach((element) =>
-        concertsFileNames.push(`./${folder}/${element.name}`),
-      )
+      sortedFiles.forEach((element) => {
+        if (path.extname(element.name) === '.json')
+          concertsFileNames.push(`./${folder}/${element.name}`)
+      })
+      console.log('concertsFileNames', concertsFileNames)
     }
 
     // Push files into array in sorted order
