@@ -1,0 +1,14 @@
+[
+  {
+    "Section": "GA2",
+    "# of tickets (>=0)": "15",
+    "Price Range": "$113 - $291",
+    "Type": "resale"
+  },
+  {
+    "Section": "GA1",
+    "# of tickets (>=0)": "8",
+    "Price Range": "$250",
+    "Type": "resale"
+  }
+]

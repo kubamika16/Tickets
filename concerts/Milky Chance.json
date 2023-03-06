@@ -1,8 +1,1 @@
-{
-  "name": "Milky Chance - Summer Haze Tour",
-  "date": "May 29",
-  "url": "https://www.ticketmaster.ca/milky-chance-summer-haze-tour-ottawa-ontario-05-29-2023/event/31005E48E9BC44CF",
-  "availableTickets": [16, 0, 6, 6],
-  "minPrice": [50, 101, 50, 50],
-  "checkingDate": ["2/3", "3/3", "4/3", "5/3"]
-}
+{"name":"Milky Chance - Summer Haze Tour","date":"May 29","url":"https://www.ticketmaster.ca/milky-chance-summer-haze-tour-ottawa-ontario-05-29-2023/event/31005E48E9BC44CF","availableTickets":[16,0,6,6,2],"minPrice":[50,101,50,50,50],"checkingDate":["2/3","3/3","4/3","5/3","6/3"]}
