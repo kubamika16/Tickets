@@ -19,7 +19,7 @@ const eventUrl = window.location.href
 
 // Create an object with the event details
 const eventDetails = {
-  name: eventName,
+  name: `${eventName} (${eventMonthDay})`,
   date: eventMonthDay,
   url: eventUrl,
   availableTickets: [],
