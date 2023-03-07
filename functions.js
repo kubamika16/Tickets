@@ -5,10 +5,49 @@ const csv = require('csv-parser')
 
 const concertsFileNames = []
 
+// JSON Into Array | 1. Read files | 2. Sort Files (by creation date)
+const jsonArray = async function (folder) {
+  // Files are being red by the function (FILE READER)
+  const files = await new Promise((resolve, reject) => {
+    fs.readdir(`./${folder}`, (err, files) => {
+      if (err) {
+        reject(err)
+      } else {
+        // const jsonFiles = files.filter((file) => path.extname(file) === '.json')
+        // resolve(jsonFiles)
+        resolve(files.filter((file) => path.extname(file) === '.json'))
+      }
+    })
+  })
+
+  const concertData = await Promise.all(
+    // Praca na każdym obiekcie z Tablicy 'files'
+    files.map(async (file) => {
+      // Zapisanie ścieżki pliku
+      const filePath = `./${folder}/${file}`
+      // czytanie pliku JSON
+      const fileData = await fs.promises.readFile(filePath, 'utf8')
+      // Zamiana pliku JSON na obiekt
+      const concert = JSON.parse(fileData)
+      // Zwrócenie obiektu, żeby można było na nim przeprowadzić zmiany
+      return concert
+    }),
+  )
+
+  // Posortowanie obiektów danych w końcowej tablicy
+  const sortedConcertData = concertData.sort((a, b) =>
+    a.fileCreationDate.localeCompare(b.fileCreationDate),
+  )
+
+  // Zwrócenie końcowego wyniku (posortowane dane)
+  return sortedConcertData
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // READ FILES FROM FOLDR AND PUT IT IN AN ARRAY (SORTED)
 const filesIntoArray = async (array, folder) => {
   try {
+    // Files are being red by the function (FILE READER)
     const files = await new Promise((resolve, reject) => {
       fs.readdir(`./${folder}`, (err, files) => {
         if (err) {
@@ -196,4 +235,5 @@ module.exports = {
   dateFunction,
   convertCSVToJSON,
   chatGPT,
+  jsonArray,
 }
