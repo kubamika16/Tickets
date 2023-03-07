@@ -31,6 +31,7 @@ const pricesFilenames = functions.sortFilesByCreationDate(pricesDirectory)
 // Results
 async function printResults() {
   console.log('---------------------------------------------------------')
+
   console.log('---------------------------------------------------------')
 
   // Zwrócenie tablicy z posortowanymi plikami JSON folderu 'concerts'
