@@ -2,8 +2,32 @@ const fs = require('fs')
 const path = require('path')
 // const puppeteer = require('puppeteer')
 const csv = require('csv-parser')
+const csvToJson = require('csvtojson')
 
 const concertsFileNames = []
+
+const csvToJSON = async function (folder) {
+  // Files are being red by the function (FILE READER)
+  const files = await new Promise((resolve, reject) => {
+    fs.readdir(`./${folder}`, (err, files) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(files.filter((file) => path.extname(file) === '.csv'))
+      }
+    })
+  })
+  console.log(files)
+
+  const jsonFiles = await Promise.all(
+    files.map(async (file) => {
+      const filePath = `./${folder}/${file}`
+      const fileData = await fs.promises.readFile(filePath, 'utf8')
+      console.log(fileData)
+      const jsonArray = await csvToJson().fromString(fileData)
+    }),
+  )
+}
 
 // JSON Into Array | 1. Read files | 2. Sort Files (by creation date)
 const jsonArray = async function (folder) {
@@ -13,8 +37,6 @@ const jsonArray = async function (folder) {
       if (err) {
         reject(err)
       } else {
-        // const jsonFiles = files.filter((file) => path.extname(file) === '.json')
-        // resolve(jsonFiles)
         resolve(files.filter((file) => path.extname(file) === '.json'))
       }
     })
@@ -236,4 +258,5 @@ module.exports = {
   convertCSVToJSON,
   chatGPT,
   jsonArray,
+  csvToJSON,
 }

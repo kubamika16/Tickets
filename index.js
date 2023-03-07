@@ -35,7 +35,9 @@ async function printResults() {
 
   // Zwrócenie tablicy z posortowanymi plikami JSON folderu 'concerts'
   const concertowaTablica = await functions.jsonArray('concerts')
-  console.log(concertowaTablica)
+  // console.log(concertowaTablica)
+
+  await functions.csvToJSON('prices')
 
   // // Put data into 2 array from folders (Prices and Concerts) sorted by the time of creation
   // await functions.filesIntoArray(pricesArray, 'prices')
