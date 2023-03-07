@@ -6,7 +6,7 @@ const csvToJson = require('csvtojson')
 
 const concertsFileNames = []
 
-const csvToJSON = async function (folder) {
+const csvToObject = async function (folder) {
   // Files are being red by the function (FILE READER)
   const files = await new Promise((resolve, reject) => {
     fs.readdir(`./${folder}`, (err, files) => {
@@ -19,18 +19,35 @@ const csvToJSON = async function (folder) {
   })
   console.log(files)
 
+  // Logika która zwraca posortowane już obiekty JSON z plików CSV
   const jsonFiles = await Promise.all(
+    // Praca na tablicy plików (a raczej na nazwach tablic plików, np. [ 'exportPrices (1).csv', 'exportPrices (2).csv', 'exportPrices.csv' ])
     files.map(async (file) => {
+      // Pobranie ścieżki danego pliku
       const filePath = `./${folder}/${file}`
+      // Przeczytanie pliku CSV
       const fileData = await fs.promises.readFile(filePath, 'utf8')
-      console.log(fileData)
+      // Zamiana pliku CSV na JSON
       const jsonArray = await csvToJson().fromString(fileData)
+      // Przeczytanie statystyk pliku CSV (potrzebne do pobrania czasu utworzenia pliku)
+      const fileStats = await fs.promises.stat(filePath)
+      // Dodanie do pliku JSON zmiennej czasu utworzenia pliku
+      jsonArray.fileCreationDate = fileStats.birthtime.toISOString()
+
+      return jsonArray
     }),
   )
+
+  // Posortowanie obiektów danych w końcowej tablicy
+  const sortedPricesData = jsonFiles.sort((a, b) =>
+    a.fileCreationDate.localeCompare(b.fileCreationDate),
+  )
+
+  return sortedPricesData
 }
 
-// JSON Into Array | 1. Read files | 2. Sort Files (by creation date)
-const jsonArray = async function (folder) {
+// JSON Into Array of objects| 1. Read files | 2. Sort Files (by creation date)
+const jsonToObject = async function (folder) {
   // Files are being red by the function (FILE READER)
   const files = await new Promise((resolve, reject) => {
     fs.readdir(`./${folder}`, (err, files) => {
@@ -51,7 +68,7 @@ const jsonArray = async function (folder) {
       const fileData = await fs.promises.readFile(filePath, 'utf8')
       // Zamiana pliku JSON na obiekt
       const concert = JSON.parse(fileData)
-      // Zwrócenie obiektu, żeby można było na nim przeprowadzić zmiany
+      // Zwrócenie obiektu (już nie JSON), żeby można było na nim przeprowadzić zmiany
       return concert
     }),
   )
@@ -257,6 +274,6 @@ module.exports = {
   dateFunction,
   convertCSVToJSON,
   chatGPT,
-  jsonArray,
-  csvToJSON,
+  jsonToObject,
+  csvToObject,
 }
