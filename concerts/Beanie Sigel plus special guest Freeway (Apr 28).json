@@ -1,1 +1,9 @@
-{"name":"Beanie Sigel plus special guest Freeway (Apr 28)","date":"Apr 28","url":"https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354","availableTickets":[344],"minPrice":[20],"checkingDate":["7/3"],"fileCreationDate":"2023-03-07T14:35:28.701Z"}
+{
+  "name": "Beanie Sigel plus special guest Freeway (Apr 28)",
+  "date": "Apr 28",
+  "url": "https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354",
+  "availableTickets": [344, 294],
+  "minPrice": [20, 29.5],
+  "checkingDate": ["7/3", "8/3"],
+  "fileCreationDate": "2023-03-07T14:35:28.701Z"
+}

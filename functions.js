@@ -5,6 +5,7 @@ const csv = require('csv-parser')
 const csvToJson = require('csvtojson')
 
 const concertsFileNames = []
+const concertDataPath = []
 
 const csvToObject = async function (folder) {
   // Files are being red by the function (FILE READER)
@@ -77,6 +78,20 @@ const jsonToObject = async function (folder) {
   const sortedConcertData = concertData.sort((a, b) =>
     a.fileCreationDate.localeCompare(b.fileCreationDate),
   )
+
+  sortedConcertData.forEach((element) => {
+    concertDataPath.push(`./${folder}/${element.name}.json`)
+  })
+  console.log('concertDataPath', concertDataPath)
+
+  // // Push name of files from "concerts folder". I need it because to overrite JSON file with an object I need a name of file
+  // if (folder === 'concerts') {
+  //   sortedFiles.forEach((element) => {
+  //     if (path.extname(element.name) === '.json')
+  //       concertsFileNames.push(`./${folder}/${element.name}`)
+  //   })
+  //   console.log('concertsFileNames', concertsFileNames)
+  // }
 
   // Zwrócenie końcowego wyniku (posortowane dane)
   return sortedConcertData
@@ -213,7 +228,13 @@ const dateFunction = function () {
   const date = new Date()
   const month = date.getMonth() + 1
   const day = date.getDate()
+
   return `${day}/${month}`
+}
+
+const isoDate = function () {
+  const isoDate = new Date().toISOString().slice(0, 10)
+  return isoDate
 }
 
 const convertCSVToJSON = async (folderPath, filenames) => {
@@ -276,4 +297,6 @@ module.exports = {
   chatGPT,
   jsonToObject,
   csvToObject,
+  isoDate,
+  concertDataPath,
 }
