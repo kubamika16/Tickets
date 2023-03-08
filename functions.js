@@ -1,7 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-// const puppeteer = require('puppeteer')
-const csv = require('csv-parser')
 const csvToJson = require('csvtojson')
 
 const concertsFileNames = []
@@ -84,67 +82,8 @@ const jsonToObject = async function (folder) {
   })
   console.log('concertDataPath', concertDataPath)
 
-  // // Push name of files from "concerts folder". I need it because to overrite JSON file with an object I need a name of file
-  // if (folder === 'concerts') {
-  //   sortedFiles.forEach((element) => {
-  //     if (path.extname(element.name) === '.json')
-  //       concertsFileNames.push(`./${folder}/${element.name}`)
-  //   })
-  //   console.log('concertsFileNames', concertsFileNames)
-  // }
-
   // Zwrócenie końcowego wyniku (posortowane dane)
   return sortedConcertData
-}
-
-//////////////////////////////////////////////////////////////////////////////
-// READ FILES FROM FOLDR AND PUT IT IN AN ARRAY (SORTED)
-const filesIntoArray = async (array, folder) => {
-  try {
-    // Files are being red by the function (FILE READER)
-    const files = await new Promise((resolve, reject) => {
-      fs.readdir(`./${folder}`, (err, files) => {
-        if (err) {
-          reject(err)
-        } else {
-          resolve(files)
-        }
-      })
-    })
-
-    // Sort files by creation time
-    const sortedFiles = await Promise.all(
-      files.map(async (file) => {
-        const filePath = path.join(folder, file)
-        const { birthtime } = await fs.promises.stat(filePath)
-        return { name: file, birthtime }
-      }),
-    ).then((filesWithBirthtimes) =>
-      filesWithBirthtimes.sort(
-        (a, b) => a.birthtime.getTime() - b.birthtime.getTime(),
-      ),
-    )
-
-    // Push name of files from "concerts folder". I need it because to overrite JSON file with an object I need a name of file
-    if (folder === 'concerts') {
-      sortedFiles.forEach((element) => {
-        if (path.extname(element.name) === '.json')
-          concertsFileNames.push(`./${folder}/${element.name}`)
-      })
-      console.log('concertsFileNames', concertsFileNames)
-    }
-
-    // Push files into array in sorted order
-    for (const file of sortedFiles) {
-      if (path.extname(file.name) === '.json') {
-        let rawData = fs.readFileSync(`./${folder}/${file.name}`)
-        let data = JSON.parse(rawData)
-        array.push(data)
-      }
-    }
-  } catch (err) {
-    console.error(err)
-  }
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -191,38 +130,6 @@ const remainingTickets = function (data) {
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// FUNCTION THAT SAVES FILE NAMES IN THE ARRAY
-const fileNameSave = function (directory, array) {
-  fs.readdir(directory, (err, files) => {
-    if (err) {
-      console.error(err)
-      return
-    }
-
-    files.forEach((file) => {
-      if (file.endsWith('.csv')) {
-        array.push(file)
-      }
-    })
-  })
-}
-
-//////////////////////////////////////////////////////////////////////////////
-// Sort out files in the folder by date of creation
-const sortFilesByCreationDate = (folderPath) => {
-  const files = fs.readdirSync(folderPath)
-
-  return files
-    .filter((file) => !file.startsWith('.'))
-    .map((file) => ({
-      name: file,
-      time: fs.statSync(path.join(folderPath, file)).ctime.getTime(),
-    }))
-    .sort((a, b) => b.time - a.time)
-    .map((file) => file.name)
-}
-
-//////////////////////////////////////////////////////////////////////////////
 // CURRENT DATE (f.e 4/3 - fourth of march)
 const dateFunction = function () {
   const date = new Date()
@@ -235,37 +142,6 @@ const dateFunction = function () {
 const isoDate = function () {
   const isoDate = new Date().toISOString().slice(0, 10)
   return isoDate
-}
-
-const convertCSVToJSON = async (folderPath, filenames) => {
-  const results = []
-  for (const filename of filenames) {
-    if (path.extname(filename) === '.csv') {
-      const filePath = path.join(folderPath, filename)
-      const fileData = fs.readFileSync(filePath, 'utf-8')
-      const jsonArray = []
-      await new Promise((resolve, reject) => {
-        fs.createReadStream(filePath)
-          .pipe(csv())
-          .on('data', (data) => jsonArray.push(data))
-          .on('end', () => {
-            const jsonFilename =
-              path.basename(filename, path.extname(filename)) + '.json'
-            const jsonPath = path.join(folderPath, jsonFilename)
-            fs.writeFileSync(jsonPath, JSON.stringify(jsonArray, null, 2))
-            results.push(jsonPath)
-            fs.unlink(filePath, (err) => {
-              if (err) reject(err)
-              else resolve()
-            })
-          })
-          .on('error', (err) => {
-            reject(err)
-          })
-      })
-    }
-  }
-  console.log('Conversion complete:', results)
 }
 
 // CHAT GPT
@@ -287,13 +163,9 @@ chatGPT = async function (apiKey) {
 
 module.exports = {
   findMinPrice,
-  filesIntoArray,
   remainingTickets,
-  fileNameSave,
-  sortFilesByCreationDate,
   concertsFileNames,
   dateFunction,
-  convertCSVToJSON,
   chatGPT,
   jsonToObject,
   csvToObject,
