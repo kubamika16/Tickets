@@ -12,11 +12,12 @@ const csvToObject = async function (folder) {
       if (err) {
         reject(err)
       } else {
+        // Jeśli nie ma żadnego błędu, do tablicy 'files' zostają dodane nazwy plików z rozszeżeniem csv
         resolve(files.filter((file) => path.extname(file) === '.csv'))
       }
     })
   })
-  console.log(files)
+  console.log('Files:', files)
 
   // Logika która zwraca posortowane już obiekty JSON z plików CSV
   const jsonFiles = await Promise.all(
@@ -77,6 +78,7 @@ const jsonToObject = async function (folder) {
     a.fileCreationDate.localeCompare(b.fileCreationDate),
   )
 
+  // Zwrócenie posortowanych ścieżek w folderze z koncertami. Potrzebne do póżniejszego nadpisania danych
   sortedConcertData.forEach((element) => {
     concertDataPath.push(`./${folder}/${element.name}.json`)
   })
