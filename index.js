@@ -41,6 +41,8 @@ async function printResults() {
   concertsArray.forEach((element) => {
     linksArray.push(element['url'])
   })
+  console.log(linksArray)
+  console.log(linksArray.length)
 
   for (let i = 0; i < concertsArray.length; i++) {
     // Sprawdzenie ostatniego argumentu dotyczącego dodania daty (5/3 albo 10/3 itp.)
@@ -70,8 +72,6 @@ async function printResults() {
   }
 
   console.log(`Concertowa Tablica`, concertsArray)
-  console.log(linksArray)
-  console.log(linksArray.length)
 
   aws.uploadFilesToS3('./concerts')
 }
