@@ -26,6 +26,7 @@ async function printResults() {
   console.log('---------------------------------------------------------')
   console.log('---------------------------------------------------------')
 
+  // Zwrócenie tablicy z posortowanymi plikami JSON z folderu 'prices'
   const pricesArray = await functions.csvToObject('prices')
   console.log('Prajsowa Tablica:', pricesArray)
 
@@ -33,17 +34,14 @@ async function printResults() {
   const concertsArray = await functions.jsonToObject('concerts')
   // console.log(concertsArray)
 
-  // Put data into 2 array from folders (Prices and Concerts) sorted by the time of creation
-  // await functions.filesIntoArray(pricesArray, 'prices')
-  // await functions.filesIntoArray(concertsArray, 'concerts')
-
-  // // // Passing links of concerts for webscraping in Google Chrome
+  // Passing links of concerts for webscraping in Google Chrome
   concertsArray.forEach((element) => {
     linksArray.push(element['url'])
   })
   console.log(linksArray)
   console.log(linksArray.length)
 
+  // Praca na każdym obiekcie tablicy z koncertami. To właśnie do tych obiektów dodaje się dane i zapisuje się zmiany
   for (let i = 0; i < concertsArray.length; i++) {
     // Sprawdzenie ostatniego argumentu dotyczącego dodania daty (5/3 albo 10/3 itp.)
     const lastCheck =
@@ -58,22 +56,31 @@ async function printResults() {
       todaysDate !== lastCheck &&
       pricesArray[i][0].Section !== ''
     ) {
+      // Dodanie dzisiejszej daty do obiektu na temat koncertu
       concertsArray[i].checkingDate.push(todaysDate)
+
+      // Dodanie liczby pozostałych biletów do obiektu na temat koncertu (bilety 'primary', nie 'resale')
       concertsArray[i].availableTickets.push(
         functions.remainingTickets(pricesArray[i]),
       )
+
+      // Dodanie minimalnej ceny biletu do obiektu na temat koncertu
       concertsArray[i].minPrice.push(functions.findMinPrice(pricesArray[i]))
 
-      // Logic that helps to overrite JSON file with data about tickets
+      // Zamiana obiektu na JSON
       const updatedJson = JSON.stringify(concertsArray[i])
-      // console.log(`updatedJson[${i}]`, updatedJson)
+      // Nadpisanie nowymi danymi danego pliku
       fs.writeFileSync(functions.concertDataPath[i], updatedJson, 'utf-8')
     }
   }
 
   console.log(`Concertowa Tablica`, concertsArray)
 
-  aws.uploadFilesToS3('./concerts')
+  // Praca z AWS
+  const awsWorkload = function () {
+    aws.uploadFilesToS3('./concerts')
+  }
+  // awsWorkload()
 }
 
 printResults()
