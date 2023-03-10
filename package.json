@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "async": "^3.2.4",
     "aws-sdk": "^2.1328.0",
     "chart.js": "^4.2.1",
     "csv-parser": "^3.0.0",

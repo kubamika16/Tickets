@@ -80,7 +80,7 @@ async function printResults() {
   const awsWorkload = function () {
     aws.uploadFilesToS3('./concerts')
   }
-  // awsWorkload()
+  awsWorkload()
 }
 
 printResults()
