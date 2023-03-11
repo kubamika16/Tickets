@@ -216,6 +216,28 @@ awsData.forEach((arrayData, index) => {
 
   const labels = arrayData.checkingDate
 
+  // let timeLeft = []
+
+  // let checkingDates = arrayData.checkingDate
+
+  // let concertDate = new Date(`${arrayData.date}/2023`)
+  // console.log('Concert Date', concertDate)
+
+  // for (const checkingDate of checkingDates) {
+  //   const currentCheckingDate = new Date(
+  //     `${checkingDate.split('/')[1]}/${checkingDate.split('/')[0]}/2023`,
+  //   )
+  //   while (currentCheckingDate <= concertDate) {
+  //     const dateString = `${currentCheckingDate.getDate()}/${
+  //       currentCheckingDate.getMonth() + 1
+  //     }`
+  //     timeLeft.push(dateString)
+  //     currentCheckingDate.setDate(currentCheckingDate.getDate() + 1)
+  //   }
+  // }
+  // console.log(timeLeft)
+  // const labels = timeLeft
+
   const data = {
     labels,
     datasets: [

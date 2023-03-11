@@ -47,7 +47,7 @@ const s3 = new AWS.S3({
 const uploadFilesToS3 = async (folder) => {
   // Read contents of the folder
   const filesInFolder = await fs.promises.readdir(folder)
-  console.log(filesInFolder)
+  // console.log(filesInFolder)
 
   // List the contents of the S3 bucket
   const objectsInBucket = await s3
@@ -76,7 +76,35 @@ const uploadFilesToS3 = async (folder) => {
     }),
   )
 
-  // Upload any files in the folder that are not in the bucket
+  // Delete any files in the bucket that are not in the folder
+  await Promise.all(
+    objectsInBucket.Contents.filter(
+      (object) => !filesInFolder.includes(object.Key),
+    ).map(async (object) => {
+      const params = {
+        Bucket: 'concert-data-bucket-2023',
+        Key: object.Key,
+      }
+      await s3.deleteObject(params).promise()
+    }),
+  )
+
+  // Update the contents of any files in the bucket that are also in the folder
+  await Promise.all(
+    filesInFolder.map(async (file) => {
+      if (path.extname(file) === '.json' && filesInBucket.includes(file)) {
+        const fileContent = await fs.promises.readFile(`${folder}/${file}`)
+        const params = {
+          Bucket: 'concert-data-bucket-2023',
+          Key: file,
+          Body: fileContent,
+        }
+        await s3.upload(params).promise()
+      }
+    }),
+  )
+
+  console.log('FILES SUCCESSFULLY UPLOADED, UPDATED, DELETED')
 }
 
 module.exports = { uploadFilesToS3 }
