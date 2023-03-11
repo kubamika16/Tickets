@@ -46,8 +46,8 @@ console.log(`Event details saved as ${filename}.json`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 09/03/2023 Data
-// 16 concerts
+// 11/03/2023 Data
+// 18 concerts
 const links = [
   'https://concerts.livenation.com/rico-nasty-houston-texas-04-29-2023/event/3A005E4977A72B62',
   'https://concerts.livenation.com/pote-baby-ben-reilly-los-angeles-california-04-19-2023/event/09005E5129189C6B',
@@ -62,9 +62,11 @@ const links = [
   'https://concerts.livenation.com/not-presents-get-busy-or-die-sacramento-california-05-21-2023/event/1C005E58CF70600D?_ga=2.78240404.1891142984.1678312456-1080492288.1671659989',
   'https://concerts.livenation.com/ella-mai-the-heart-on-my-chicago-illinois-05-23-2023/event/04005E3ABF404BD2?_ga=2.114333063.1891142984.1678312456-1080492288.1671659989',
   'https://concerts.livenation.com/grandson-kflay-present-i-love-you-chicago-illinois-06-10-2023/event/04005E66C4FD2142',
-  'https://concerts.livenation.com/grandson-kflay-present-i-love-you-chicago-illinois-06-10-2023/event/04005E66C4FD2142',
   'https://www.ticketmaster.com/event/0C005E67D1BB3D04',
   'https://www.ticketmaster.com/alec-benjamin-harrisburg-pennsylvania-04-29-2023/event/02005E63AFB247F4',
+  'https://concerts.livenation.com/soulja-boy-atlanta-georgia-05-11-2023/event/0E005E3AFC4564E3',
+  'https://concerts.livenation.com/soulja-boy-pittsburgh-pennsylvania-05-21-2023/event/16005E4F0C757A1E',
+  'https://www.ticketmaster.com/bush-huntington-new-york-04-30-2023/event/00005E6693AF0EBB',
 ]
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
