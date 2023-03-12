@@ -1,3 +1,7 @@
+import { awsVariable } from './aws.js'
+
+console.log(awsVariable) // Output: "my variable"
+
 const chartContainer = document.querySelector('.chart-container')
 
 let dataTest
@@ -13,18 +17,6 @@ getData().then((data) => {
   dataTest = data
   console.log(dataTest)
 })
-
-async function getDataTest() {
-  // List the contents of the S3 bucket
-  const objectsInBucket = await s3
-    .listObjectsV2({ Bucket: ticketBucket })
-    .promise()
-
-  // Extract the filenames from the S3 objects
-  const filesInBucket = objectsInBucket.Contents.map((object) => object.Key)
-  console.log(filesInBucket)
-}
-getDataTest()
 
 // let dataTest = [];
 

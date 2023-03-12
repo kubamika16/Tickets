@@ -1,3 +1,5 @@
+export const awsVariable = 'my variable'
+
 // Required modules
 const AWS = require('aws-sdk')
 const fs = require('fs')
