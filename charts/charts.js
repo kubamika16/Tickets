@@ -1,17 +1,51 @@
 const chartContainer = document.querySelector('.chart-container')
 
+console.log(ticketBucket)
+
 let dataTest
 
-function getData() {
-  return fetch(
-    'https://concert-data-bucket-2023.s3.eu-west-2.amazonaws.com/Bastille+(May+24).json',
+async function getData() {
+  const response = await fetch(
+    'https://concert-data-bucket-2023.s3.eu-west-2.amazonaws.com/50+Cent+(Apr+01).json',
   )
-    .then((response) => response.json())
-    .then((data) => {
-      dataTest = data
-      return dataTest
-    })
+  return await response.json()
 }
+
+getData().then((data) => {
+  dataTest = data
+  console.log(dataTest)
+})
+
+async function getDataTest() {
+  // List the contents of the S3 bucket
+  const objectsInBucket = await s3
+    .listObjectsV2({ Bucket: ticketBucket })
+    .promise()
+
+  // Extract the filenames from the S3 objects
+  const filesInBucket = objectsInBucket.Contents.map((object) => object.Key)
+  console.log(filesInBucket)
+}
+getDataTest()
+
+// let dataTest = [];
+
+// async function getData() {
+//   const files = ['50+Cent+(Apr+01).json', 'Bush+(Apr+30).json', ...];
+//   const promises = files.map(async (file) => {
+//     const response = await fetch(
+//       `https://concert-data-bucket-2023.s3.eu-west-2.amazonaws.com/${file}`,
+//     );
+//     return await response.json();
+//   });
+
+//   const data = await Promise.all(promises);
+//   data.forEach((d) => dataTest.push(d));
+// }
+
+// getData().then(() => {
+//   console.log(dataTest);
+// });
 
 // Wyimituję obiekt który został pobrany z AWS
 
