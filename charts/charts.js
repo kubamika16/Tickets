@@ -1,8 +1,8 @@
-import { awsVariable } from './aws.js'
+// You can now access the environment variables using process.env.<variable name>
+const apiKey = process.env.API_KEY
+const apiSecret = process.env.API_SECRET
 
-console.log(awsVariable) // Output: "my variable"
-
-const chartContainer = document.querySelector('.chart-container')
+console.log(apiKey)
 
 let dataTest
 

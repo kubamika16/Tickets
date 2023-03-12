@@ -1,11 +1,7 @@
-export const awsVariable = 'my variable'
-
 // Required modules
 const AWS = require('aws-sdk')
 const fs = require('fs')
 const path = require('path')
-const async = require('async')
-require('dotenv').config()
 
 const ticketBucket = 'concert-data-bucket-2023'
 
