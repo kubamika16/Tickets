@@ -1,7 +1,5 @@
 const chartContainer = document.querySelector('.chart-container')
 
-console.log(ticketBucket)
-
 let dataTest
 
 async function getData() {
