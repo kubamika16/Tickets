@@ -2,6 +2,7 @@
 const AWS = require('aws-sdk')
 const fs = require('fs')
 const path = require('path')
+require('dotenv').config()
 
 const ticketBucket = 'concert-data-bucket-2023'
 
