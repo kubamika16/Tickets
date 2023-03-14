@@ -16,33 +16,48 @@ const s3 = new AWS.S3({
   region: 'eu-west-2',
 })
 
-// const uploadFilesToS3 = (folder) => {
-//   // Czytanie folderu asynchronicznie
-//   // Read the contents of the folder asynchronously
-//   fs.readdir(folder, async (err, files) => {
-//     if (err) throw err
-//     // Use async.eachLimit to upload files to S3 in parallel with a limit of 5 files at a time
-//     // By limiting the number of parallel iterations to 5, we ensure that we don't overwhelm the system with too many simultaneous uploads. This can help improve the performance and reliability of the code
-//     await async.eachLimit(files, 5, async (file) => {
-//       // Only upload json files
-//       if (path.extname(file) === '.json') {
-//         // Read content of each file asynchronously
-//         const fileContent = await fs.promises.readFile(`${folder}/${file}`)
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// DynamoDB
+// AWS.config.update({
+//   region: 'eu-west-2',
+//   endpoint: 'https://dynamodb.eu-west-2.amazonaws.com',
+//   accessKeyId: process.env.ACCESS_KEY_ID,
+//   secretAccessKey: process.env.SECRET_ACCESS_KEY,
+// })
+// const docClient = new AWS.DynamoDB.DocumentClient()
+// const table = 'tickets'
 
-//         // Define the parameters for S3 upload
-//         const params = {
-//           Bucket: 'concert-data-bucket-2023',
-//           Key: file,
-//           Body: fileContent,
-//         }
-
-//         await s3.upload(params).promise()
-//       }
-//     })
-//     console.log('FILES TO S3 UPLOADED SUCCESSFULLY')
-//   })
+// const item = {
+//   name: '50 Pense (Apr 01)',
+//   date: 'Apr 01',
+//   url:
+//     'https://www.ticketmaster.com/50-cent-everett-massachusetts-04-01-2023/event/01005E4AE6FE7CBA',
+//   availableTickets: [55, 47, 43, 27, 14],
+//   minPrice: [95, 95, 95, 95, 95],
+//   checkingDate: ['9/3', '10/3', '11/3', '12/3', '13/3'],
+//   fileCreationDate: '2023-03-09T04:57:09.327Z',
 // }
 
+// const params = {
+//   TableName: table,
+//   Item: item,
+// }
+
+// docClient.put(params, function (err, data) {
+//   if (err) {
+//     console.error(
+//       'Unable to add item. Error JSON:',
+//       JSON.stringify(err, null, 2),
+//     )
+//   } else {
+//     console.log('Added item:', JSON.stringify(data, null, 2))
+//   }
+// })
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// S3
 const uploadFilesToS3 = async (folder) => {
   // Read contents of the folder
   const filesInFolder = await fs.promises.readdir(folder)
