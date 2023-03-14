@@ -28,7 +28,7 @@ async function printResults() {
 
   // Zwrócenie tablicy z posortowanymi plikami JSON z folderu 'prices'
   const pricesArray = await functions.csvToObject('prices')
-  console.log('Prajsowa Tablica:', pricesArray)
+  // console.log('Prajsowa Tablica:', pricesArray)
 
   // Zwrócenie tablicy z posortowanymi plikami JSON folderu 'concerts'
   const concertsArray = await functions.jsonToObject('concerts')
@@ -38,8 +38,8 @@ async function printResults() {
   concertsArray.forEach((element) => {
     linksArray.push(element['url'])
   })
-  console.log(linksArray)
-  console.log(linksArray.length)
+  // console.log(linksArray)
+  // console.log(linksArray.length)
 
   // Praca na każdym obiekcie tablicy z koncertami. To właśnie do tych obiektów dodaje się dane i zapisuje się zmiany
   for (let i = 0; i < concertsArray.length; i++) {
@@ -74,11 +74,11 @@ async function printResults() {
     }
   }
 
-  console.log(`Concertowa Tablica`, concertsArray)
+  // console.log(`Concertowa Tablica`, concertsArray)
 
   // Praca z AWS
   const awsWorkload = function () {
-    aws.uploadFilesToS3('./concerts')
+    // aws.uploadFilesToS3('./concerts')
   }
   awsWorkload()
 }

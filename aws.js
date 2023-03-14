@@ -1,5 +1,6 @@
 // Required modules
 const AWS = require('aws-sdk')
+const { DocumentClient } = require('aws-sdk/clients/dynamodb')
 const fs = require('fs')
 const path = require('path')
 require('dotenv').config()
@@ -19,25 +20,42 @@ const s3 = new AWS.S3({
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // DynamoDB
-// AWS.config.update({
-//   region: 'eu-west-2',
-//   endpoint: 'https://dynamodb.eu-west-2.amazonaws.com',
-//   accessKeyId: process.env.ACCESS_KEY_ID,
-//   secretAccessKey: process.env.SECRET_ACCESS_KEY,
-// })
-// const docClient = new AWS.DynamoDB.DocumentClient()
-// const table = 'tickets'
+AWS.config.update({
+  region: 'eu-west-2',
+  endpoint: 'https://dynamodb.eu-west-2.amazonaws.com',
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+})
+const docClient = new AWS.DynamoDB.DocumentClient()
+const table = 'tickets'
 
-// const item = {
-//   name: '50 Pense (Apr 01)',
-//   date: 'Apr 01',
-//   url:
-//     'https://www.ticketmaster.com/50-cent-everett-massachusetts-04-01-2023/event/01005E4AE6FE7CBA',
-//   availableTickets: [55, 47, 43, 27, 14],
-//   minPrice: [95, 95, 95, 95, 95],
-//   checkingDate: ['9/3', '10/3', '11/3', '12/3', '13/3'],
-//   fileCreationDate: '2023-03-09T04:57:09.327Z',
-// }
+const dynamoFunction = async function (folder) {
+  const filesInFolder = await fs.promises.readdir(folder)
+  for (const file of filesInFolder) {
+    if (path.extname(file) === '.json') {
+      const fileContent = await fs.promises.readFile(`${folder}/${file}`)
+      const item = JSON.parse(fileContent)
+
+      const params = {
+        TableName: table,
+        Item: item,
+      }
+      console.log(params)
+
+      docClient.put(params, function (err, data) {
+        if (err) {
+          console.error(
+            'Unable to add item. Error JSON:',
+            JSON.stringify(err, null, 2),
+          )
+        } else {
+          console.log(`Added file ${file}`)
+        }
+      })
+    }
+  }
+}
+dynamoFunction('./concerts')
 
 // const params = {
 //   TableName: table,
@@ -80,6 +98,7 @@ const uploadFilesToS3 = async (folder) => {
       if (path.extname(file) === '.json' && !filesInBucket.includes(file)) {
         // Przeczytanie pliku
         const fileContent = await fs.promises.readFile(`${folder}/${file}`)
+
         const params = {
           Bucket: 'concert-data-bucket-2023',
           Key: file,

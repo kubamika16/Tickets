@@ -17,7 +17,7 @@ const csvToObject = async function (folder) {
       }
     })
   })
-  console.log('Files:', files)
+  // console.log('Files:', files)
 
   // Logika która zwraca posortowane już obiekty JSON z plików CSV
   const jsonFiles = await Promise.all(
@@ -82,7 +82,7 @@ const jsonToObject = async function (folder) {
   sortedConcertData.forEach((element) => {
     concertDataPath.push(`./${folder}/${element.name}.json`)
   })
-  console.log('concertDataPath', concertDataPath)
+  // console.log('concertDataPath', concertDataPath)
 
   // Zwrócenie końcowego wyniku (posortowane dane)
   return sortedConcertData
@@ -160,7 +160,7 @@ chatGPT = async function (apiKey) {
     max_tokens: 3000,
   })
 
-  console.log(response.data.choices[0].text.trim(0))
+  // console.log(response.data.choices[0].text.trim(0))
 }
 
 module.exports = {
