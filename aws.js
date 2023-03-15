@@ -40,7 +40,7 @@ const dynamoFunction = async function (folder) {
         TableName: table,
         Item: item,
       }
-      console.log(params)
+      // console.log(params)
 
       docClient.put(params, function (err, data) {
         if (err) {
@@ -49,7 +49,7 @@ const dynamoFunction = async function (folder) {
             JSON.stringify(err, null, 2),
           )
         } else {
-          console.log(`Added file ${file}`)
+          // console.log(`Added file ${file}`)
         }
       })
     }

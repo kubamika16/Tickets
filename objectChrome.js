@@ -47,7 +47,7 @@ console.log(`Event details saved as ${filename}.json`)
 // FUNCTION THAT OPENS LINKS
 
 // 14/03/2023 Data
-// 16 concerts
+// 20 concerts
 const links = [
   'https://concerts.livenation.com/rico-nasty-houston-texas-04-29-2023/event/3A005E4977A72B62',
   'https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354',
@@ -65,6 +65,10 @@ const links = [
   'https://concerts.livenation.com/ekkstacy-los-angeles-california-07-21-2023/event/09005E66C061CE15',
   'https://concerts.livenation.com/ruel-4th-wall-world-tour-north-boston-massachusetts-06-14-2023/event/01005E58DB0B7F33',
   'https://www.ticketmaster.com/powerman-5000-atlanta-georgia-08-06-2023/event/0E005E68A0A2287D',
+  'https://concerts.livenation.com/darnell-cole-the-vibe-anaheim-california-04-13-2023/event/09005E6B11484B63',
+  'https://www.ticketmaster.com/alix-page-new-york-new-york-05-14-2023/event/00005E6AFD73731A',
+  'https://www.ticketmaster.ca/saint-asonia-montreal-quebec-05-13-2023/event/31005E6AD7CD66EF',
+  'https://concerts.livenation.com/fangirl-fantasy-one-direction-vs-5sos-boston-massachusetts-04-15-2023/event/01005E579FC93D0B',
 ]
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {

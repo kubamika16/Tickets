@@ -3,8 +3,12 @@
 // Variables
 
 // This works like a login for Access Key and Seret Access Key - data will be downloaded from these variables
-const accessKey = window.prompt('Enter Access Key ID')
-const secretAccessKey = window.prompt('Enter Secret Access Key ID')
+// const accessKey = window.prompt('Enter Access Key ID')
+// const secretAccessKey = window.prompt('Enter Secret Access Key ID')
+
+const accessKey = 'AKIAWTNZIWA53CI6FSHC'
+const secretAccessKey = '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'
+
 const chartContainer = document.querySelector('.chart-container')
 const ticketBucket = 'concert-data-bucket-2023'
 
@@ -40,6 +44,17 @@ s3.listObjects(params, function (err, data) {
         const response = await fetch(
           `https://${ticketBucket}.s3.eu-west-2.amazonaws.com/${file}?t=${Date.now()}`,
         )
+        // const responseText = await response.text()
+
+        // const isErrorResponse = responseText.startsWith('<?xml')
+
+        // if (isErrorResponse) {
+        //   console.error('Error response:', responseText)
+        // } else {
+        //   const responseData = JSON.parse(responseText)
+        //   // Process the JSON data as needed
+        //   console.log(responseData)
+        // }
         return await response.json()
       })
 
@@ -47,6 +62,7 @@ s3.listObjects(params, function (err, data) {
       //  (i.e., for all the JSON files to be retrieved and parsed)
       // and returns a new promise that resolves to an array of the results.
       const data = await Promise.all(promises)
+
       data.forEach((data) => concertsArray.push(data))
     }
 
