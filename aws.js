@@ -26,52 +26,46 @@ AWS.config.update({
   accessKeyId: process.env.ACCESS_KEY_ID,
   secretAccessKey: process.env.SECRET_ACCESS_KEY,
 })
+
 const docClient = new AWS.DynamoDB.DocumentClient()
 const table = 'tickets'
 
-const dynamoFunction = async function (folder) {
-  const filesInFolder = await fs.promises.readdir(folder)
-  for (const file of filesInFolder) {
-    if (path.extname(file) === '.json') {
-      const fileContent = await fs.promises.readFile(`${folder}/${file}`)
-      const item = JSON.parse(fileContent)
+const uploadItem = async (item) => {
+  const params = {
+    TableName: table,
+    Item: item,
+  }
 
-      const params = {
-        TableName: table,
-        Item: item,
-      }
-      // console.log(params)
-
-      docClient.put(params, function (err, data) {
-        if (err) {
-          console.error(
-            'Unable to add item. Error JSON:',
-            JSON.stringify(err, null, 2),
-          )
-        } else {
-          // console.log(`Added file ${file}`)
-        }
-      })
-    }
+  try {
+    await docClient.put(params).promise()
+    console.log(`Added item with ID: ${item.name}`)
+  } catch (err) {
+    console.error(
+      'Unable to add item. Error JSON:',
+      JSON.stringify(err, null, 2),
+    )
   }
 }
+
+const processFile = async (folder, file) => {
+  const filePath = path.join(folder, file)
+  const fileContent = await fs.promises.readFile(filePath)
+  const item = JSON.parse(fileContent)
+  await uploadItem(item)
+}
+
+const dynamoFunction = async (folder) => {
+  const filesInFolder = await fs.promises.readdir(folder)
+  const jsonFiles = filesInFolder.filter(
+    (file) => path.extname(file) === '.json',
+  )
+
+  for (const file of jsonFiles) {
+    await processFile(folder, file)
+  }
+}
+
 dynamoFunction('./concerts')
-
-// const params = {
-//   TableName: table,
-//   Item: item,
-// }
-
-// docClient.put(params, function (err, data) {
-//   if (err) {
-//     console.error(
-//       'Unable to add item. Error JSON:',
-//       JSON.stringify(err, null, 2),
-//     )
-//   } else {
-//     console.log('Added item:', JSON.stringify(data, null, 2))
-//   }
-// })
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

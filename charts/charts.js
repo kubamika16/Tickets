@@ -3,11 +3,8 @@
 // Variables
 
 // This works like a login for Access Key and Seret Access Key - data will be downloaded from these variables
-// const accessKey = window.prompt('Enter Access Key ID')
-// const secretAccessKey = window.prompt('Enter Secret Access Key ID')
-
-const accessKey = 'AKIAWTNZIWA53CI6FSHC'
-const secretAccessKey = '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'
+const accessKey = window.prompt('Enter Access Key ID')
+const secretAccessKey = window.prompt('Enter Secret Access Key ID')
 
 const chartContainer = document.querySelector('.chart-container')
 const ticketBucket = 'concert-data-bucket-2023'
