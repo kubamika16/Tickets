@@ -1,6 +1,5 @@
 // Required modules
 const AWS = require('aws-sdk')
-const { DocumentClient } = require('aws-sdk/clients/dynamodb')
 const fs = require('fs')
 const path = require('path')
 require('dotenv').config()
@@ -26,10 +25,48 @@ AWS.config.update({
   accessKeyId: process.env.ACCESS_KEY_ID,
   secretAccessKey: process.env.SECRET_ACCESS_KEY,
 })
-
 const docClient = new AWS.DynamoDB.DocumentClient()
 const table = 'tickets'
 
+// Function to fetch all items from the DynamoDB table
+const getAllItems = async () => {
+  const params = {
+    TableName: table,
+  }
+
+  try {
+    const data = await docClient.scan(params).promise()
+    console.log('Retrieved items:', JSON.stringify(data.Items, null, 2))
+    return data.Items
+  } catch (err) {
+    console.error(
+      'Unable to retrieve items. Error JSON:',
+      JSON.stringify(err, null, 2),
+    )
+    return null
+  }
+}
+
+// Example usage:
+// getAllItems()
+
+// Function to fetch all keys from the DynamoDB table
+const getAllKeys = async () => {
+  const items = await getAllItems()
+  if (items !== null) {
+    const keys = items.map((item) => item.name)
+    console.log('Retrieved keys:', JSON.stringify(keys, null, 2))
+    return keys
+  } else {
+    console.error('Unable to retrieve keys.')
+    return null
+  }
+}
+
+// Example usage:
+getAllKeys()
+
+// Function that uploads an item to the DynamoDB table
 const uploadItem = async (item) => {
   const params = {
     TableName: table,
@@ -38,7 +75,7 @@ const uploadItem = async (item) => {
 
   try {
     await docClient.put(params).promise()
-    console.log(`Added item with ID: ${item.name}`)
+    // console.log(`Added item with ID: ${item.name}`)
   } catch (err) {
     console.error(
       'Unable to add item. Error JSON:',
@@ -47,6 +84,7 @@ const uploadItem = async (item) => {
   }
 }
 
+// Function to process a single JSON file and upload its content to DynamoDB
 const processFile = async (folder, file) => {
   const filePath = path.join(folder, file)
   const fileContent = await fs.promises.readFile(filePath)
@@ -54,18 +92,21 @@ const processFile = async (folder, file) => {
   await uploadItem(item)
 }
 
-const dynamoFunction = async (folder) => {
+// Main function to read the folder, filter JSON files and process each one
+const dynamoDBFunction = async (folder) => {
+  // Reads the contents of the folder
   const filesInFolder = await fs.promises.readdir(folder)
+
+  // Filter onlu JSON files
   const jsonFiles = filesInFolder.filter(
     (file) => path.extname(file) === '.json',
   )
 
+  // Process each JSON file and upload its content to DynamoDB
   for (const file of jsonFiles) {
     await processFile(folder, file)
   }
 }
-
-dynamoFunction('./concerts')
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -134,4 +175,4 @@ const uploadFilesToS3 = async (folder) => {
   console.log('FILES SUCCESSFULLY UPLOADED, UPDATED, DELETED')
 }
 
-module.exports = { uploadFilesToS3 }
+module.exports = { uploadFilesToS3, dynamoDBFunction }
