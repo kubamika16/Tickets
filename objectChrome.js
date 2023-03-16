@@ -4,8 +4,11 @@
 // FUNCTION THAT DOWNLOADS DATA FROM GOOGLE CHROME WEBSITE
 
 // Get the name of the event
-const eventName = document.querySelector('.event-header__event-name-text')
-  .innerText
+const eventName = document
+  .querySelector('.event-header__event-name-text')
+  .innerText.split(' ')
+
+const eventNameShort = `${eventName[0]} ${eventName[1]}`
 
 // Get the date of the event (with only the day and month)
 const eventDate = document
@@ -19,7 +22,7 @@ const eventUrl = window.location.href
 
 // Create an object with the event details
 const eventDetails = {
-  name: `${eventName} (${eventMonthDay})`,
+  name: `${eventNameShort} (${eventMonthDay})`,
   date: eventMonthDay,
   url: eventUrl,
   availableTickets: [],
@@ -39,7 +42,7 @@ const downloadLink = document.createElement('a')
 downloadLink.href = URL.createObjectURL(blob)
 downloadLink.download = `${eventDetails.name}.json`
 downloadLink.click()
-console.log(`Event details saved as ${filename}.json`)
+console.log(`Event details saved.`)
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
