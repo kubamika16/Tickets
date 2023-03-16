@@ -41,7 +41,7 @@ const getAllItems = async () => {
 
   try {
     const data = await docClient.scan(params).promise()
-    console.log('Retrieved items:', JSON.stringify(data.Items, null, 2))
+    // console.log('Retrieved items:', JSON.stringify(data.Items, null, 2))
     return data.Items
   } catch (err) {
     console.error(
@@ -60,7 +60,7 @@ const getAllKeys = async () => {
   const items = await getAllItems()
   if (items !== null) {
     const keys = items.map((item) => item.name)
-    console.log('Retrieved keys:', JSON.stringify(keys, null, 2))
+    // console.log('Retrieved keys:', JSON.stringify(keys, null, 2))
     return keys
   } else {
     console.error('Unable to retrieve keys.')
@@ -72,7 +72,10 @@ const getAllKeys = async () => {
 // getAllKeys()
 
 // Function that uploads an item to the DynamoDB table
-const uploadItem = async (item) => {
+const uploadItem = async (folder, file) => {
+  const item = await processFile(folder, file)
+  // console.log('Processed file: ', item)
+
   const params = {
     TableName: table,
     Item: item,
@@ -89,28 +92,74 @@ const uploadItem = async (item) => {
   }
 }
 
-// Function to process a single JSON file and upload its content to DynamoDB
+// Function to process a single JSON file
 const processFile = async (folder, file) => {
   const filePath = path.join(folder, file)
   const fileContent = await fs.promises.readFile(filePath)
   const item = JSON.parse(fileContent)
-  await uploadItem(item)
+  return item
+}
+
+// Function to delete an item by its 'name' attribute
+const deleteItem = async (itemName) => {
+  const params = {
+    TableName: table,
+    Key: {
+      name: itemName,
+    },
+  }
+
+  try {
+    await docClient.delete(params).promise()
+    console.log(`Deleted item with name: ${itemName}`)
+  } catch (error) {
+    console.error(
+      'Unable to delete item. Error JSON:',
+      JSON.stringify(error, null, 2),
+    )
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main function to read the folder, filter JSON files and process each one
 const dynamoDBFunction = async (folder) => {
+  // File that is not in folder, but still in DynamoDB and needs to be deleted
+  let deleteFile
+  ////////////////////////////////////////////////////////////////////////////////
+  // FOLDER
   // Reads the contents of the folder
-  const filesInFolder = await fs.promises.readdir(folder)
+  const concertNames = []
 
+  const filesInFolder = await fs.promises.readdir(folder)
   // Filter onlu JSON files
   const jsonFiles = filesInFolder.filter(
     (file) => path.extname(file) === '.json',
   )
-
-  // Process each JSON file and upload its content to DynamoDB
   for (const file of jsonFiles) {
-    await processFile(folder, file)
+    const processedFile = await processFile(folder, file)
+    concertNames.push(processedFile.name)
+  }
+  // console.log('Name: ', concertNames)
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // "TICKETS" TABLE
+  const dynamoDBKeys = await getAllKeys()
+
+  // DELETE CERTAIN FILES FROM DYNAMO DB
+  for (const name of dynamoDBKeys) {
+    // Sprawdź 2 tablice
+    // Jeśli 'concertNames', czyli tablica z nazwami z folderu nie zawiera nazwy która znajduje się w 'getAllKeys' (tablica z nazwami z Dynamo)
+    if (!concertNames.includes(name)) {
+      console.log(`concertNames (items in folder) don't include ${name}`)
+
+      // // Usunięcie Rekordu z DynamoDB
+      await deleteItem(name)
+    }
+  }
+
+  // UPLOAD JSON FILES TO DYNAMO DB
+  for (const file of jsonFiles) {
+    await uploadItem(folder, file)
   }
 }
 
