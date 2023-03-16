@@ -46,7 +46,7 @@ console.log(`Event details saved as ${filename}.json`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 14/03/2023 Data
+// 16/03/2023 Data
 // 20 concerts
 const links = [
   'https://concerts.livenation.com/rico-nasty-houston-texas-04-29-2023/event/3A005E4977A72B62',
