@@ -38,8 +38,8 @@ async function printResults() {
   concertsArray.forEach((element) => {
     linksArray.push(element['url'])
   })
-  // console.log(linksArray)
-  // console.log(linksArray.length)
+  console.log(linksArray)
+  console.log(linksArray.length)
 
   // Praca na każdym obiekcie tablicy z koncertami. To właśnie do tych obiektów dodaje się dane i zapisuje się zmiany
   for (let i = 0; i < concertsArray.length; i++) {
@@ -74,7 +74,7 @@ async function printResults() {
     }
   }
 
-  // console.log(`Concertowa Tablica`, concertsArray)
+  console.log(`Concertowa Tablica`, concertsArray)
 
   // Praca z AWS
   const awsWorkload = function () {

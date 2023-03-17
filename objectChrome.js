@@ -72,6 +72,14 @@ const links = [
   'https://www.ticketmaster.com/alix-page-new-york-new-york-05-14-2023/event/00005E6AFD73731A',
   'https://www.ticketmaster.ca/saint-asonia-montreal-quebec-05-13-2023/event/31005E6AD7CD66EF',
   'https://concerts.livenation.com/fangirl-fantasy-one-direction-vs-5sos-boston-massachusetts-04-15-2023/event/01005E579FC93D0B',
+  'https://www.ticketmaster.com/new-west-new-york-new-york-05-09-2023/event/00005E67BEF6297B',
+  'https://concerts.livenation.com/big-bubble-rave-21-salt-lake-city-utah-04-08-2023/event/1E005E68E1164093',
+  'https://concerts.livenation.com/zae-france-cleveland-ohio-04-24-2023/event/05005E6E9839218E',
+  'https://concerts.livenation.com/electric-feels-salt-lake-city-utah-05-13-2023/event/1E005E6CE97B1F23',
+  'https://concerts.livenation.com/isabella-lovestory-laticonica-tour-dallas-texas-05-04-2023/event/0C005E69B03820CB',
+  'https://concerts.livenation.com/bob-vylan-ban-bob-vylan-tour-boston-massachusetts-05-12-2023/event/01005E67C1C13D80',
+  'https://www.ticketmaster.com/waka-flocka-flame-with-the-homies-louisville-kentucky-03-31-2023/event/16005E6DA63813A7',
+  'https://www.ticketmaster.com/twin-tribes-191-toole-tucson-arizona-05-22-2023/event/19005E6ECD0D3DFE',
 ]
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
