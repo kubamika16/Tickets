@@ -49,11 +49,9 @@ console.log(`Event details saved.`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 16/03/2023 Data
-// 20 concerts
+// 18/03/2023 Data
+// 23 concerts
 const links = [
-  'https://concerts.livenation.com/rico-nasty-houston-texas-04-29-2023/event/3A005E4977A72B62',
-  'https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354',
   'https://concerts.livenation.com/icon-for-hire-boston-massachusetts-05-15-2023/event/01005E5C84051272',
   'https://www.ticketmaster.com/bastille-tucson-arizona-05-24-2023/event/19005E589CFB2553',
   'https://www.ticketmaster.com/50-cent-everett-massachusetts-04-01-2023/event/01005E4AE6FE7CBA',
@@ -62,11 +60,8 @@ const links = [
   'https://concerts.livenation.com/grandson-kflay-present-i-love-you-chicago-illinois-06-10-2023/event/04005E66C4FD2142',
   'https://www.ticketmaster.com/event/0C005E67D1BB3D04',
   'https://www.ticketmaster.com/alec-benjamin-harrisburg-pennsylvania-04-29-2023/event/02005E63AFB247F4',
-  'https://concerts.livenation.com/soulja-boy-atlanta-georgia-05-11-2023/event/0E005E3AFC4564E3',
-  'https://concerts.livenation.com/soulja-boy-pittsburgh-pennsylvania-05-21-2023/event/16005E4F0C757A1E',
   'https://www.ticketmaster.com/bush-huntington-new-york-04-30-2023/event/00005E6693AF0EBB',
   'https://concerts.livenation.com/ekkstacy-los-angeles-california-07-21-2023/event/09005E66C061CE15',
-  'https://concerts.livenation.com/ruel-4th-wall-world-tour-north-boston-massachusetts-06-14-2023/event/01005E58DB0B7F33',
   'https://www.ticketmaster.com/powerman-5000-atlanta-georgia-08-06-2023/event/0E005E68A0A2287D',
   'https://concerts.livenation.com/darnell-cole-the-vibe-anaheim-california-04-13-2023/event/09005E6B11484B63',
   'https://www.ticketmaster.com/alix-page-new-york-new-york-05-14-2023/event/00005E6AFD73731A',
