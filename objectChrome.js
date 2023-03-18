@@ -49,8 +49,8 @@ console.log(`Event details saved.`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 18/03/2023 Data
-// 23 concerts
+// 18/03/2023 11:50 Data
+// 37 concerts
 const links = [
   'https://concerts.livenation.com/icon-for-hire-boston-massachusetts-05-15-2023/event/01005E5C84051272',
   'https://www.ticketmaster.com/bastille-tucson-arizona-05-24-2023/event/19005E589CFB2553',
@@ -75,6 +75,20 @@ const links = [
   'https://concerts.livenation.com/bob-vylan-ban-bob-vylan-tour-boston-massachusetts-05-12-2023/event/01005E67C1C13D80',
   'https://www.ticketmaster.com/waka-flocka-flame-with-the-homies-louisville-kentucky-03-31-2023/event/16005E6DA63813A7',
   'https://www.ticketmaster.com/twin-tribes-191-toole-tucson-arizona-05-22-2023/event/19005E6ECD0D3DFE',
+  'https://concerts.livenation.com/man-with-a-mission-world-tour-boston-massachusetts-05-28-2023/event/01005E6809707D33',
+  'https://concerts.livenation.com/311-houston-texas-05-26-2023/event/3A005E6ADBF97BD2',
+  'https://concerts.livenation.com/atreyu-with-special-guests-point-north-dallas-texas-05-13-2023/event/0C005E6DD8192E5D',
+  'https://concerts.livenation.com/shy-glizzy-silver-spring-maryland-05-26-2023/event/15005E6A1CCE869E',
+  'https://concerts.livenation.com/roc-marciano-thank-god-for-roc-boston-massachusetts-05-18-2023/event/01005E6F8F2A20EC',
+  'https://concerts.livenation.com/bullet-for-my-valentine-raleigh-north-carolina-05-21-2023/event/2D005E6ADBEE7856',
+  'https://www.ticketmaster.com/declan-mckenna-the-big-return-albany-new-york-05-28-2023/event/30005E67B71E150F',
+  'https://www.ticketmaster.com/matt-maeson-washington-district-of-columbia-05-31-2023/event/15005E6ABEE96DC4',
+  'https://concerts.livenation.com/badflower-charlotte-north-carolina-05-24-2023/event/2D005E67914C1B6D',
+  'https://concerts.livenation.com/peezy-los-angeles-california-04-16-2023/event/09005E6A1630945D',
+  'https://www.ticketmaster.com/yungblud-del-mar-california-04-19-2023/event/0A005E69B3853DF9',
+  'https://concerts.livenation.com/saviii-3rd-santa-ana-california-04-09-2023/event/09005E6FC8714415',
+  'https://concerts.livenation.com/joeyy-with-marlon-dubois-and-shed-los-angeles-california-04-22-2023/event/09005E6ECBBB316F',
+  'https://concerts.livenation.com/aly-aj-with-love-from-denver-colorado-04-04-2023/event/1E005E6EF3E13A8A',
 ]
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {

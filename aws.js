@@ -83,7 +83,7 @@ const uploadItem = async (folder, file) => {
 
   try {
     await docClient.put(params).promise()
-    // console.log(`Added item with ID: ${item.name}`)
+    console.log(`Added item with ID: ${item.name}`)
   } catch (err) {
     console.error(
       'Unable to add item. Error JSON:',
