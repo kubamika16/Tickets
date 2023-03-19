@@ -49,7 +49,7 @@ console.log(`Event details saved.`)
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 18/03/2023 11:50 Data
+// 19/03/2023 11:50 Data
 // 37 concerts
 const links = [
   'https://concerts.livenation.com/icon-for-hire-boston-massachusetts-05-15-2023/event/01005E5C84051272',
@@ -96,7 +96,7 @@ async function openLinks() {
       setTimeout(() => {
         window.open(links[i], '_blank')
         resolve()
-      }, 10000)
+      }, 15000)
     })
   }
 }
