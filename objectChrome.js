@@ -49,35 +49,27 @@ console.log(`Event details saved.`);
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 19/03/2023 11:50 Data
-// 37 concerts
+// 20/03/2023 11:50 Data
+// 29 concerts
 const links = [
-  "https://concerts.livenation.com/icon-for-hire-boston-massachusetts-05-15-2023/event/01005E5C84051272",
   "https://www.ticketmaster.com/bastille-tucson-arizona-05-24-2023/event/19005E589CFB2553",
   "https://www.ticketmaster.com/50-cent-everett-massachusetts-04-01-2023/event/01005E4AE6FE7CBA",
   "https://concerts.livenation.com/not-presents-get-busy-or-die-sacramento-california-05-21-2023/event/1C005E58CF70600D?_ga=2.78240404.1891142984.1678312456-1080492288.1671659989",
   "https://concerts.livenation.com/ella-mai-the-heart-on-my-chicago-illinois-05-23-2023/event/04005E3ABF404BD2?_ga=2.114333063.1891142984.1678312456-1080492288.1671659989",
-  "https://concerts.livenation.com/grandson-kflay-present-i-love-you-chicago-illinois-06-10-2023/event/04005E66C4FD2142",
   "https://www.ticketmaster.com/event/0C005E67D1BB3D04",
-  "https://www.ticketmaster.com/alec-benjamin-harrisburg-pennsylvania-04-29-2023/event/02005E63AFB247F4",
   "https://www.ticketmaster.com/bush-huntington-new-york-04-30-2023/event/00005E6693AF0EBB",
   "https://concerts.livenation.com/ekkstacy-los-angeles-california-07-21-2023/event/09005E66C061CE15",
   "https://www.ticketmaster.com/powerman-5000-atlanta-georgia-08-06-2023/event/0E005E68A0A2287D",
-  "https://concerts.livenation.com/darnell-cole-the-vibe-anaheim-california-04-13-2023/event/09005E6B11484B63",
-  "https://www.ticketmaster.com/alix-page-new-york-new-york-05-14-2023/event/00005E6AFD73731A",
   "https://www.ticketmaster.ca/saint-asonia-montreal-quebec-05-13-2023/event/31005E6AD7CD66EF",
   "https://concerts.livenation.com/fangirl-fantasy-one-direction-vs-5sos-boston-massachusetts-04-15-2023/event/01005E579FC93D0B",
   "https://www.ticketmaster.com/new-west-new-york-new-york-05-09-2023/event/00005E67BEF6297B",
-  "https://concerts.livenation.com/big-bubble-rave-21-salt-lake-city-utah-04-08-2023/event/1E005E68E1164093",
   "https://concerts.livenation.com/zae-france-cleveland-ohio-04-24-2023/event/05005E6E9839218E",
+  "https://concerts.livenation.com/electric-feels-salt-lake-city-utah-05-13-2023/event/1E005E6CE97B1F23",
+  "https://concerts.livenation.com/isabella-lovestory-laticonica-tour-dallas-texas-05-04-2023/event/0C005E69B03820CB",
 ];
 
 const links2 = [
-  "https://concerts.livenation.com/electric-feels-salt-lake-city-utah-05-13-2023/event/1E005E6CE97B1F23",
-  "https://concerts.livenation.com/isabella-lovestory-laticonica-tour-dallas-texas-05-04-2023/event/0C005E69B03820CB",
-  "https://concerts.livenation.com/bob-vylan-ban-bob-vylan-tour-boston-massachusetts-05-12-2023/event/01005E67C1C13D80",
   "https://www.ticketmaster.com/waka-flocka-flame-with-the-homies-louisville-kentucky-03-31-2023/event/16005E6DA63813A7",
-  "https://www.ticketmaster.com/twin-tribes-191-toole-tucson-arizona-05-22-2023/event/19005E6ECD0D3DFE",
   "https://concerts.livenation.com/man-with-a-mission-world-tour-boston-massachusetts-05-28-2023/event/01005E6809707D33",
   "https://concerts.livenation.com/311-houston-texas-05-26-2023/event/3A005E6ADBF97BD2",
   "https://concerts.livenation.com/atreyu-with-special-guests-point-north-dallas-texas-05-13-2023/event/0C005E6DD8192E5D",
