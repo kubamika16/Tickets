@@ -49,7 +49,7 @@ console.log(`Event details saved.`);
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 20/03/2023 11:50 Data
+// 21/03/2023
 // 29 concerts
 const links = [
   "https://www.ticketmaster.com/bastille-tucson-arizona-05-24-2023/event/19005E589CFB2553",
@@ -66,9 +66,6 @@ const links = [
   "https://concerts.livenation.com/zae-france-cleveland-ohio-04-24-2023/event/05005E6E9839218E",
   "https://concerts.livenation.com/electric-feels-salt-lake-city-utah-05-13-2023/event/1E005E6CE97B1F23",
   "https://concerts.livenation.com/isabella-lovestory-laticonica-tour-dallas-texas-05-04-2023/event/0C005E69B03820CB",
-];
-
-const links2 = [
   "https://www.ticketmaster.com/waka-flocka-flame-with-the-homies-louisville-kentucky-03-31-2023/event/16005E6DA63813A7",
   "https://concerts.livenation.com/man-with-a-mission-world-tour-boston-massachusetts-05-28-2023/event/01005E6809707D33",
   "https://concerts.livenation.com/311-houston-texas-05-26-2023/event/3A005E6ADBF97BD2",
