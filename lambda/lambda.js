@@ -1,6 +1,7 @@
 // scanDynamoRecords ?
 
-const AWS = require("aws-sdk");
+// const AWS = require("aws-sdk");
+import AWS from "aws-sdk";
 // Region set as in a Lambda Function
 AWS.config.update({
   region: "eu-west-2",
@@ -100,10 +101,10 @@ const scanDynamoRecords = async function (scanParams, itemArray) {
     itemArray = itemArray.concat(dynamoData.Items);
 
     // If there's a LastEvaluatedKey, it means there are more items to fetch
-    if (dynamoData.LastEvaluateKey) {
-      // Update the ExclusiveStartKey to the LastEvaluateKey to continue scanning
+    if (dynamoData.LastEvaluatedKey) {
+      // Update the ExclusiveStartKey to the LastEvaluatedKey to continue scanning
       // (If there are more items left to look at, it remembers where it stopped and continues looking from there.)
-      scanParams.ExclusiveStartKey = dynamoData.LastEvaluateKey;
+      scanParams.ExclusiveStartKey = dynamoData.LastEvaluatedKey;
       return await scanDynamoRecords(scanParams, itemArray);
     }
     return itemArray;
