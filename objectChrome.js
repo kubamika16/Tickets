@@ -62,7 +62,6 @@ const links = [
   "https://www.ticketmaster.com/powerman-5000-atlanta-georgia-08-06-2023/event/0E005E68A0A2287D",
   "https://www.ticketmaster.ca/saint-asonia-montreal-quebec-05-13-2023/event/31005E6AD7CD66EF",
   "https://concerts.livenation.com/fangirl-fantasy-one-direction-vs-5sos-boston-massachusetts-04-15-2023/event/01005E579FC93D0B",
-  "https://www.ticketmaster.com/new-west-new-york-new-york-05-09-2023/event/00005E67BEF6297B",
   "https://concerts.livenation.com/zae-france-cleveland-ohio-04-24-2023/event/05005E6E9839218E",
   "https://concerts.livenation.com/electric-feels-salt-lake-city-utah-05-13-2023/event/1E005E6CE97B1F23",
   "https://concerts.livenation.com/isabella-lovestory-laticonica-tour-dallas-texas-05-04-2023/event/0C005E69B03820CB",
@@ -76,7 +75,6 @@ const links = [
   "https://www.ticketmaster.com/declan-mckenna-the-big-return-albany-new-york-05-28-2023/event/30005E67B71E150F",
   "https://www.ticketmaster.com/matt-maeson-washington-district-of-columbia-05-31-2023/event/15005E6ABEE96DC4",
   "https://concerts.livenation.com/badflower-charlotte-north-carolina-05-24-2023/event/2D005E67914C1B6D",
-  "https://concerts.livenation.com/peezy-los-angeles-california-04-16-2023/event/09005E6A1630945D",
   "https://www.ticketmaster.com/yungblud-del-mar-california-04-19-2023/event/0A005E69B3853DF9",
   "https://concerts.livenation.com/saviii-3rd-santa-ana-california-04-09-2023/event/09005E6FC8714415",
   "https://concerts.livenation.com/joeyy-with-marlon-dubois-and-shed-los-angeles-california-04-22-2023/event/09005E6ECBBB316F",
@@ -88,7 +86,7 @@ async function openLinks() {
       setTimeout(() => {
         window.open(links[i], "_blank");
         resolve();
-      }, 15000);
+      }, 5000);
     });
   }
 }
