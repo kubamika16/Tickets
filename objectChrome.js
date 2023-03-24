@@ -86,7 +86,7 @@ async function openLinks() {
       setTimeout(() => {
         window.open(links[i], "_blank");
         resolve();
-      }, 5000);
+      }, 12000);
     });
   }
 }
