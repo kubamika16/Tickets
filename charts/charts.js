@@ -1,176 +1,102 @@
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-// Variables
-
-// This works like a login for Access Key and Seret Access Key - data will be downloaded from these variables
-const accessKey = window.prompt("Enter Access Key ID");
-const secretAccessKey = window.prompt("Enter Secret Access Key ID");
-
 const chartContainer = document.querySelector(".chart-container");
-const ticketBucket = "concert-data-bucket-2023";
 
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-// S3 Connection
-const s3 = new AWS.S3({
-  accessKeyId: accessKey,
-  secretAccessKey: secretAccessKey,
-  region: "eu-west-2",
-});
-const params = {
-  Bucket: ticketBucket,
-};
+async function DataFromAPI() {
+  const apiUrl =
+    "https://ndy7m4kqv6.execute-api.eu-west-2.amazonaws.com/test/tickets";
 
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-// Pobranie wszystkich plików z S3 bucket
-s3.listObjects(params, function (err, data) {
-  if (err) console.log(err, err.stack);
-  else {
-    // Zapisanie w tablicy nazw plików w s3. Nazwy potrzebne do przeczytania zawartości plików
-    const fileNames = data.Contents.map((object) => object.Key);
-    console.log(fileNames);
+  try {
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-    // Utworzenie końcowej tablicy wyników
-    const concertsArray = [];
-
-    // Funkcja która pozwala wyciągnąć dane z s3
-    async function getData() {
-      // Pobranie z tablicy 'fileNames' nazw a na nich fetch (request to a remote server (in this case, an Amazon S3 bucket) to retrieve a JSON file)
-      const promises = fileNames.map(async (file) => {
-        const response = await fetch(
-          `https://${ticketBucket}.s3.eu-west-2.amazonaws.com/${file}?t=${Date.now()}`
-        );
-        // const responseText = await response.text()
-
-        // const isErrorResponse = responseText.startsWith('<?xml')
-
-        // if (isErrorResponse) {
-        //   console.error('Error response:', responseText)
-        // } else {
-        //   const responseData = JSON.parse(responseText)
-        //   // Process the JSON data as needed
-        //   console.log(responseData)
-        // }
-        return await response.json();
-      });
-
-      // The Promise.all() method is called on the promises array, which waits for all the promises in the array to resolve
-      //  (i.e., for all the JSON files to be retrieved and parsed)
-      // and returns a new promise that resolves to an array of the results.
-      const data = await Promise.all(promises);
-
-      data.forEach((data) => concertsArray.push(data));
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    //then() method takes a callback function that logs the concertsArray to the console when the Promise is resolved.
-    getData().then(() => {
-      const apiUrl =
-        "https://32eoek0i94.execute-api.eu-west-2.amazonaws.com/prod/items";
+    const data = await response.json();
+    console.log("Fetched data:", data);
 
-      async function getAllItems() {
-        try {
-          const response = await fetch(apiUrl);
-          const data = await response.json();
-          return data.items;
-        } catch (error) {
-          console.error("Error fetching data:", error);
-          return [];
-        }
-      }
+    // Transform raw data to a desired format
+    const concertsArray = data.Items.map((item) => {
+      return {
+        name: item.name.S,
+        // Extract date value as string
+        date: item.date.S,
+        // Extract checking date values as an array of strings
+        checkingDate: item.checkingDate.L.map((d) => d.S),
+        // Extract file creation date as string
+        fileCreationDate: item.fileCreationDate.S,
+        // Extract min price values as an array of numbers
+        minPrice: item.minPrice.L.map((p) => Number(p.N)),
+        // Extract URL value as string
+        url: item.url.S,
+        // Extract available ticket values as an array of numbers
+        availableTickets: item.availableTickets.L.map((t) => Number(t.N)),
+      };
+    });
 
-      (async function () {
-        const items = await getAllItems();
-        console.log(items);
-      })();
+    concertsArray.forEach((arrayData, index) => {
+      console.log(arrayData);
 
-      console.log(concertsArray);
+      const canvasID = `myChart${index + 1}`;
+      const canvasHTML = `<div class="chart"><canvas id="${canvasID}"></canvas></div>`;
+      chartContainer.insertAdjacentHTML("beforeend", canvasHTML);
 
-      // I wreszcie praca na danych 'concertsArray'
-      concertsArray.forEach((arrayData, index) => {
-        const canvasID = `myChart${index + 1}`;
-        const canvasHTML = `<div class="chart"><canvas id="${canvasID}"></canvas></div>`;
-        chartContainer.insertAdjacentHTML("beforeend", canvasHTML);
+      const canvas = document.getElementById(canvasID);
+      const ctx = canvas.getContext("2d");
 
-        const canvas = document.getElementById(canvasID);
-        const ctx = canvas.getContext("2d");
+      let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+      gradient.addColorStop(0, "rgba(58,123,213,1");
+      gradient.addColorStop(1, "rgba(0,210,255, 0.3)");
 
-        let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, "rgba(58,123,213,1");
-        gradient.addColorStop(1, "rgba(0,210,255, 0.3)");
+      const labels = arrayData.checkingDate;
 
-        const labels = arrayData.checkingDate;
+      const data = {
+        labels,
+        datasets: [
+          {
+            // Points on the array (X Line)
+            data: arrayData.availableTickets,
+            // History with name
+            label: arrayData.name,
+            fill: true,
+            backgroundColor: gradient,
+            borderColor: "#fff",
+          },
+        ],
+      };
 
-        const data = {
-          labels,
-          datasets: [
-            {
-              // Points on the array (X Line)
-              data: arrayData.availableTickets,
-              // History with name
-              label: arrayData.name,
-              fill: true,
-              backgroundColor: gradient,
-              borderColor: "#fff",
-            },
-          ],
-        };
-
-        // Configuration of the chart (line, circle, etc.)
-        const config = {
-          type: "line",
-          // Passing data object
-          data: data,
-          options: {
-            radius: 5,
-            hitRadius: 100,
-            responsive: true,
-            scales: {
-              y: {
-                ticks: {
-                  callback: function (value) {
-                    return value + " tickets";
-                  },
+      // Configuration of the chart (line, circle, etc.)
+      const config = {
+        type: "line",
+        // Passing data object
+        data: data,
+        options: {
+          radius: 5,
+          hitRadius: 100,
+          responsive: true,
+          scales: {
+            y: {
+              ticks: {
+                callback: function (value) {
+                  return value + " tickets";
                 },
               },
             },
           },
-        };
+        },
+      };
 
-        // Object that gets 2 params (ctx, config object)
-        const chart = new Chart(ctx, config);
-        // canvas.chart = chart
-      });
+      // Object that gets 2 params (ctx, config object)
+      const chart = new Chart(ctx, config);
+      // canvas.chart = chart
     });
-  }
-});
-
-async function sendDataToAPI(date, name) {
-  const apiUrl =
-    "https://e09so3pxh2.execute-api.eu-west-2.amazonaws.com/test/customers";
-
-  const requestBody = {
-    date: date,
-    name: name,
-  };
-
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestBody),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error ${response.status}`);
-    }
-
-    console.log("Data sent successfully");
   } catch (error) {
-    console.error("Error sending data to API:", error);
+    console.error("Error fetching data:", error);
   }
 }
 
-sendDataToAPI("1999", "John");
+DataFromAPI();
