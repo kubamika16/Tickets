@@ -144,3 +144,33 @@ s3.listObjects(params, function (err, data) {
     });
   }
 });
+
+async function sendDataToAPI(date, name) {
+  const apiUrl =
+    "https://e09so3pxh2.execute-api.eu-west-2.amazonaws.com/test/customers";
+
+  const requestBody = {
+    date: date,
+    name: name,
+  };
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}`);
+    }
+
+    console.log("Data sent successfully");
+  } catch (error) {
+    console.error("Error sending data to API:", error);
+  }
+}
+
+sendDataToAPI("1999", "John");
