@@ -49,10 +49,7 @@ console.log(`Event details saved.`);
 ////////////////////////////////////////////////////////////////////////////////
 // FUNCTION THAT OPENS LINKS
 
-// 21/03/2023
-// 29 concerts
 const links = [
-  "https://www.ticketmaster.com/bastille-tucson-arizona-05-24-2023/event/19005E589CFB2553",
   "https://www.ticketmaster.com/50-cent-everett-massachusetts-04-01-2023/event/01005E4AE6FE7CBA",
   "https://concerts.livenation.com/not-presents-get-busy-or-die-sacramento-california-05-21-2023/event/1C005E58CF70600D?_ga=2.78240404.1891142984.1678312456-1080492288.1671659989",
   "https://concerts.livenation.com/ella-mai-the-heart-on-my-chicago-illinois-05-23-2023/event/04005E3ABF404BD2?_ga=2.114333063.1891142984.1678312456-1080492288.1671659989",
@@ -61,17 +58,12 @@ const links = [
   "https://concerts.livenation.com/ekkstacy-los-angeles-california-07-21-2023/event/09005E66C061CE15",
   "https://www.ticketmaster.ca/saint-asonia-montreal-quebec-05-13-2023/event/31005E6AD7CD66EF",
   "https://concerts.livenation.com/fangirl-fantasy-one-direction-vs-5sos-boston-massachusetts-04-15-2023/event/01005E579FC93D0B",
-  "https://concerts.livenation.com/zae-france-cleveland-ohio-04-24-2023/event/05005E6E9839218E",
-  "https://www.ticketmaster.com/waka-flocka-flame-with-the-homies-louisville-kentucky-03-31-2023/event/16005E6DA63813A7",
   "https://concerts.livenation.com/man-with-a-mission-world-tour-boston-massachusetts-05-28-2023/event/01005E6809707D33",
   "https://concerts.livenation.com/311-houston-texas-05-26-2023/event/3A005E6ADBF97BD2",
-  "https://concerts.livenation.com/roc-marciano-thank-god-for-roc-boston-massachusetts-05-18-2023/event/01005E6F8F2A20EC",
-  "https://concerts.livenation.com/bullet-for-my-valentine-raleigh-north-carolina-05-21-2023/event/2D005E6ADBEE7856",
   "https://www.ticketmaster.com/matt-maeson-washington-district-of-columbia-05-31-2023/event/15005E6ABEE96DC4",
   "https://concerts.livenation.com/saviii-3rd-santa-ana-california-04-09-2023/event/09005E6FC8714415",
   "https://concerts.livenation.com/joeyy-with-marlon-dubois-and-shed-los-angeles-california-04-22-2023/event/09005E6ECBBB316F",
   "https://concerts.livenation.com/ruel-4th-wall-world-tour-north-boston-massachusetts-06-14-2023/event/01005E71C829628F",
-  "https://concerts.livenation.com/scarface-chicago-illinois-07-07-2023/event/04005E6ECB401E24",
   "https://www.ticketmaster.com/dreamers-191-toole-tucson-arizona-06-09-2023/event/19005E71AD8A267A",
   "https://concerts.livenation.com/robert-delong-dreamers-philadelphia-pennsylvania-05-30-2023/event/02005E71931F2470",
   "https://www.ticketmaster.com/dreamers-robert-delong-atlanta-georgia-06-05-2023/event/0E005E71C1CD464B",
