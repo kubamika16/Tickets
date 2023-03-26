@@ -64,13 +64,28 @@ const links = [
   "https://concerts.livenation.com/saviii-3rd-santa-ana-california-04-09-2023/event/09005E6FC8714415",
   "https://concerts.livenation.com/joeyy-with-marlon-dubois-and-shed-los-angeles-california-04-22-2023/event/09005E6ECBBB316F",
   "https://concerts.livenation.com/ruel-4th-wall-world-tour-north-boston-massachusetts-06-14-2023/event/01005E71C829628F",
-  "https://www.ticketmaster.com/dreamers-191-toole-tucson-arizona-06-09-2023/event/19005E71AD8A267A",
   "https://concerts.livenation.com/robert-delong-dreamers-philadelphia-pennsylvania-05-30-2023/event/02005E71931F2470",
-  "https://www.ticketmaster.com/dreamers-robert-delong-atlanta-georgia-06-05-2023/event/0E005E71C1CD464B",
   "https://concerts.livenation.com/dreamers-robert-delong-santa-ana-california-06-15-2023/event/09005E6FCD4945DB",
   "https://concerts.livenation.com/2rare-new-york-new-york-04-16-2023/event/00005E71C5D939E1",
+];
+const links2 = [
   "https://www.ticketmaster.com/the-dan-band-new-york-new-york-04-29-2023/event/00005E74B8FF1DA1",
   "https://www.ticketmaster.com/mipso-savannah-georgia-04-20-2023/event/0E005E74C1D02B25",
+  "https://www.ticketmaster.ca/social-distortion-toronto-ontario-07-22-2023/event/10005E6F32285CB6",
+  "https://concerts.livenation.com/dead-poet-society-dallas-texas-05-15-2023/event/0C005E7411424ED9",
+  "https://www.ticketmaster.com/duster-w-sour-widows-houston-texas-06-17-2023/event/3A005E75BA4231FD",
+  "https://concerts.livenation.com/event/0E005E6FC9044F50",
+  "https://concerts.livenation.com/kat-dahlia-2023-north-american-tour-los-angeles-california-05-12-2023/event/09005E77CA703A7E",
+  "https://www.ticketmaster.com/rick-springfield-madison-wisconsin-07-31-2023/event/07005E7078AD5808",
+  "https://concerts.livenation.com/larrys-market-run-2023-las-vegas-nevada-07-14-2023/event/17005E6FC6B47A0B",
+  "https://www.ticketmaster.ca/nickel-creek-toronto-ontario-07-19-2023/event/10005E63D7D05F5C",
+  "https://www.ticketmaster.com/larrys-market-run-2023-rialto-theatre-tucson-arizona-05-30-2023/event/19005E72883A122D",
+  "https://concerts.livenation.com/sleeping-with-sirens-sacramento-california-06-01-2023/event/1C005E74004756E6",
+  "https://www.ticketmaster.com/blackberry-smoke-detroit-michigan-08-03-2023/event/08005E74B3A61A13",
+  "https://www.ticketmaster.com/steel-pulse-del-mar-california-07-22-2023/event/0A005E74CF50311C",
+  "https://concerts.livenation.com/peezy-detroit-michigan-05-05-2023/event/08005E75088945C0",
+  "https://concerts.livenation.com/arkells-los-angeles-california-05-17-2023/event/09005E71F60968D5",
+  "https://www.ticketmaster.com/hosted-by-ty-dolla-ign-boston-massachusetts-04-01-2023/event/01005E78E31274D0",
 ];
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
