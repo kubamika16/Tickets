@@ -63,15 +63,13 @@ const links = [
   "https://www.ticketmaster.com/matt-maeson-washington-district-of-columbia-05-31-2023/event/15005E6ABEE96DC4",
   "https://concerts.livenation.com/saviii-3rd-santa-ana-california-04-09-2023/event/09005E6FC8714415",
   "https://concerts.livenation.com/joeyy-with-marlon-dubois-and-shed-los-angeles-california-04-22-2023/event/09005E6ECBBB316F",
-  "https://concerts.livenation.com/ruel-4th-wall-world-tour-north-boston-massachusetts-06-14-2023/event/01005E71C829628F",
   "https://concerts.livenation.com/robert-delong-dreamers-philadelphia-pennsylvania-05-30-2023/event/02005E71931F2470",
   "https://concerts.livenation.com/dreamers-robert-delong-santa-ana-california-06-15-2023/event/09005E6FCD4945DB",
   "https://concerts.livenation.com/2rare-new-york-new-york-04-16-2023/event/00005E71C5D939E1",
-];
-const links2 = [
   "https://www.ticketmaster.com/the-dan-band-new-york-new-york-04-29-2023/event/00005E74B8FF1DA1",
   "https://www.ticketmaster.com/mipso-savannah-georgia-04-20-2023/event/0E005E74C1D02B25",
-  "https://www.ticketmaster.ca/social-distortion-toronto-ontario-07-22-2023/event/10005E6F32285CB6",
+];
+const links2 = [
   "https://concerts.livenation.com/dead-poet-society-dallas-texas-05-15-2023/event/0C005E7411424ED9",
   "https://www.ticketmaster.com/duster-w-sour-widows-houston-texas-06-17-2023/event/3A005E75BA4231FD",
   "https://concerts.livenation.com/event/0E005E6FC9044F50",
@@ -86,6 +84,13 @@ const links2 = [
   "https://concerts.livenation.com/peezy-detroit-michigan-05-05-2023/event/08005E75088945C0",
   "https://concerts.livenation.com/arkells-los-angeles-california-05-17-2023/event/09005E71F60968D5",
   "https://www.ticketmaster.com/hosted-by-ty-dolla-ign-boston-massachusetts-04-01-2023/event/01005E78E31274D0",
+  "https://concerts.livenation.com/sleeping-with-sirens-family-tree-tour-silver-spring-maryland-05-22-2023/event/15005E74931E1A7C",
+  "https://concerts.livenation.com/rio-romeo-tour-2023-new-york-new-york-05-21-2023/event/00005E74F5C44384",
+  "https://www.ticketmaster.ca/social-distortion-toronto-ontario-07-22-2023/event/10005E6F32285CB6",
+  "https://concerts.livenation.com/kxt-917-presents-first-aid-kit-dallas-texas-09-14-2023/event/0C005E742177548C",
+  "https://concerts.livenation.com/girlfriends-boston-massachusetts-05-17-2023/event/01005E6EC98F400F",
+  "https://www.ticketmaster.com/snarky-puppy-los-angeles-california-09-24-2023/event/09005E6AC0967B53",
+  "https://www.ticketmaster.com/snarky-puppy-seattle-washington-09-15-2023/event/0F005E70A7732EBF",
 ];
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
