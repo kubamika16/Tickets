@@ -37,30 +37,31 @@ const csvToObject = async function (folder) {
       // console.log(jsonArray);
       // console.log(jsonArray.length);
 
-      // Logic about collecting data for later 3 charts (if not possible then only two/one chart)
+      ////////////////////////////////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////////////////
+      // Logic about collecting data for later 3 charts (if not possible then only two/one chart). 3 charts represent first 3 types of tickets. Usually there is 3 types of tickets. First are the cheapest, then more expensive, and then the most expensive. It's good to have that documented on charts, because it can easier evaluate tickets we want to buy.
       // If array (jsonArray) contains one of these names (FLOOR, GA, AG, GENADM) (it doen't matter for example if GA is GA1/GA2, or AG1/AG2, it has to be that prefix)
-      // Save in new array only elements with these type of names
-      // In that new array
       const prefixes = ["FLOOR", "GA", "AG", "GENADM"];
-      let GA1;
-      let GA2;
-      let GA3;
 
-      // Pętla dla kadego obiektu danego biletu (np. koncert 50 Cent - GA 50, Resale 12, itd.)
-      // Sprawdzamy czy właściwość 'Section' zaczyna się od jednej z wymienionych w tablicy 'prefixes'
-      // To pozwala na wyciągnięcie danych o biletach TYLKO z tych 4 rodzajów biletów (FLOOR, GA, AG, GENADM)
-      // Dodatkowo, wazne jest zeby pracować na biletach 'primary' a nie resale
+      // TODO
+      // DODAĆ KOMENTARZE DO FUNKCJI NIZEJ
+      // ADD THESE COMMENTS:
+      // The empty box is an empty array called accumulator. This will hold the combined objects (cars) with the same price (color).
+      // The filteredArray is the first box with all the cars (objects) that have different prices (colors) and numbers of tickets (stickers).
+      // We go through each object (car) in the filteredArray one by one.
+      // We look into the accumulator (new box) to see if there's already an object (car) with the same Price Range (color) as the current object (car).
+      // If we find an object (car) with the same Price Range (color), we add the current object's (car's) # of tickets (>=0) (stickers) to the existing object's (car's) # of tickets (>=0) (stickers). We also combine the Section values.
+      // If we don't find an object (car) with the same Price Range (color), we put the current object (car) in the accumulator (new box) by itself.
+      // We repeat this process for all the objects (cars) in the filteredArray (first box).
+      // In the end, we have a new array (mergedArray) with objects (cars) of the same Price Range (color) together and the total number of # of tickets (>=0) (stickers) for each Price Range (color).
 
+      // First
       const filteredArray = jsonArray.filter(
         (obj) =>
           obj.Type === "primary" &&
           prefixes.some((prefix) => obj.Section.startsWith(prefix))
       );
       // console.log("filteredArray", filteredArray);
-
-      // Teraz pracuję na tablicy która przefiltrowała i zwróciła tylko potrzebne wartości
-      // Jeśli w tablicy kilku obiektów np. 2 obiekty mają takie same ceny, dodaj liczby biletów do siebie
-      // Najpierw zwróć te obiekty których wartości są takie same
 
       // Use .reduce() method to merge objects with the same 'Price Range'
       const mergedArray = filteredArray.reduce((accumulator, current) => {
