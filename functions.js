@@ -67,21 +67,33 @@ const csvToObject = async function (folder) {
         // If we find an object with the same Price Range
         if (existingIndex !== -1) {
           // Update the number of tickets by summing up the '# of tickets (>=0)' values
-          // Add the current object's (car's) # of tickets (>=0) (stickers) to the existing object's (car's) # of tickets (>=0) (stickers). We also combine the Section values.
+          // Add the current object's # of tickets (>=0) to the existing object's # of tickets (>=0). We also combine the Section values.
 
-          const currentTicketCount = Number(
+          // Getting the current number of tickets from the accumulator
+          const currentTicketNumber = Number(
             accumulator[existingIndex]["# of tickets (>=0)"]
           );
-          console.log("currentTicketCount", currentTicketCount);
+          // Getting the additional ticket number from the current object
+          const additionalTicketNumber = Number(current["# of tickets (>=0)"]);
+          // Calculate the new ticket count by summing up the current and additional ticket count
+          const newTicketNumber = currentTicketNumber + additionalTicketNumber;
+
+          // Update the accumulator with the new ticket count
+          accumulator[existingIndex]["# of tickets (>=0)"] = newTicketNumber;
+          // Get the current section from the accumulator
+          const currentSection = accumulator[existingIndex].Section;
+          // Get the section from the current object
+          const additionalSection = current.Section;
+          // Combine the current and additional sections
+          const combinedSection = `${currentSection}, ${additionalSection}`;
+          // Update the accumulator with the combined sections
+          accumulator[existingIndex].Section = combinedSection;
 
           accumulator[existingIndex]["# of tickets (>=0)"] =
             Number(accumulator[existingIndex]["# of tickets (>=0)"]) +
             Number(current["# of tickets (>=0)"]);
 
-          // Merge the 'Section' values
-          accumulator[existingIndex].Section =
-            accumulator[existingIndex].Section + ", " + current.Section;
-          // If we don't find an object (car) with the same Price Range (color), we put the current object (car) in the accumulator (new box) by itself.
+          // If we don't find an object with the same Price Range, we put the current object in the accumulator by itself.
         } else {
           // If the 'Price Range' is not in the accumulator array, add the current object
           accumulator.push(current);
@@ -91,6 +103,9 @@ const csvToObject = async function (folder) {
         return accumulator;
       }, []);
 
+      console.log(
+        "-------------------------------------------------------------------------------"
+      );
       console.log(mergedArray);
 
       // console.log("jsonArray from forEach loop:", jsonArray);
