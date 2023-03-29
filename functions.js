@@ -46,16 +46,9 @@ const csvToObject = async function (folder) {
       // TODO
       // DODAĆ KOMENTARZE DO FUNKCJI NIZEJ
       // ADD THESE COMMENTS:
-      // The empty box is an empty array called accumulator. This will hold the combined objects (cars) with the same price (color).
-      // The filteredArray is the first box with all the cars (objects) that have different prices (colors) and numbers of tickets (stickers).
-      // We go through each object (car) in the filteredArray one by one.
-      // We look into the accumulator (new box) to see if there's already an object (car) with the same Price Range (color) as the current object (car).
-      // If we find an object (car) with the same Price Range (color), we add the current object's (car's) # of tickets (>=0) (stickers) to the existing object's (car's) # of tickets (>=0) (stickers). We also combine the Section values.
-      // If we don't find an object (car) with the same Price Range (color), we put the current object (car) in the accumulator (new box) by itself.
       // We repeat this process for all the objects (cars) in the filteredArray (first box).
-      // In the end, we have a new array (mergedArray) with objects (cars) of the same Price Range (color) together and the total number of # of tickets (>=0) (stickers) for each Price Range (color).
 
-      // First
+      // The filteredArray is the first box with all the cars (objects) that have different prices (colors) and numbers of tickets (stickers).
       const filteredArray = jsonArray.filter(
         (obj) =>
           obj.Type === "primary" &&
@@ -63,14 +56,19 @@ const csvToObject = async function (folder) {
       );
       // console.log("filteredArray", filteredArray);
 
-      // Use .reduce() method to merge objects with the same 'Price Range'
+      // Using .reduce() method to merge objects with the same 'Price Range'
+      // We go through each object (car) in the filteredArray one by one.
+      // The empty box is an empty array called accumulator. This will hold the combined objects (cars) with the same price (color).
+      // We look into the accumulator (new box) to see if there's already an object (car) with the same Price Range (color) as the current object (car).
       const mergedArray = filteredArray.reduce((accumulator, current) => {
         const existingIndex = accumulator.findIndex(
           (item) => item["Price Range"] === current["Price Range"]
         );
 
+        // If we find an object (car) with the same Price Range (color)
         if (existingIndex !== -1) {
           // Update the number of tickets by summing up the '# of tickets (>=0)' values
+          // Add the current object's (car's) # of tickets (>=0) (stickers) to the existing object's (car's) # of tickets (>=0) (stickers). We also combine the Section values.
           accumulator[existingIndex]["# of tickets (>=0)"] =
             Number(accumulator[existingIndex]["# of tickets (>=0)"]) +
             Number(current["# of tickets (>=0)"]);
@@ -78,11 +76,13 @@ const csvToObject = async function (folder) {
           // Merge the 'Section' values
           accumulator[existingIndex].Section =
             accumulator[existingIndex].Section + ", " + current.Section;
+          // If we don't find an object (car) with the same Price Range (color), we put the current object (car) in the accumulator (new box) by itself.
         } else {
           // If the 'Price Range' is not in the accumulator array, add the current object
           accumulator.push(current);
         }
 
+        // In the end, we have a new array (mergedArray) with objects (cars) of the same Price Range (color) together and the total number of # of tickets (>=0) (stickers) for each Price Range (color).
         return accumulator;
       }, []);
 
