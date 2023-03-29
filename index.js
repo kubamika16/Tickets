@@ -78,8 +78,8 @@ async function printResults() {
 
   // Praca z AWS
   const awsWorkload = function () {
-    // aws.uploadFilesToS3("./concerts");
-    // aws.dynamoDBFunction("./concerts");
+    aws.uploadFilesToS3("./concerts");
+    aws.dynamoDBFunction("./concerts");
   };
   awsWorkload();
 }
