@@ -74,7 +74,7 @@ async function printResults() {
     }
   }
 
-  // console.log(`Concertowa Tablica`, concertsArray);
+  console.log(`Concertowa Tablica`, concertsArray);
 
   // Praca z AWS
   const awsWorkload = function () {
