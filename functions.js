@@ -37,15 +37,11 @@ const csvToObject = async function (folder) {
       // console.log(jsonArray);
       // console.log(jsonArray.length);
 
-      ////////////////////////////////////////////////////////////////////////
-      ////////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////
       // Logic about collecting data for later 3 charts (if not possible then only two/one chart). 3 charts represent first 3 types of tickets. Usually there are 3 types of tickets. First is the cheapest, then more expensive, and then the most expensive. It's good to have that documented on charts, because it can easier evaluate tickets we want to buy.
       const prefixes = ["FLOOR", "GA", "AG", "GENADM"];
-
-      // TODO
-      // DODAĆ KOMENTARZE DO FUNKCJI NIZEJ
-      // ADD THESE COMMENTS:
-      // We repeat this process for all the objects (cars) in the filteredArray (first box).
 
       // The filteredArray is the first box with all the cars (objects) that have different prices (colors) and numbers of tickets (stickers).
       const filteredArray = jsonArray.filter(
@@ -89,27 +85,25 @@ const csvToObject = async function (folder) {
           // Update the accumulator with the combined sections
           accumulator[existingIndex].Section = combinedSection;
 
-          accumulator[existingIndex]["# of tickets (>=0)"] =
-            Number(accumulator[existingIndex]["# of tickets (>=0)"]) +
-            Number(current["# of tickets (>=0)"]);
-
           // If we don't find an object with the same Price Range, we put the current object in the accumulator by itself.
         } else {
           // If the 'Price Range' is not in the accumulator array, add the current object
           accumulator.push(current);
         }
-
         // In the end, we have a new array (mergedArray) with objects (cars) of the same Price Range (color) together and the total number of # of tickets (>=0) (stickers) for each Price Range (color).
         return accumulator;
       }, []);
+      // Adding creation date time to JSON file
+      mergedArray.fileCreationDate = fileStats.birthtime.toISOString();
 
       console.log(
         "-------------------------------------------------------------------------------"
       );
-      console.log(mergedArray);
+      console.log("mergedArray", mergedArray);
+      console.log("jsonArray", jsonArray);
 
-      // console.log("jsonArray from forEach loop:", jsonArray);
-      return jsonArray;
+      // return jsonArray;
+      return mergedArray;
     })
   );
 
