@@ -39,8 +39,7 @@ const csvToObject = async function (folder) {
 
       ////////////////////////////////////////////////////////////////////////
       ////////////////////////////////////////////////////////////////////////
-      // Logic about collecting data for later 3 charts (if not possible then only two/one chart). 3 charts represent first 3 types of tickets. Usually there is 3 types of tickets. First are the cheapest, then more expensive, and then the most expensive. It's good to have that documented on charts, because it can easier evaluate tickets we want to buy.
-      // If array (jsonArray) contains one of these names (FLOOR, GA, AG, GENADM) (it doen't matter for example if GA is GA1/GA2, or AG1/AG2, it has to be that prefix)
+      // Logic about collecting data for later 3 charts (if not possible then only two/one chart). 3 charts represent first 3 types of tickets. Usually there are 3 types of tickets. First is the cheapest, then more expensive, and then the most expensive. It's good to have that documented on charts, because it can easier evaluate tickets we want to buy.
       const prefixes = ["FLOOR", "GA", "AG", "GENADM"];
 
       // TODO
@@ -54,21 +53,27 @@ const csvToObject = async function (folder) {
           obj.Type === "primary" &&
           prefixes.some((prefix) => obj.Section.startsWith(prefix))
       );
-      // console.log("filteredArray", filteredArray);
 
       // Using .reduce() method to merge objects with the same 'Price Range'
-      // We go through each object (car) in the filteredArray one by one.
-      // The empty box is an empty array called accumulator. This will hold the combined objects (cars) with the same price (color).
-      // We look into the accumulator (new box) to see if there's already an object (car) with the same Price Range (color) as the current object (car).
+      // .reduce() is being used for sorting different data points with the same price range
+      // We go through each object in the filteredArray one by one.
+      // The empty box is an empty array called accumulator. This will hold the combined objects with the same price.
       const mergedArray = filteredArray.reduce((accumulator, current) => {
+        // We look into the accumulator (new box) to see if there's already an object with the same Price Range as the current object.
         const existingIndex = accumulator.findIndex(
           (item) => item["Price Range"] === current["Price Range"]
         );
 
-        // If we find an object (car) with the same Price Range (color)
+        // If we find an object with the same Price Range
         if (existingIndex !== -1) {
           // Update the number of tickets by summing up the '# of tickets (>=0)' values
           // Add the current object's (car's) # of tickets (>=0) (stickers) to the existing object's (car's) # of tickets (>=0) (stickers). We also combine the Section values.
+
+          const currentTicketCount = Number(
+            accumulator[existingIndex]["# of tickets (>=0)"]
+          );
+          console.log("currentTicketCount", currentTicketCount);
+
           accumulator[existingIndex]["# of tickets (>=0)"] =
             Number(accumulator[existingIndex]["# of tickets (>=0)"]) +
             Number(current["# of tickets (>=0)"]);
