@@ -92,6 +92,7 @@ const csvToObject = async function (folder) {
         }
         // In the end, we have a new array (mergedArray) with objects (cars) of the same Price Range (color) together and the total number of # of tickets (>=0) (stickers) for each Price Range (color).
         return accumulator;
+        // return jsonArray
       }, []);
       // Adding creation date time to JSON file
       mergedArray.fileCreationDate = fileStats.birthtime.toISOString();
@@ -102,8 +103,8 @@ const csvToObject = async function (folder) {
       console.log("mergedArray", mergedArray);
       console.log("jsonArray", jsonArray);
 
-      // return jsonArray;
-      return mergedArray;
+      return jsonArray;
+      // return mergedArray;
     })
   );
 
