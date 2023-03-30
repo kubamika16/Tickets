@@ -96,6 +96,7 @@ const csvToObject = async function (folder) {
       }, []);
       // Adding creation date time to JSON file
       mergedArray.fileCreationDate = fileStats.birthtime.toISOString();
+      mergedArray.remainingTickets = remainingTickets(jsonArray);
 
       console.log(
         "-------------------------------------------------------------------------------"
@@ -103,8 +104,8 @@ const csvToObject = async function (folder) {
       console.log("mergedArray", mergedArray);
       console.log("jsonArray", jsonArray);
 
-      return jsonArray;
-      // return mergedArray;
+      // return jsonArray;
+      return mergedArray;
     })
   );
 

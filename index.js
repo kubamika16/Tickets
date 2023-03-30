@@ -28,7 +28,10 @@ async function printResults() {
 
   // Zwrócenie tablicy z posortowanymi plikami JSON z folderu 'prices'
   const pricesArray = await functions.csvToObject("prices");
-  // console.log('Prajsowa Tablica:', pricesArray)
+  console.log("Prajsowa Tablica:", pricesArray);
+  console.log("-------------------------------------------------------------");
+  console.log("Prajsowa Tablica 0:", pricesArray[0].remainingTickets);
+  console.log("-------------------------------------------------------------");
 
   // Zwrócenie tablicy z posortowanymi plikami JSON folderu 'concerts'
   const concertsArray = await functions.jsonToObject("concerts");
@@ -52,17 +55,16 @@ async function printResults() {
     // Oraz jeśli klucz 'Section' posiada jakąkolwiek wartość (zdaża się że nie posiada, czyli '')
     // Czyli jeśli wszystko jest ok, można pracować na danych
     if (
-      pricesArray[i] != undefined &&
+      pricesArray[i] !== undefined &&
       todaysDate !== lastCheck &&
       pricesArray[i][0].Section !== ""
+      // pricesArray[i][0].Section !== undefined
     ) {
       // Dodanie dzisiejszej daty do obiektu na temat koncertu
       concertsArray[i].checkingDate.push(todaysDate);
 
       // Dodanie liczby pozostałych biletów do obiektu na temat koncertu (bilety 'primary', nie 'resale')
-      concertsArray[i].availableTickets.push(
-        functions.remainingTickets(pricesArray[i])
-      );
+      concertsArray[i].availableTickets.push(pricesArray[i].remainingTickets);
 
       // Dodanie minimalnej ceny biletu do obiektu na temat koncertu
       concertsArray[i].minPrice.push(functions.findMinPrice(pricesArray[i]));
