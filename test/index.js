@@ -92,3 +92,41 @@ chartVersion.innerText = Chart.version;
 //   "rgba(54, 162, 235, 0.2)",
 //   "rgba(75, 192, 192, 0.2)",
 // ],
+const ticketArray = [
+  {
+    Section: "GA3",
+    "# of tickets (>=0)": "90",
+    "Price Range": "$149.5",
+    Type: "primary",
+  },
+  {
+    Section: "GA1",
+    "# of tickets (>=0)": "2",
+    "Price Range": "$79.5",
+    Type: "primary",
+  },
+  {
+    Section: "GA3",
+    "# of tickets (>=0)": "1",
+    "Price Range": "$360.5",
+    Type: "primary",
+  },
+];
+console.log(ticketArray);
+
+const sortedArray = ticketArray.sort((a, b) => {
+  return (
+    parseFloat(a["Price Range"].slice(1)) -
+    parseFloat(b["Price Range"].slice(1))
+  );
+});
+console.log(sortedArray);
+
+const GA1 = {
+  amount: sortedArray[0]["# of tickets (>=0)"],
+  price: sortedArray[0]["Price Range"],
+};
+console.log(GA1);
+
+// TODO
+// GA2...

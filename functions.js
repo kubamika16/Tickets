@@ -94,7 +94,7 @@ const csvToObject = async function (folder) {
         return accumulator;
         // return jsonArray
       }, []);
-      // Adding creation date time to JSON file
+      // Adding creation date time to JSON file and all available tickets
       mergedArray.fileCreationDate = fileStats.birthtime.toISOString();
       mergedArray.remainingTickets = remainingTickets(jsonArray);
 
