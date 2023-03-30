@@ -92,41 +92,65 @@ chartVersion.innerText = Chart.version;
 //   "rgba(54, 162, 235, 0.2)",
 //   "rgba(75, 192, 192, 0.2)",
 // ],
+// const ticketArray = [
+//   {
+//     Section: "GA3",
+//     "# of tickets (>=0)": "90",
+//     "Price Range": "$149.5",
+//     Type: "primary",
+//   },
+//   {
+//     Section: "GA1",
+//     "# of tickets (>=0)": "2",
+//     "Price Range": "$79.5",
+//     Type: "primary",
+//   },
+//   {
+//     Section: "GA3",
+//     "# of tickets (>=0)": "1",
+//     "Price Range": "$360.5",
+//     Type: "primary",
+//   },
+// ];
+// console.log(ticketArray);
+
 const ticketArray = [
   {
-    Section: "GA3",
-    "# of tickets (>=0)": "90",
-    "Price Range": "$149.5",
-    Type: "primary",
-  },
-  {
-    Section: "GA1",
-    "# of tickets (>=0)": "2",
-    "Price Range": "$79.5",
-    Type: "primary",
-  },
-  {
-    Section: "GA3",
-    "# of tickets (>=0)": "1",
-    "Price Range": "$360.5",
+    Section: "FLOOR3, FLOOR4, FLOOR5, FLOOR2, FLOOR3, FLOOR1, FLOOR3",
+    "# of tickets (>=0)": 1192,
+    "Price Range": "$56.25",
     Type: "primary",
   },
 ];
-console.log(ticketArray);
 
-const sortedArray = ticketArray.sort((a, b) => {
-  return (
+// Sort the array based on the 'Price Range' property
+const sortedArray = ticketArray.sort(
+  (a, b) =>
     parseFloat(a["Price Range"].slice(1)) -
     parseFloat(b["Price Range"].slice(1))
-  );
-});
-console.log(sortedArray);
+);
 
-const GA1 = {
-  amount: sortedArray[0]["# of tickets (>=0)"],
-  price: sortedArray[0]["Price Range"],
-};
-console.log(GA1);
+// Initialize GA1, GA2, and GA3 variables with default values
+const GA1 = { amount: 0, price: 0 };
+const GA2 = { amount: 0, price: 0 };
+const GA3 = { amount: 0, price: 0 };
 
-// TODO
-// GA2...
+// Assign the ticket information based on the sorted array length
+if (sortedArray.length > 0) {
+  GA1.amount = sortedArray[0]["# of tickets (>=0)"];
+  GA1.price = sortedArray[0]["Price Range"];
+}
+
+if (sortedArray.length > 1) {
+  GA2.amount = sortedArray[1]["# of tickets (>=0)"];
+  GA2.price = sortedArray[1]["Price Range"];
+}
+
+if (sortedArray.length > 2) {
+  GA3.amount = sortedArray[2]["# of tickets (>=0)"];
+  GA3.price = sortedArray[2]["Price Range"];
+}
+
+console.log("GA1:", GA1);
+console.log("GA2:", GA2);
+console.log("GA3:", GA3);
