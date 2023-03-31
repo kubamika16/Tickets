@@ -55,10 +55,9 @@ async function printResults() {
     // Oraz jeśli klucz 'Section' posiada jakąkolwiek wartość (zdaża się że nie posiada, czyli '')
     // Czyli jeśli wszystko jest ok, można pracować na danych
     if (
-      pricesArray[i] !== undefined &&
-      todaysDate !== lastCheck &&
-      pricesArray[i][0].Section !== ""
-      // pricesArray[i][0].Section !== undefined
+      pricesArray[i]?.[0]?.Section !== undefined &&
+      pricesArray[i]?.[0]?.Section !== "" &&
+      todaysDate !== lastCheck
     ) {
       // Dodanie dzisiejszej daty do obiektu na temat koncertu
       concertsArray[i].checkingDate.push(todaysDate);

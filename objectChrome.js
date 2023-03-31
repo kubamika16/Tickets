@@ -65,6 +65,10 @@ const links = [
   "https://concerts.livenation.com/malinda-its-all-true-film-screening-new-york-new-york-04-30-2023/event/00005E7BE17F3F92",
   "https://concerts.livenation.com/the-amity-affliction-san-diego-california-05-10-2023/event/0B005E78D6B225A4",
   "https://www.ticketmaster.com/the-amity-affliction-tucson-arizona-05-13-2023/event/19005E77F5A15004",
+  "https://concerts.livenation.com/vs-self-and-friends-los-angeles-california-06-30-2023/event/09005E705103644E",
+  "https://www.ticketmaster.com/pat-travers-leesburg-virginia-06-12-2023/event/01005E7BBBC739A1",
+  "https://www.ticketmaster.com/velvet-wounds-los-angeles-california-04-15-2023/event/09005E7BEA044BA3",
+  "https://concerts.livenation.com/grand-ole-echo-presents-rob-leines-los-angeles-california-04-16-2023/event/09005E7CC7854609",
 ];
 const links2 = [];
 async function openLinks() {

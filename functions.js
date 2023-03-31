@@ -98,25 +98,25 @@ const csvToObject = async function (folder) {
       mergedArray.fileCreationDate = fileStats.birthtime.toISOString();
       mergedArray.remainingTickets = remainingTickets(jsonArray);
 
-      // GA TICEKTS (GA1, GA2, GA3)
-      const sortedArray = mergedArray.sort((a, b) => {
-        return (
-          parseFloat(a["Price Range"].slice(1)) -
-          parseFloat(b["Price Range"].slice(1))
-        );
-      });
-      mergedArray.ga1 = {
-        price: sortedArray[0]["Price Range"],
-        amount: sortedArray[0]["# of tickets (>=0)"],
-      };
-      mergedArray.ga2 = {
-        price: sortedArray[1]["Price Range"],
-        amount: sortedArray[1]["# of tickets (>=0)"],
-      };
-      mergedArray.ga3 = {
-        price: sortedArray[2]["Price Range"],
-        amount: sortedArray[2]["# of tickets (>=0)"],
-      };
+      // // GA TICEKTS (GA1, GA2, GA3)
+      // const sortedArray = mergedArray.sort((a, b) => {
+      //   return (
+      //     parseFloat(a["Price Range"].slice(1)) -
+      //     parseFloat(b["Price Range"].slice(1))
+      //   );
+      // });
+      // mergedArray.ga1 = {
+      //   price: sortedArray[0]["Price Range"],
+      //   amount: sortedArray[0]["# of tickets (>=0)"],
+      // };
+      // mergedArray.ga2 = {
+      //   price: sortedArray[1]["Price Range"],
+      //   amount: sortedArray[1]["# of tickets (>=0)"],
+      // };
+      // mergedArray.ga3 = {
+      //   price: sortedArray[2]["Price Range"],
+      //   amount: sortedArray[2]["# of tickets (>=0)"],
+      // };
 
       console.log(
         "-------------------------------------------------------------------------------"
