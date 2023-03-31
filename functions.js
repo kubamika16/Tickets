@@ -98,8 +98,7 @@ const csvToObject = async function (folder) {
       mergedArray.fileCreationDate = fileStats.birthtime.toISOString();
       mergedArray.remainingTickets = remainingTickets(jsonArray);
 
-      // GA TICEKTS (ga1, ga2, ga3)
-
+      // ADD COMMENTS
       // Sort the array based on the 'Price Range' property
       const sortedArray = mergedArray.sort(
         (a, b) =>
@@ -118,13 +117,10 @@ const csvToObject = async function (folder) {
         };
       }
 
-      const generalAdmission = {
-        ga1: ga[0],
-        ga2: ga[1],
-        ga3: ga[2],
-      };
-
-      mergedArray.push(generalAdmission);
+      // ADD COMMENTS
+      mergedArray["ga1"] = ga[0];
+      mergedArray["ga2"] = ga[1];
+      mergedArray["ga3"] = ga[2];
 
       console.log(
         "-------------------------------------------------------------------------------"

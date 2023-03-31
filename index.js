@@ -68,6 +68,15 @@ async function printResults() {
       // Dodanie minimalnej ceny biletu do obiektu na temat koncertu
       concertsArray[i].minPrice.push(functions.findMinPrice(pricesArray[i]));
 
+      // ADD COMMENTS
+      concertsArray[i].ga1.amount.push(Number(pricesArray[i].ga1.amount));
+      concertsArray[i].ga2.amount.push(Number(pricesArray[i].ga2.amount));
+      concertsArray[i].ga3.amount.push(Number(pricesArray[i].ga3.amount));
+
+      concertsArray[i].ga1.price = pricesArray[i].ga1.price;
+      concertsArray[i].ga2.price = pricesArray[i].ga2.price;
+      concertsArray[i].ga3.price = pricesArray[i].ga3.price;
+
       // Zamiana obiektu na JSON
       const updatedJson = JSON.stringify(concertsArray[i]);
       // Nadpisanie nowymi danymi danego pliku
@@ -75,6 +84,7 @@ async function printResults() {
     }
   }
   console.log(`Concertowa Tablica`, concertsArray);
+  console.log(concertsArray[1]);
 
   // Praca z AWS
   const awsWorkload = function () {
