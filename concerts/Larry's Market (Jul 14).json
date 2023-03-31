@@ -2,8 +2,20 @@
   "name": "Larry's Market (Jul 14)",
   "date": "Jul 14",
   "url": "https://concerts.livenation.com/larrys-market-run-2023-las-vegas-nevada-07-14-2023/event/17005E6FC6B47A0B",
-  "availableTickets": [305, 176, 4, 145, 6, 19, 19],
-  "minPrice": [35, 35, 88.75, 35, 55, 55, 55],
-  "checkingDate": ["25/3", "26/3", "27/3", "28/3", "29/3", "30/3", "31/3"],
+  "availableTickets": [145, 6, 19, 19],
+  "minPrice": [35, 55, 55, 55],
+  "ga1": {
+    "amount": [0, 0, 0, 0],
+    "price": 0
+  },
+  "ga2": {
+    "amount": [0, 0, 0, 0],
+    "price": 0
+  },
+  "ga3": {
+    "amount": [0, 0, 0, 0],
+    "price": 0
+  },
+  "checkingDate": ["28/3", "29/3", "30/3", "31/3"],
   "fileCreationDate": "2023-03-25T21:29:42.635Z"
 }

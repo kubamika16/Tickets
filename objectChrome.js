@@ -27,6 +27,18 @@ const eventDetails = {
   url: eventUrl,
   availableTickets: [],
   minPrice: [],
+  ga1: {
+    amount: [],
+    price: 0,
+  },
+  ga2: {
+    amount: [],
+    price: 0,
+  },
+  ga3: {
+    amount: [],
+    price: 0,
+  },
   checkingDate: [],
   fileCreationDate: new Date(),
 };
