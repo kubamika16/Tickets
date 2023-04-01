@@ -67,20 +67,19 @@ const links = [
   "https://www.ticketmaster.com/event/0C005E67D1BB3D04",
   "https://www.ticketmaster.com/bush-huntington-new-york-04-30-2023/event/00005E6693AF0EBB",
   "https://www.ticketmaster.ca/saint-asonia-montreal-quebec-05-13-2023/event/31005E6AD7CD66EF",
-  "https://concerts.livenation.com/311-houston-texas-05-26-2023/event/3A005E6ADBF97BD2",
   "https://concerts.livenation.com/larrys-market-run-2023-las-vegas-nevada-07-14-2023/event/17005E6FC6B47A0B",
-  "https://concerts.livenation.com/sleeping-with-sirens-family-tree-tour-silver-spring-maryland-05-22-2023/event/15005E74931E1A7C",
   "https://www.ticketmaster.com/matt-maeson-washington-district-of-columbia-05-31-2023/event/15005E6ABEE96DC4",
   "https://www.ticketmaster.com/neffex-born-a-rockstar-the-world-new-york-new-york-11-19-2023/event/00005E7CAF17248C",
-  "https://www.ticketmaster.com/abhw-x-lola-brooke-somerville-massachusetts-04-13-2023/event/01005E7B4509C2F0",
   "https://concerts.livenation.com/siriusxms-hiphop-nation-presents-key-glock-salt-lake-city-utah-04-04-2023/event/1E005E78C9B64608",
   "https://concerts.livenation.com/malinda-its-all-true-film-screening-new-york-new-york-04-30-2023/event/00005E7BE17F3F92",
   "https://concerts.livenation.com/the-amity-affliction-san-diego-california-05-10-2023/event/0B005E78D6B225A4",
   "https://www.ticketmaster.com/the-amity-affliction-tucson-arizona-05-13-2023/event/19005E77F5A15004",
   "https://concerts.livenation.com/vs-self-and-friends-los-angeles-california-06-30-2023/event/09005E705103644E",
-  "https://www.ticketmaster.com/pat-travers-leesburg-virginia-06-12-2023/event/01005E7BBBC739A1",
   "https://www.ticketmaster.com/velvet-wounds-los-angeles-california-04-15-2023/event/09005E7BEA044BA3",
   "https://concerts.livenation.com/grand-ole-echo-presents-rob-leines-los-angeles-california-04-16-2023/event/09005E7CC7854609",
+  "https://concerts.livenation.com/owl-city-boston-massachusetts-09-17-2023/event/01005E68CBCC54E8",
+  "https://www.ticketmaster.com/jesse-joy-summer-tour-2023-boston-massachusetts-06-16-2023/event/01005E701F679F4F",
+  "https://www.ticketmaster.com/owl-city-washington-district-of-columbia-09-16-2023/event/15005E6DC02C1E9B",
 ];
 const links2 = [];
 async function openLinks() {
