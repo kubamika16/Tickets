@@ -41,7 +41,7 @@ const csvToObject = async function (folder) {
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////
       // Logic about collecting data for later 3 charts (if not possible then only two/one chart). 3 charts represent first 3 types of tickets. Usually there are 3 types of tickets. First is the cheapest, then more expensive, and then the most expensive. It's good to have that documented on charts, because it can easier evaluate tickets we want to buy.
-      const prefixes = ["FLOOR", "GA", "AG", "GENADM", "GENAD"];
+      const prefixes = ["FLOOR", "GA", "AG", "GENADM", "GENAD", "ADG", "HELL"];
 
       // The filteredArray is the first box with all the cars (objects) that have different prices (colors) and numbers of tickets (stickers).
       const filteredArray = jsonArray.filter(
