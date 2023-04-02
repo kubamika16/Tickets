@@ -14,6 +14,8 @@ const salesNumbers = [
   { day: "Sun", sales: { food: 2100, drinks: 500, cakes: 400 } },
 ];
 
+const tests = [];
+
 // setup
 const data = {
   // labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -118,6 +120,12 @@ const ticketArray = [
   {
     Section: "FLOOR3, FLOOR4, FLOOR5, FLOOR2, FLOOR3, FLOOR1, FLOOR3",
     "# of tickets (>=0)": 1192,
+    "Price Range": "$56.25",
+    Type: "primary",
+  },
+  {
+    Section: "FLOOR3, FLOOR4, FLOOR5, FLOOR2, FLOOR3, FLOOR1, FLOOR3",
+    "# of tickets (>=0)": 85,
     "Price Range": "$56.25",
     Type: "primary",
   },

@@ -35,6 +35,19 @@ async function DataFromAPI() {
         url: item.url.S,
         // Extract available ticket values as an array of numbers
         availableTickets: item.availableTickets.L.map((t) => Number(t.N)),
+        // Extract GA1, GA2, and GA3 values
+        ga1: {
+          amount: item.ga1.M.amount.L.map((a) => Number(a.N)),
+          price: item.ga1.M.price.S,
+        },
+        ga2: {
+          amount: item.ga2.M.amount.L.map((a) => Number(a.N)),
+          price: item.ga2.M.price.S,
+        },
+        ga3: {
+          amount: item.ga3.M.amount.L.map((a) => Number(a.N)),
+          price: item.ga3.M.price.S,
+        },
       };
     });
 
@@ -70,6 +83,33 @@ async function DataFromAPI() {
             backgroundColor: gradient,
             borderColor: "#fff",
           },
+          {
+            // Points on the array (X Line)
+            data: arrayData.ga1.amount,
+            // History with name
+            label: "GA1",
+            // fill: true,
+            // backgroundColor: gradient,
+            borderColor: "#FF0808",
+          },
+          {
+            // Points on the array (X Line)
+            data: arrayData.ga2.amount,
+            // History with name
+            label: "GA2",
+            // fill: true,
+            // backgroundColor: gradient,
+            borderColor: "#FFBF08",
+          },
+          {
+            // Points on the array (X Line)
+            data: arrayData.ga3.amount,
+            // History with name
+            label: "GA3",
+            // fill: true,
+            // backgroundColor: gradient,
+            borderColor: "#31FF08",
+          },
         ],
       };
 
@@ -82,6 +122,18 @@ async function DataFromAPI() {
           radius: 5,
           hitRadius: 100,
           responsive: true,
+          tooltips: {
+            enabled: true,
+            mode: "nearest",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, chartData) {
+                const ticketPrice = arrayData.minPrice[tooltipItem.index];
+                return "Ticket price: $" + ticketPrice;
+              },
+            },
+          },
+
           scales: {
             y: {
               ticks: {
