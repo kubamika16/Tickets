@@ -62,7 +62,6 @@ console.log(`Event details saved.`);
 // FUNCTION THAT OPENS LINKS
 
 const links = [
-  "https://concerts.livenation.com/not-presents-get-busy-or-die-sacramento-california-05-21-2023/event/1C005E58CF70600D?_ga=2.78240404.1891142984.1678312456-1080492288.1671659989",
   "https://concerts.livenation.com/ella-mai-the-heart-on-my-chicago-illinois-05-23-2023/event/04005E3ABF404BD2?_ga=2.114333063.1891142984.1678312456-1080492288.1671659989",
   "https://www.ticketmaster.com/event/0C005E67D1BB3D04",
   "https://www.ticketmaster.com/bush-huntington-new-york-04-30-2023/event/00005E6693AF0EBB",
@@ -77,11 +76,30 @@ const links = [
   "https://concerts.livenation.com/vs-self-and-friends-los-angeles-california-06-30-2023/event/09005E705103644E",
   "https://www.ticketmaster.com/velvet-wounds-los-angeles-california-04-15-2023/event/09005E7BEA044BA3",
   "https://concerts.livenation.com/grand-ole-echo-presents-rob-leines-los-angeles-california-04-16-2023/event/09005E7CC7854609",
-  "https://concerts.livenation.com/owl-city-boston-massachusetts-09-17-2023/event/01005E68CBCC54E8",
   "https://www.ticketmaster.com/jesse-joy-summer-tour-2023-boston-massachusetts-06-16-2023/event/01005E701F679F4F",
-  "https://www.ticketmaster.com/owl-city-washington-district-of-columbia-09-16-2023/event/15005E6DC02C1E9B",
+  "https://www.ticketmaster.com/candlebox-the-long-goodbye-tour-saint-louis-missouri-08-13-2023/event/06005E75B6D234F8",
+  "https://concerts.livenation.com/owl-city-chicago-illinois-10-18-2023/event/04005E69AFF41AAC",
+  "https://www.ticketmaster.com/young-buck-saint-louis-missouri-06-09-2023/event/06005E7BC290498C",
 ];
-const links2 = [];
+const links2 = [
+  "https://www.ticketmaster.com/owl-city-saint-louis-missouri-10-14-2023/event/06005E6DC3881EB8",
+  "https://www.ticketmaster.ca/les-cowboys-fringants-brossard-quebec-09-21-2023/event/31005E7BDA822703",
+  "https://www.ticketmaster.com/the-frights-houston-texas-07-09-2023/event/3A005E74220775F7",
+  "https://concerts.livenation.com/owl-city-atlanta-georgia-09-20-2023/event/0E005E69B74C2F98",
+  "https://concerts.livenation.com/owl-city-sacramento-california-10-02-2023/event/1C005E6A691F173D",
+  "https://concerts.livenation.com/launder-santa-ana-california-05-26-2023/event/09005E76F5185C99",
+  "https://concerts.livenation.com/owl-city-indianapolis-indiana-09-23-2023/event/05005E75F3F05B8C",
+  "https://www.ticketmaster.com/candlebox-the-long-goodbye-tour-huntington-new-york-06-29-2023/event/00005E76F03C6C2A",
+  "https://concerts.livenation.com/jesse-joy-summer-tour-2023-atlanta-georgia-08-08-2023/event/0E005E74F0ADB0F0",
+  "https://www.ticketmaster.com/duster-new-york-new-york-04-16-2023/event/00005E7DFFF46A6A",
+  "https://www.ticketmaster.com/poorstacy-teenage-vertigo-tour-atlanta-georgia-05-19-2023/event/0E005E77945E1B91",
+  "https://concerts.livenation.com/owl-city-to-the-moon-tour-san-diego-california-10-07-2023/event/0A005E6F9CC22AFC",
+  "https://concerts.livenation.com/cico-p-los-angeles-california-06-03-2023/event/09005E7B14246266",
+  "https://concerts.livenation.com/candlebox-the-long-goodbye-tour-louisville-kentucky-08-02-2023/event/16005E78E0F26A6A",
+  "https://www.ticketmaster.com/mild-minds-new-york-new-york-06-10-2023/event/00005E7BC3262E52",
+  "https://concerts.livenation.com/bluebucksclan-no-rules-tour-detroit-michigan-05-21-2023/event/08005E63360D8B86",
+  "https://concerts.livenation.com/owl-city-houston-texas-10-11-2023/event/3A005E699E872C81",
+];
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
     await new Promise((resolve) => {
