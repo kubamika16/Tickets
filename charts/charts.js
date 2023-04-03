@@ -51,6 +51,25 @@ async function DataFromAPI() {
       };
     });
 
+    concertsArray.sort((a, b) => {
+      const soldPercentageA =
+        (a.availableTickets[a.availableTickets.length - 1] * 100) /
+        a.availableTickets[0];
+
+      const soldPercentageB =
+        (b.availableTickets[b.availableTickets.length - 1] * 100) /
+        b.availableTickets[0];
+      return soldPercentageA - soldPercentageB;
+    });
+
+    concertsArray.forEach((el) => {
+      console.log(
+        el.name,
+        (el.availableTickets[el.availableTickets.length - 1] * 100) /
+          el.availableTickets[0]
+      );
+    });
+
     concertsArray.forEach((arrayData, index) => {
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////
