@@ -68,7 +68,6 @@ async function printResults() {
         // Dodanie minimalnej ceny biletu do obiektu na temat koncertu
         concertsArray[i].minPrice.push(functions.findMinPrice(pricesArray[i]));
 
-        // ADD COMMENTS
         concertsArray[i].ga1.amount.push(Number(pricesArray[i].ga1.amount));
         concertsArray[i].ga2.amount.push(Number(pricesArray[i].ga2.amount));
         concertsArray[i].ga3.amount.push(Number(pricesArray[i].ga3.amount));

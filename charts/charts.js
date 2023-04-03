@@ -17,7 +17,7 @@ async function DataFromAPI() {
     }
 
     const data = await response.json();
-    console.log("Fetched data:", data);
+    // console.log("Fetched data:", data);
 
     // Transform raw data to a desired format
     const concertsArray = data.Items.map((item) => {
@@ -56,7 +56,7 @@ async function DataFromAPI() {
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////
       // WORKING ON A SINGLE CHART
-      console.log(arrayData);
+      // console.log(arrayData);
 
       const canvasID = `myChart${index + 1}`;
       const canvasHTML = `<div class="chart"><canvas id="${canvasID}"></canvas></div>`;
@@ -122,14 +122,37 @@ async function DataFromAPI() {
           radius: 5,
           hitRadius: 100,
           responsive: true,
-          tooltips: {
-            enabled: true,
-            mode: "nearest",
-            intersect: false,
-            callbacks: {
-              label: function (tooltipItem, chartData) {
-                const ticketPrice = arrayData.minPrice[tooltipItem.index];
-                return "Ticket price: $" + ticketPrice;
+
+          plugins: {
+            tooltip: {
+              enabled: true,
+              mode: "nearest",
+              intersect: false,
+              callbacks: {
+                label: function (context) {
+                  const datasetIndex = context.datasetIndex;
+                  const dataIndex = context.dataIndex;
+                  const label = context.chart.data.labels[dataIndex];
+                  const tickets =
+                    context.chart.data.datasets[datasetIndex].data[dataIndex];
+                  let ticketPrice;
+
+                  switch (datasetIndex) {
+                    case 1:
+                      ticketPrice = arrayData.ga1.price;
+                      break;
+                    case 2:
+                      ticketPrice = arrayData.ga2.price;
+                      break;
+                    case 3:
+                      ticketPrice = arrayData.ga3.price;
+                      break;
+                    default:
+                      ticketPrice = "N/A";
+                  }
+
+                  return `${tickets}: ${ticketPrice}`;
+                },
               },
             },
           },

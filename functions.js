@@ -117,7 +117,6 @@ const csvToObject = async function (folder) {
         };
       }
 
-      // ADD COMMENTS
       mergedArray["ga1"] = ga[0];
       mergedArray["ga2"] = ga[1];
       mergedArray["ga3"] = ga[2];
