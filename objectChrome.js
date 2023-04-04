@@ -80,9 +80,9 @@ const links = [
   "https://www.ticketmaster.com/candlebox-the-long-goodbye-tour-saint-louis-missouri-08-13-2023/event/06005E75B6D234F8",
   "https://concerts.livenation.com/owl-city-chicago-illinois-10-18-2023/event/04005E69AFF41AAC",
   "https://www.ticketmaster.com/young-buck-saint-louis-missouri-06-09-2023/event/06005E7BC290498C",
+  "https://www.ticketmaster.com/owl-city-saint-louis-missouri-10-14-2023/event/06005E6DC3881EB8",
 ];
 const links2 = [
-  "https://www.ticketmaster.com/owl-city-saint-louis-missouri-10-14-2023/event/06005E6DC3881EB8",
   "https://www.ticketmaster.ca/les-cowboys-fringants-brossard-quebec-09-21-2023/event/31005E7BDA822703",
   "https://www.ticketmaster.com/the-frights-houston-texas-07-09-2023/event/3A005E74220775F7",
   "https://concerts.livenation.com/owl-city-atlanta-georgia-09-20-2023/event/0E005E69B74C2F98",
@@ -99,6 +99,14 @@ const links2 = [
   "https://www.ticketmaster.com/mild-minds-new-york-new-york-06-10-2023/event/00005E7BC3262E52",
   "https://concerts.livenation.com/bluebucksclan-no-rules-tour-detroit-michigan-05-21-2023/event/08005E63360D8B86",
   "https://concerts.livenation.com/owl-city-houston-texas-10-11-2023/event/3A005E699E872C81",
+  "https://www.ticketmaster.com/beanie-sigel-plus-special-guest-freeway-new-york-new-york-04-28-2023/event/00005E54CC2B6354",
+  "https://www.ticketmaster.com/alec-benjamin-harrisburg-pennsylvania-04-29-2023/event/02005E63AFB247F4",
+  "https://www.ticketmaster.com/prof-brooklyn-new-york-04-30-2023/event/00005E43ED977E18",
+  "https://www.ticketmaster.com/devin-the-dude-austin-texas-04-18-2023/event/3A005E3FFA2A7C39",
+  "https://concerts.livenation.com/nothing-more-spirits-tour-2023-salt-lake-city-utah-04-19-2023/event/1E005E26F15C4DE6",
+  "https://concerts.livenation.com/bankrol-hayden-the-29-tour-dallas-texas-04-20-2023/event/0C005E309F0E3288",
+  "https://www.ticketmaster.com/tony-yayo-new-york-new-york-04-26-2023/event/00005E77E21B4BD1",
+  "https://concerts.livenation.com/ethan-bortnick-los-angeles-california-04-26-2023/event/09005E43E0DD6CEC",
 ];
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
