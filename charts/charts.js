@@ -1,6 +1,31 @@
 const chartContainer = document.querySelector(".chart-container");
 
 async function DataFromAPI() {
+  // Get the modal
+  const modal = document.getElementById("infoModal");
+
+  // Get the close button
+  const closeButton = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the close button, close the modal
+  closeButton.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // Function to display random data in the modal
+  function showRandomData() {
+    const randomData = Math.random().toString(36).substring(7);
+    document.getElementById("modalText").innerHTML = randomData;
+    modal.style.display = "block";
+  }
+
   const apiUrl =
     "https://ndy7m4kqv6.execute-api.eu-west-2.amazonaws.com/test/tickets";
 
@@ -93,6 +118,13 @@ async function DataFromAPI() {
 
       const canvas = document.getElementById(canvasID);
       const ctx = canvas.getContext("2d");
+
+      const chartElement = document
+        .querySelector(`#${canvasID}`)
+        .closest(".chart");
+      const infoButton = chartElement.querySelector(".info-button");
+
+      infoButton.addEventListener("click", showRandomData);
 
       let gradient = ctx.createLinearGradient(0, 0, 0, 400);
       gradient.addColorStop(0, "rgba(58,123,213,1");
