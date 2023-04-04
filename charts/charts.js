@@ -79,11 +79,6 @@ async function DataFromAPI() {
 
       const canvasID = `myChart${index + 1}`;
 
-      const canvasHTML = `
-      <div class="chart">
-      <canvas id="${canvasID}"></canvas>
-      </div>`;
-
       // Add Material Icons information icon to the chart container
       const infoButtonHTML =
         '<div class="info-button material-icons">info</div>';
