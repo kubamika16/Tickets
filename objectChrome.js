@@ -81,11 +81,11 @@ const links = [
   "https://concerts.livenation.com/owl-city-chicago-illinois-10-18-2023/event/04005E69AFF41AAC",
   "https://www.ticketmaster.com/young-buck-saint-louis-missouri-06-09-2023/event/06005E7BC290498C",
   "https://www.ticketmaster.com/owl-city-saint-louis-missouri-10-14-2023/event/06005E6DC3881EB8",
-];
-const links2 = [
   "https://www.ticketmaster.ca/les-cowboys-fringants-brossard-quebec-09-21-2023/event/31005E7BDA822703",
   "https://www.ticketmaster.com/the-frights-houston-texas-07-09-2023/event/3A005E74220775F7",
   "https://concerts.livenation.com/owl-city-atlanta-georgia-09-20-2023/event/0E005E69B74C2F98",
+];
+const links2 = [
   "https://concerts.livenation.com/owl-city-sacramento-california-10-02-2023/event/1C005E6A691F173D",
   "https://concerts.livenation.com/launder-santa-ana-california-05-26-2023/event/09005E76F5185C99",
   "https://concerts.livenation.com/owl-city-indianapolis-indiana-09-23-2023/event/05005E75F3F05B8C",
