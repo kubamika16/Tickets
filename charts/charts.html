@@ -15,10 +15,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
     <script src="charts.js" type="module"></script>
-    <!-- TODO Komentarze -->
-    <!-- Container for the MODAL. It has id 'infoModal' so it can be accessed by JavaScript, and class 'modal' so it can be styled by css -->
+    <!-- infoModal: -->
+    <!-- Controls display and positioning of the modal (wheatheer is visible or hidden, size, and location on the screen) -->
+    <!-- Creates background overlay that covers the page when the modal is open -->
+    <!-- Handles the click event outside the 'modal-content' area so it helps to close the modal when user click outside the content area -->
     <div id="infoModal" class="modal">
+      <!-- Actual content of the modal. It will hold all elements that need to be displayed in the modal -->
+      <!-- (text, images, any other HTML content) -->
+      <!-- Separates the content from the background, so the content is clearly distinguishable from the rest of the page -->
       <div class="modal-content">
+        <!-- 
+          - Close button for the modal
+          - &times is used for displaying X symbol
+         -->
         <span class="close">&times;</span>
         <p id="modalText">Random data goes here</p>
       </div>

@@ -23,6 +23,7 @@ body {
 }
 
 .modal {
+  /* Hides the modal by default so that it doesn't appear on the page until it's triggered by an event (e.g., clicking the info button). The modal will be displayed by changing this property to "block" in JavaScript. */
   display: none;
   position: fixed;
   z-index: 1;
