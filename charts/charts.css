@@ -25,26 +25,38 @@ body {
 .modal {
   /* Hides the modal by default so that it doesn't appear on the page until it's triggered by an event (e.g., clicking the info button). The modal will be displayed by changing this property to "block" in JavaScript. */
   display: none;
+  /* Modal will stay in the same place when the user scrolls the page */
   position: fixed;
+  /* Stacking order of the element */
   z-index: 1;
+  /* modal position from top left corner, so it starts covering entire viewport */
   left: 0;
   top: 0;
+  /* Cover the entire viewport, so modal background overlay across entire screen */
   width: 100%;
   height: 100%;
-  overflow: auto;
+  /* automated scrollbars, to access overflowing content */
+  /* overflow: auto; */
+  /* Color of the background */
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
+  /* Color of the modal */
   background-color: #fefefe;
-  margin: 15% auto;
+  /* 50% of the viewport height (50% from top), auto for the left and right margins */
+  margin: 50% auto;
+  /* Add space between text so it's more readable */
   padding: 20px;
+  /* Grey border outside modal */
   border: 1px solid #888;
+  /* Width of the modal content to half of the viewport width, so it doesn't cover the entire screen */
   width: 50%;
 }
 
 .close {
   color: #aaaaaa;
+  /* Positioning close button on the right site */
   float: right;
   font-size: 28px;
   font-weight: bold;

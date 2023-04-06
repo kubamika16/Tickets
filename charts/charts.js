@@ -1,11 +1,15 @@
 const chartContainer = document.querySelector(".chart-container");
 
 async function DataFromAPI() {
+  ////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////
+  // ABOUT THE MODAL
   // Get the modal
   const modal = document.getElementById("infoModal");
 
   // Get the close button
   const closeButton = document.getElementsByClassName("close")[0];
+  console.log(document.getElementsByClassName("close")[0]);
 
   // When the user clicks on the close button, close the modal
   closeButton.onclick = function () {
