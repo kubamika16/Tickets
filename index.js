@@ -109,6 +109,7 @@ async function printResults() {
     aws.dynamoDBFunction("./concerts");
   };
   pricesToConcertsSave();
+
   awsWorkload();
 }
 
