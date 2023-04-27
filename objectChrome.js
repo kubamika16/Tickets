@@ -62,7 +62,6 @@ console.log(`Event details saved.`);
 // FUNCTION THAT OPENS LINKS
 
 const links = [
-  "https://www.ticketmaster.com/nikki-mitchell-foundation-behind-the-strings-nashville-tennessee-06-06-2023/event/1B005E914011BB7E",
   "https://www.ticketmaster.com/the-wailers-charlottesville-virginia-08-30-2023/event/01005E91B19E2D67",
   "https://www.ticketmaster.com/lloyd-banks-new-york-new-york-06-10-2023/event/00005E93CD5A4237",
   "https://www.ticketmaster.com/hosted-by-don-toliver-boston-massachusetts-04-29-2023/event/01005E958FE02DB0",
@@ -74,14 +73,13 @@ const links = [
   "https://www.ticketmaster.com/buckcherry-dubuque-iowa-06-02-2023/event/20005E91B277B168",
   "https://www.ticketmaster.com/buckcherry-ft-lauderdale-florida-07-15-2023/event/0D005E8D2D90BDAF",
   "https://concerts.livenation.com/emily-king-with-special-guests-cleveland-ohio-05-09-2023/event/05005E98DD107826",
-  "https://www.ticketmaster.com/babyface-ray-courtesy-of-the-mob-austin-texas-04-25-2023/event/3A005E9273DD1664",
   "https://www.ticketmaster.com/ones-to-watch-presents-valley-lost-austin-texas-05-13-2023/event/3A005E9283AC1DA8",
   "https://concerts.livenation.com/against-the-current-trophy-eyes-boston-massachusetts-05-12-2023/event/01005E33E89B716F",
   "https://www.ticketmaster.com/kutx-presents-wild-child-end-of-austin-texas-05-05-2023/event/3A005E927ABD1874",
-];
-const links2 = [
   "https://concerts.livenation.com/kat-dahlia-2023-north-american-tour-los-angeles-california-05-12-2023/event/09005E77CA703A7E",
   "https://www.ticketmaster.com/blu-eyes-new-york-new-york-05-12-2023/event/00005E62D8666CD4",
+];
+const links2 = [
   "https://www.ticketmaster.com/the-menzingers-albany-new-york-05-12-2023/event/30005E62F62824F6",
   "https://www.ticketmaster.com/adelitas-way-hampton-new-hampshire-05-12-2023/event/01005E3BD10B7773",
   "https://www.ticketmaster.com/the-bouncing-souls-saint-louis-missouri-05-12-2023/event/06005E318D471CF6",

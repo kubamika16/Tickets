@@ -26,14 +26,14 @@ async function printResults() {
   console.log("---------------------------------------------------------");
   console.log("---------------------------------------------------------");
 
-  // Zwrócenie tablicy z posortowanymi plikami JSON z folderu 'prices'
+  // Return an array with sorted JSON files from the 'prices' folder
   const pricesArray = await functions.csvToObject("prices");
-  // console.log("Prajsowa Tablica:", pricesArray);
+  // console.log("Price Array:", pricesArray);
   // console.log("-------------------------------------------------------------");
-  // console.log("Prajsowa Tablica 0:", pricesArray[0].remainingTickets);
+  // console.log("Price Array 0:", pricesArray[0].remainingTickets);
   // console.log("-------------------------------------------------------------");
 
-  // Zwrócenie tablicy z posortowanymi plikami JSON folderu 'concerts'
+  // Return an array with sorted JSON files from the 'concerts' folder
   const concertsArray = await functions.jsonToObject("concerts");
   // console.log(concertsArray)
 
@@ -44,31 +44,31 @@ async function printResults() {
   console.log(linksArray);
   console.log(linksArray.length);
 
-  // Praca na każdym obiekcie tablicy z koncertami. To właśnie do tych obiektów dodaje się dane i zapisuje się zmiany
+  // Working on each object of the concerts array. This is where data is added and changes are saved
   const pricesToConcertsSave = async function () {
     for (let i = 0; i < concertsArray.length; i++) {
-      // Sprawdzenie ostatniego argumentu dotyczącego dodania daty (5/3 albo 10/3 itp.)
+      // Check the last date argument for adding a date (5/3 or 10/3, etc.)
       const lastCheck =
         concertsArray[i].checkingDate[concertsArray[i].checkingDate.length - 1];
 
-      // Jeśli istnieją date na temat ceny (są zdefiniowane),
-      // oraz gdy dzisiejsza data jest różna tej która była sprawdzo
-      // Oraz jeśli klucz 'Section' posiada jakąkolwiek wartość (zdaża się że nie posiada, czyli '')
-      // Czyli jeśli wszystko jest ok, można pracować na danych
+      // If there are dates about the price (they are defined),
+      // and when today's date is different from the one that was checked
+      // And if the 'Section' key has any value (it happens that it doesn't, i.e., '')
+      // So if everything is ok, you can work on the data
       if (todaysDate !== lastCheck) {
         if (
           pricesArray[i]?.[0]?.Section !== undefined &&
           pricesArray[i]?.[0]?.Section !== ""
         ) {
-          // Dodanie dzisiejszej daty do obiektu na temat koncertu
+          // Add today's date to the concert object
           concertsArray[i].checkingDate.push(todaysDate);
 
-          // Dodanie liczby pozostałych biletów do obiektu na temat koncertu (bilety 'primary', nie 'resale')
+          // Add the number of remaining tickets to the concert object (primary tickets, not resale)
           concertsArray[i].availableTickets.push(
             pricesArray[i].remainingTickets
           );
 
-          // Dodanie minimalnej ceny biletu do obiektu na temat koncertu
+          // Add the minimum ticket price to the concert object
           concertsArray[i].minPrice.push(
             functions.findMinPrice(pricesArray[i])
           );
@@ -81,29 +81,29 @@ async function printResults() {
           concertsArray[i].ga2.price = pricesArray[i].ga2.price;
           concertsArray[i].ga3.price = pricesArray[i].ga3.price;
 
-          // Zamiana obiektu na JSON
+          // Convert the object to JSON
           const updatedJson = JSON.stringify(concertsArray[i]);
-          // Nadpisanie nowymi danymi danego pliku
+          // Overwrite the file with the new data
           fs.writeFileSync(functions.concertDataPath[i], updatedJson, "utf-8");
           // Else if concerts are already sold
         } else {
-          // Dodanie dzisiejszej daty do obiektu na temat koncertu
+          // Add today's date to the concert object
           concertsArray[i].checkingDate.push(todaysDate);
-          // Dodanie liczby 0 biletów do obiektu na temat koncertu (bilety 'primary', nie 'resale')
+          // Add the number of 0 tickets to the concert object (primary tickets, not resale)
           concertsArray[i].availableTickets.push(0);
-          // Dodanie minimalnej ceny biletu do obiektu na temat koncertu
+          // Add the minimum ticket price to the concert object
           concertsArray[i].minPrice.push(0);
-          // Zamiana obiektu na JSON
+          // Convert the object to JSON
           const updatedJson = JSON.stringify(concertsArray[i]);
-          // Nadpisanie nowymi danymi danego pliku
+          // Overwrite the file with the new data
           fs.writeFileSync(functions.concertDataPath[i], updatedJson, "utf-8");
         }
       }
     }
-    console.log(`Concertowa Tablica`, concertsArray);
+    console.log("Concert Array", concertsArray);
     // console.log(concertsArray[1]);
   };
-  // Praca z AWS
+  // Working with AWS
   const awsWorkload = function () {
     aws.uploadFilesToS3("./concerts");
     aws.dynamoDBFunction("./concerts");
