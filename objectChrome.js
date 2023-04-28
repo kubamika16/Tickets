@@ -76,10 +76,11 @@ const links = [
   "https://www.ticketmaster.com/ones-to-watch-presents-valley-lost-austin-texas-05-13-2023/event/3A005E9283AC1DA8",
   "https://concerts.livenation.com/against-the-current-trophy-eyes-boston-massachusetts-05-12-2023/event/01005E33E89B716F",
   "https://www.ticketmaster.com/kutx-presents-wild-child-end-of-austin-texas-05-05-2023/event/3A005E927ABD1874",
+];
+
+const links2 = [
   "https://concerts.livenation.com/kat-dahlia-2023-north-american-tour-los-angeles-california-05-12-2023/event/09005E77CA703A7E",
   "https://www.ticketmaster.com/blu-eyes-new-york-new-york-05-12-2023/event/00005E62D8666CD4",
-];
-const links2 = [
   "https://www.ticketmaster.com/the-menzingers-albany-new-york-05-12-2023/event/30005E62F62824F6",
   "https://www.ticketmaster.com/adelitas-way-hampton-new-hampshire-05-12-2023/event/01005E3BD10B7773",
   "https://www.ticketmaster.com/the-bouncing-souls-saint-louis-missouri-05-12-2023/event/06005E318D471CF6",
@@ -95,6 +96,7 @@ const links2 = [
   "https://www.ticketmaster.com/saosin-charleston-south-carolina-05-13-2023/event/2D005E50D3BB65F8",
   "https://www.ticketmaster.com/costa-boston-massachusetts-05-13-2023/event/01005E8CFC1F6D61",
 ];
+
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
     await new Promise((resolve) => {
