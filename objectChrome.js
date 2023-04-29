@@ -62,20 +62,16 @@ console.log(`Event details saved.`);
 // FUNCTION THAT OPENS LINKS
 
 const links = [
-  "https://www.ticketmaster.com/the-wailers-charlottesville-virginia-08-30-2023/event/01005E91B19E2D67",
-  "https://www.ticketmaster.com/lloyd-banks-new-york-new-york-06-10-2023/event/00005E93CD5A4237",
-  "https://www.ticketmaster.com/hosted-by-don-toliver-boston-massachusetts-04-29-2023/event/01005E958FE02DB0",
-  "https://www.ticketmaster.com/stephen-marley-babylon-by-bus-tour-st-augustine-florida-08-11-2023/event/22005E91A00BB8EC",
-  "https://www.ticketmaster.com/mushroomhead-reading-pennsylvania-10-07-2023/event/02005E9296101D8B",
-  "https://www.ticketmaster.com/lila-downs-new-york-new-york-09-18-2023/event/00005E8DC899507E",
-  "https://www.ticketmaster.com/chiddy-bang-new-york-new-york-06-07-2023/event/00005E8ECF1A4A2A",
   "https://www.ticketmaster.com/project-glow-after-party-w-wax-washington-district-of-columbia-04-30-2023/event/15005E8B3A395D26",
-  "https://www.ticketmaster.com/buckcherry-dubuque-iowa-06-02-2023/event/20005E91B277B168",
-  "https://www.ticketmaster.com/buckcherry-ft-lauderdale-florida-07-15-2023/event/0D005E8D2D90BDAF",
-  "https://concerts.livenation.com/emily-king-with-special-guests-cleveland-ohio-05-09-2023/event/05005E98DD107826",
-  "https://www.ticketmaster.com/ones-to-watch-presents-valley-lost-austin-texas-05-13-2023/event/3A005E9283AC1DA8",
-  "https://concerts.livenation.com/against-the-current-trophy-eyes-boston-massachusetts-05-12-2023/event/01005E33E89B716F",
-  "https://www.ticketmaster.com/kutx-presents-wild-child-end-of-austin-texas-05-05-2023/event/3A005E927ABD1874",
+  "https://www.ticketmaster.com/adam-ezra-group-savannah-georgia-06-11-2023/event/0E005E918D3F1B2F",
+  "https://www.ticketmaster.com/jeffrey-martin-anna-tivel-madison-wisconsin-07-23-2023/event/07005E92D4F11DF4",
+  "https://concerts.livenation.com/idk-santa-ana-california-10-10-2023/event/09005E9303AB49CD",
+  "https://concerts.livenation.com/idk-dallas-texas-10-05-2023/event/0C005E98F40E4756",
+  "https://concerts.livenation.com/idk-houston-texas-10-06-2023/event/3A005E98AF473272",
+  "https://www.ticketmaster.com/panda-bear-sonic-boom-seattle-washington-07-16-2023/event/0F005E949A101BAC",
+  "https://www.ticketmaster.com/the-down-outs-scab-comatosed-brooklyn-new-york-05-26-2023/event/00005E9BBD7C73E4",
+  "https://www.ticketmaster.com/rema-rave-roses-north-american-tour-seattle-washington-08-12-2023/event/0F005E956F8911A3",
+  "https://concerts.livenation.com/roar-los-angeles-california-09-13-2023/event/09005E98F680337F",
 ];
 
 const links2 = [
