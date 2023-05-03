@@ -62,27 +62,20 @@ console.log(`Event details saved.`);
 // FUNCTION THAT OPENS LINKS
 
 const links = [
-  "https://www.ticketmaster.com/adam-ezra-group-savannah-georgia-06-11-2023/event/0E005E918D3F1B2F",
-  "https://www.ticketmaster.com/jeffrey-martin-anna-tivel-madison-wisconsin-07-23-2023/event/07005E92D4F11DF4",
-  "https://concerts.livenation.com/idk-santa-ana-california-10-10-2023/event/09005E9303AB49CD",
-  "https://concerts.livenation.com/idk-dallas-texas-10-05-2023/event/0C005E98F40E4756",
-  "https://concerts.livenation.com/idk-houston-texas-10-06-2023/event/3A005E98AF473272",
-  "https://www.ticketmaster.com/panda-bear-sonic-boom-seattle-washington-07-16-2023/event/0F005E949A101BAC",
-  "https://www.ticketmaster.com/the-down-outs-scab-comatosed-brooklyn-new-york-05-26-2023/event/00005E9BBD7C73E4",
-  "https://www.ticketmaster.com/rema-rave-roses-north-american-tour-seattle-washington-08-12-2023/event/0F005E956F8911A3",
-  "https://concerts.livenation.com/roar-los-angeles-california-09-13-2023/event/09005E98F680337F",
-  "https://www.ticketmaster.com/bobby-shmurda-new-york-new-york-06-07-2023/event/00005E9CAD3433BD",
-  "https://www.ticketmaster.com/pepper-twenty-years-of-kona-town-los-angeles-california-09-21-2023/event/09005E981210494E",
-  "https://www.ticketmaster.com/andy-frasco-the-un-washington-district-of-columbia-10-01-2023/event/15005E95B2043FB0",
-  "https://www.ticketmaster.com/jidenna-baltimore-maryland-08-06-2023/event/15005E78E7514A46",
-  "https://concerts.livenation.com/otr-los-angeles-california-09-22-2023/event/09005E94091861A1",
-  "https://www.ticketmaster.com/959-the-ranch-presents-steve-earle-fort-worth-texas-07-08-2023/event/0C005E982BC95723",
-  "https://concerts.livenation.com/beast-in-black-with-support-from-new-york-new-york-09-11-2023/event/00005E95A3803DB2",
-  "https://www.ticketmaster.com/albert-bouchards-imaginos-new-york-new-york-07-12-2023/event/00005E98EACC614D",
-  "https://www.ticketmaster.com/morgan-wade-asbury-park-new-jersey-08-16-2023/event/00005E92BB50E616",
-  "https://www.ticketmaster.com/generationals-washington-district-of-columbia-10-14-2023/event/15005E939CAF2BE3",
-  "https://concerts.livenation.com/belly-18-boston-massachusetts-10-05-2023/event/01005E95E0BA6C8D",
-];
+  'https://concerts.livenation.com/idk-santa-ana-california-10-10-2023/event/09005E9303AB49CD',
+  'https://www.ticketmaster.com/panda-bear-sonic-boom-seattle-washington-07-16-2023/event/0F005E949A101BAC',
+  'https://www.ticketmaster.com/rema-rave-roses-north-american-tour-seattle-washington-08-12-2023/event/0F005E956F8911A3',
+  'https://concerts.livenation.com/roar-los-angeles-california-09-13-2023/event/09005E98F680337F',
+  'https://www.ticketmaster.com/morgan-wade-asbury-park-new-jersey-08-16-2023/event/00005E92BB50E616',
+  'https://www.ticketmaster.com/generationals-washington-district-of-columbia-10-14-2023/event/15005E939CAF2BE3',
+  'https://concerts.livenation.com/belly-18-boston-massachusetts-10-05-2023/event/01005E95E0BA6C8D',
+  'https://www.ticketmaster.com/the-gangs-all-here-tour-skid-suquamish-washington-10-06-2023/event/0F005E91A2BA884C',
+  'https://concerts.livenation.com/chris-renzema-with-special-guest-jess-boston-massachusetts-09-30-2023/event/01005E92A23921B2',
+  'https://concerts.livenation.com/event/04005E94BCCC2670',
+  'https://concerts.livenation.com/jidenna-santa-ana-california-07-21-2023/event/09005E7EA4D624C0',
+  'https://concerts.livenation.com/boz-scaggs-summer-23-tour-san-francisco-california-08-26-2023/event/1C005E8DD13055D8',
+  'https://concerts.livenation.com/boz-scaggs-summer-23-tour-san-francisco-california-08-25-2023/event/1C005E8DD12E55D0'
+]
 
 const links2 = [
   "https://www.ticketmaster.com/joy-oladokun-living-proof-tour-charlottesville-virginia-09-23-2023/event/01005E93A29931A2",
