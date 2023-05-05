@@ -63,18 +63,11 @@ console.log(`Event details saved.`);
 
 const links = [
   "https://concerts.livenation.com/idk-santa-ana-california-10-10-2023/event/09005E9303AB49CD",
-  "https://www.ticketmaster.com/panda-bear-sonic-boom-seattle-washington-07-16-2023/event/0F005E949A101BAC",
-  "https://www.ticketmaster.com/rema-rave-roses-north-american-tour-seattle-washington-08-12-2023/event/0F005E956F8911A3",
   "https://concerts.livenation.com/roar-los-angeles-california-09-13-2023/event/09005E98F680337F",
-  "https://www.ticketmaster.com/morgan-wade-asbury-park-new-jersey-08-16-2023/event/00005E92BB50E616",
-  "https://www.ticketmaster.com/generationals-washington-district-of-columbia-10-14-2023/event/15005E939CAF2BE3",
   "https://concerts.livenation.com/belly-18-boston-massachusetts-10-05-2023/event/01005E95E0BA6C8D",
   "https://www.ticketmaster.com/the-gangs-all-here-tour-skid-suquamish-washington-10-06-2023/event/0F005E91A2BA884C",
-  "https://concerts.livenation.com/chris-renzema-with-special-guest-jess-boston-massachusetts-09-30-2023/event/01005E92A23921B2",
   "https://concerts.livenation.com/event/04005E94BCCC2670",
-  "https://concerts.livenation.com/jidenna-santa-ana-california-07-21-2023/event/09005E7EA4D624C0",
   "https://concerts.livenation.com/boz-scaggs-summer-23-tour-san-francisco-california-08-26-2023/event/1C005E8DD13055D8",
-  "https://concerts.livenation.com/boz-scaggs-summer-23-tour-san-francisco-california-08-25-2023/event/1C005E8DD12E55D0",
   "https://www.ticketmaster.com/ava-max-on-tour-finally-nashville-tennessee-06-12-2023/event/1B005E8E813B2068",
   "https://www.ticketmaster.com/waka-flocka-flame-nashville-tennessee-05-18-2023/event/1B005E8DF3C7A42F",
   "https://www.ticketmaster.com/owl-city-nashville-tennessee-10-15-2023/event/1B005E8DD4608F6C",
@@ -86,6 +79,17 @@ const links = [
   "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
   "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
   "https://www.ticketmaster.com/less-than-jake-nashville-tennessee-07-06-2023/event/1B005E8E88F32614",
+  "https://www.ticketmaster.com/the-wailers-leesburg-virginia-09-13-2023/event/01005EA18B5213C8",
+  "https://www.ticketmaster.com/ripe-asbury-park-new-jersey-07-12-2023/event/00005E999F2529D9",
+  "https://www.ticketmaster.com/reva-devito-dreamcast-moe-los-angeles-california-06-17-2023/event/09005EA386521496",
+  "https://concerts.livenation.com/gaelic-storm-cleveland-ohio-08-03-2023/event/05005EA2C41128D6",
+  "https://www.ticketmaster.com/mustard-plug-madison-wisconsin-11-11-2023/event/07005EA2A86815AD",
+  "https://www.ticketmaster.com/club-90s-jonas-brothers-night-los-angeles-california-05-13-2023/event/09005EA3AF2F3237",
+  "https://concerts.livenation.com/klub-nocturno-presents-caifanes-night-a-san-diego-california-05-27-2023/event/0A005EA3AED92996",
+  "https://www.ticketmaster.com/hermitude-washington-district-of-columbia-07-06-2023/event/15005EA3882318B0",
+  "https://www.ticketmaster.com/the-way-down-wanderers-columbia-missouri-07-19-2023/event/06005E9ACCEB59C3",
+  "https://concerts.livenation.com/rock-and-roll-playhouse-plays-show-los-angeles-california-06-17-2023/event/09005EA2000A4940",
+  "https://concerts.livenation.com/sabaidee-fest-sacramento-california-06-02-2023/event/1C005E9CBDAC484C",
 ];
 
 const links2 = [
