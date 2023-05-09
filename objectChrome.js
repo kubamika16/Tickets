@@ -78,6 +78,9 @@ const links = [
   "https://www.ticketmaster.com/declan-mckenna-the-big-return-nashville-tennessee-07-30-2023/event/1B005E8DDC6996B7",
   "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
   "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
+];
+
+const links2 = [
   "https://www.ticketmaster.com/less-than-jake-nashville-tennessee-07-06-2023/event/1B005E8E88F32614",
   "https://www.ticketmaster.com/the-wailers-leesburg-virginia-09-13-2023/event/01005EA18B5213C8",
   "https://www.ticketmaster.com/ripe-asbury-park-new-jersey-07-12-2023/event/00005E999F2529D9",
@@ -90,30 +93,19 @@ const links = [
   "https://www.ticketmaster.com/the-way-down-wanderers-columbia-missouri-07-19-2023/event/06005E9ACCEB59C3",
   "https://concerts.livenation.com/rock-and-roll-playhouse-plays-show-los-angeles-california-06-17-2023/event/09005EA2000A4940",
   "https://concerts.livenation.com/sabaidee-fest-sacramento-california-06-02-2023/event/1C005E9CBDAC484C",
-];
-
-const links2 = [
-  "https://www.ticketmaster.com/joy-oladokun-living-proof-tour-charlottesville-virginia-09-23-2023/event/01005E93A29931A2",
-  "https://www.ticketmaster.com/alice-phoebe-lou-asbury-park-new-jersey-07-25-2023/event/00005E95BFC753D0",
-  "https://www.ticketmaster.com/secrets-houston-texas-06-22-2023/event/3A005E9B088E72F5",
-  "https://www.ticketmaster.com/the-gangs-all-here-tour-skid-suquamish-washington-10-06-2023/event/0F005E91A2BA884C",
-  "https://www.ticketmaster.com/chris-renzema-charlottesville-virginia-10-28-2023/event/01005E95CE716233",
-  "https://concerts.livenation.com/chris-renzema-with-special-guest-jess-boston-massachusetts-09-30-2023/event/01005E92A23921B2",
-  "https://www.ticketmaster.com/three-dog-night-alexandria-virginia-11-29-2023/event/15005E98A8122811",
-  "https://concerts.livenation.com/drew-holcomb-and-the-neighbors-18-boston-massachusetts-09-29-2023/event/01005E8DADB23E48",
-  "https://www.ticketmaster.com/beast-in-black-with-support-from-baltimore-maryland-09-09-2023/event/15005E95BB6646AC",
-  "https://www.ticketmaster.com/pepper-portland-maine-07-08-2023/event/01005E98B198313A",
-  "https://www.ticketmaster.com/fit-for-an-autopsy-mechanicsburg-pennsylvania-06-10-2023/event/02005E9AE57953D1",
-  "https://concerts.livenation.com/navy-blue-ways-of-knowing-tour-los-angeles-california-06-25-2023/event/09005E99859A131E",
-  "https://www.ticketmaster.com/goodbye-for-now-squitch-final-show-somerville-massachusetts-08-05-2023/event/01005E99D2704DC5",
-  "https://www.ticketmaster.com/metric-wichita-kansas-06-16-2023/event/06005E9994C75782",
-  "https://www.ticketmaster.com/pride-calling-hosted-by-trina-rockstarr-boston-massachusetts-06-04-2023/event/01005E9CAF014B4D",
-  "https://concerts.livenation.com/event/04005E94BCCC2670",
-  "https://concerts.livenation.com/jidenna-santa-ana-california-07-21-2023/event/09005E7EA4D624C0",
-  "https://concerts.livenation.com/boz-scaggs-summer-23-tour-san-francisco-california-08-26-2023/event/1C005E8DD13055D8",
-  "https://concerts.livenation.com/boz-scaggs-summer-23-tour-san-francisco-california-08-25-2023/event/1C005E8DD12E55D0",
-  "https://concerts.livenation.com/joy-oladokun-living-proof-tour-charlotte-north-carolina-09-22-2023/event/2D005E91BF1439B1",
-  "https://concerts.livenation.com/event/1C005E7D79F5112F",
+  "https://concerts.livenation.com/island-block-concert-series-siaosi-anaheim-california-08-26-2023/event/09005EA1E456382A",
+  "https://concerts.livenation.com/cat-burns-burns-in-the-usa-boston-massachusetts-07-26-2023/event/01005E9B983335E3",
+  "https://concerts.livenation.com/the-red-jumpsuit-apparatus-new-orleans-louisiana-06-11-2023/event/1B005E9E0330841E",
+  "https://concerts.livenation.com/claud-supermodel-tour-part-1-boston-massachusetts-09-17-2023/event/01005E9CBC7B548F",
+  "https://concerts.livenation.com/boldy-james-detroit-michigan-06-10-2023/event/08005EA2AB8418FC",
+  "https://www.ticketmaster.com/ziggy-alberts-rewind-tour-with-kim-alexandria-virginia-08-17-2023/event/15005E9A9A4D22D1",
+  "https://www.ticketmaster.com/a-flock-of-seagulls-ft-lauderdale-florida-08-04-2023/event/0D005E9B179FF641",
+  "https://concerts.livenation.com/des-rocs-never-ending-moment-tour-cleveland-ohio-07-22-2023/event/05005E9BB62452AF",
+  "https://www.ticketmaster.com/nurko-washington-district-of-columbia-06-22-2023/event/15005EA5BC016A87",
+  "https://concerts.livenation.com/malinda-denver-colorado-09-26-2023/event/1E005E99F964572C",
+  "https://www.ticketmaster.com/malinda-austin-texas-10-11-2023/event/3A005E9999702D1F",
+  "https://concerts.livenation.com/event/3A005E978D4027C4",
+  "https://concerts.livenation.com/malinda-boston-massachusetts-09-06-2023/event/01005E95A7FE40C0",
 ];
 
 async function openLinks() {
