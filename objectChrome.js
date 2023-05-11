@@ -62,41 +62,36 @@ console.log(`Event details saved.`);
 // FUNCTION THAT OPENS LINKS
 
 const links = [
-  "https://concerts.livenation.com/belly-18-boston-massachusetts-10-05-2023/event/01005E95E0BA6C8D",
   "https://www.ticketmaster.com/the-gangs-all-here-tour-skid-suquamish-washington-10-06-2023/event/0F005E91A2BA884C",
   "https://concerts.livenation.com/event/04005E94BCCC2670",
   "https://www.ticketmaster.com/ava-max-on-tour-finally-nashville-tennessee-06-12-2023/event/1B005E8E813B2068",
-  "https://www.ticketmaster.com/waka-flocka-flame-nashville-tennessee-05-18-2023/event/1B005E8DF3C7A42F",
   "https://www.ticketmaster.com/owl-city-nashville-tennessee-10-15-2023/event/1B005E8DD4608F6C",
-  "https://www.ticketmaster.com/crankdat-albany-new-york-10-28-2023/event/30005E9BDF552DC7",
   "https://www.ticketmaster.com/declan-mckenna-the-big-return-nashville-tennessee-07-30-2023/event/1B005E8DDC6996B7",
-  "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
   "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
   "https://www.ticketmaster.com/the-wailers-leesburg-virginia-09-13-2023/event/01005EA18B5213C8",
   "https://www.ticketmaster.com/ripe-asbury-park-new-jersey-07-12-2023/event/00005E999F2529D9",
   "https://www.ticketmaster.com/reva-devito-dreamcast-moe-los-angeles-california-06-17-2023/event/09005EA386521496",
   "https://concerts.livenation.com/gaelic-storm-cleveland-ohio-08-03-2023/event/05005EA2C41128D6",
-  "https://www.ticketmaster.com/mustard-plug-madison-wisconsin-11-11-2023/event/07005EA2A86815AD",
   "https://www.ticketmaster.com/club-90s-jonas-brothers-night-los-angeles-california-05-13-2023/event/09005EA3AF2F3237",
-];
-const links2 = [
   "https://concerts.livenation.com/klub-nocturno-presents-caifanes-night-a-san-diego-california-05-27-2023/event/0A005EA3AED92996",
   "https://www.ticketmaster.com/hermitude-washington-district-of-columbia-07-06-2023/event/15005EA3882318B0",
+];
+const links2 = [
   "https://www.ticketmaster.com/the-way-down-wanderers-columbia-missouri-07-19-2023/event/06005E9ACCEB59C3",
   "https://concerts.livenation.com/rock-and-roll-playhouse-plays-show-los-angeles-california-06-17-2023/event/09005EA2000A4940",
-  "https://concerts.livenation.com/island-block-concert-series-siaosi-anaheim-california-08-26-2023/event/09005EA1E456382A",
-  "https://concerts.livenation.com/cat-burns-burns-in-the-usa-boston-massachusetts-07-26-2023/event/01005E9B983335E3",
-  "https://concerts.livenation.com/the-red-jumpsuit-apparatus-new-orleans-louisiana-06-11-2023/event/1B005E9E0330841E",
-  "https://concerts.livenation.com/claud-supermodel-tour-part-1-boston-massachusetts-09-17-2023/event/01005E9CBC7B548F",
-  "https://concerts.livenation.com/boldy-james-detroit-michigan-06-10-2023/event/08005EA2AB8418FC",
-  "https://www.ticketmaster.com/ziggy-alberts-rewind-tour-with-kim-alexandria-virginia-08-17-2023/event/15005E9A9A4D22D1",
-  "https://www.ticketmaster.com/a-flock-of-seagulls-ft-lauderdale-florida-08-04-2023/event/0D005E9B179FF641",
-  "https://concerts.livenation.com/des-rocs-never-ending-moment-tour-cleveland-ohio-07-22-2023/event/05005E9BB62452AF",
-  "https://www.ticketmaster.com/nurko-washington-district-of-columbia-06-22-2023/event/15005EA5BC016A87",
-  "https://concerts.livenation.com/malinda-denver-colorado-09-26-2023/event/1E005E99F964572C",
-  "https://www.ticketmaster.com/malinda-austin-texas-10-11-2023/event/3A005E9999702D1F",
-  "https://concerts.livenation.com/event/3A005E978D4027C4",
-  "https://concerts.livenation.com/malinda-boston-massachusetts-09-06-2023/event/01005E95A7FE40C0",
+  "https://www.ticketmaster.com/ludacris-music-by-dj-infamous-boston-massachusetts-05-19-2023/event/01005EA978D1125F",
+  "https://www.ticketmaster.com/musiq-soulchild-new-york-new-york-05-31-2023/event/00005EA9A90C3C0D",
+  "https://www.ticketmaster.com/sungazer-washington-district-of-columbia-12-08-2023/event/15005EA3EB005899",
+  "https://www.ticketmaster.com/lord-nelson-with-low-water-bridge-charlottesville-virginia-06-10-2023/event/01005EA81B14805F",
+  "https://www.ticketmaster.com/passion-and-power-tour-w-cinema-covington-kentucky-06-03-2023/event/16005EA48E7E2CB4",
+  "https://www.ticketmaster.com/the-lowdown-brass-band-asbury-park-new-jersey-08-25-2023/event/00005EA98D7717A8",
+  "https://concerts.livenation.com/belly-new-york-new-york-10-08-2023/event/00005EA5BF3876E2",
+  "https://www.ticketmaster.com/ayoni-with-support-new-york-new-york-06-14-2023/event/00005EA5EE1F94C6",
+  "https://www.ticketmaster.com/zach-nugents-dead-port-chester-new-york-05-24-2023/event/1D005EA5E3F14561",
+  "https://www.ticketmaster.com/millie-oliver-the-missing-pieces-covington-kentucky-08-05-2023/event/16005E8A91141005",
+  "https://www.ticketmaster.com/cooper-alan-columbia-missouri-08-17-2023/event/06005EA5F3C4A2D4",
+  "https://www.ticketmaster.com/nautics-mons-vi-new-york-new-york-05-19-2023/event/00005EA8BD633137",
+  "https://www.ticketmaster.com/michael-williams-band-covington-kentucky-06-16-2023/event/16005EA4A8985336",
 ];
 
 async function openLinks() {
