@@ -66,19 +66,8 @@ const links = [
   "https://concerts.livenation.com/event/04005E94BCCC2670",
   "https://www.ticketmaster.com/ava-max-on-tour-finally-nashville-tennessee-06-12-2023/event/1B005E8E813B2068",
   "https://www.ticketmaster.com/owl-city-nashville-tennessee-10-15-2023/event/1B005E8DD4608F6C",
-  "https://www.ticketmaster.com/declan-mckenna-the-big-return-nashville-tennessee-07-30-2023/event/1B005E8DDC6996B7",
-  "https://www.ticketmaster.com/pouya-nashville-tennessee-05-22-2023/event/1B005E8E76D01610",
-  "https://www.ticketmaster.com/the-wailers-leesburg-virginia-09-13-2023/event/01005EA18B5213C8",
   "https://www.ticketmaster.com/ripe-asbury-park-new-jersey-07-12-2023/event/00005E999F2529D9",
-  "https://www.ticketmaster.com/reva-devito-dreamcast-moe-los-angeles-california-06-17-2023/event/09005EA386521496",
   "https://concerts.livenation.com/gaelic-storm-cleveland-ohio-08-03-2023/event/05005EA2C41128D6",
-  "https://www.ticketmaster.com/club-90s-jonas-brothers-night-los-angeles-california-05-13-2023/event/09005EA3AF2F3237",
-  "https://concerts.livenation.com/klub-nocturno-presents-caifanes-night-a-san-diego-california-05-27-2023/event/0A005EA3AED92996",
-  "https://www.ticketmaster.com/hermitude-washington-district-of-columbia-07-06-2023/event/15005EA3882318B0",
-];
-const links2 = [
-  "https://www.ticketmaster.com/the-way-down-wanderers-columbia-missouri-07-19-2023/event/06005E9ACCEB59C3",
-  "https://concerts.livenation.com/rock-and-roll-playhouse-plays-show-los-angeles-california-06-17-2023/event/09005EA2000A4940",
   "https://www.ticketmaster.com/ludacris-music-by-dj-infamous-boston-massachusetts-05-19-2023/event/01005EA978D1125F",
   "https://www.ticketmaster.com/musiq-soulchild-new-york-new-york-05-31-2023/event/00005EA9A90C3C0D",
   "https://www.ticketmaster.com/sungazer-washington-district-of-columbia-12-08-2023/event/15005EA3EB005899",
@@ -93,6 +82,7 @@ const links2 = [
   "https://www.ticketmaster.com/nautics-mons-vi-new-york-new-york-05-19-2023/event/00005EA8BD633137",
   "https://www.ticketmaster.com/michael-williams-band-covington-kentucky-06-16-2023/event/16005EA4A8985336",
 ];
+const links2 = [];
 
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
