@@ -80,10 +80,10 @@ const links = [
   "https://www.ticketmaster.com/kany-garcia-usa-tour-2023-boston-massachusetts-09-16-2023/event/01005EA58B323D51",
   "https://www.ticketmaster.com/high-tolerance-ent-presents-icewear-vezzo-atlanta-georgia-06-17-2023/event/0E005EA4DD2C6CB2",
   "https://concerts.livenation.com/ashley-metha-san-diego-california-07-21-2023/event/0A005EA5CF5C519D",
-];
-const links2 = [
   "https://www.ticketmaster.com/bassrush-presents-dirt-monkey-washington-district-of-columbia-05-31-2023/event/15005EAA8FF91FB6",
   "https://www.ticketmaster.com/black-country-new-road-los-angeles-california-09-01-2023/event/09005EA9980E2F79",
+];
+const links2 = [
   "https://www.ticketmaster.com/drumming-bird-andrew-montana-houston-texas-08-09-2023/event/3A005EA80C8E7A94",
   "https://www.ticketmaster.com/florist-skullcrusher-191-toole-tucson-arizona-08-13-2023/event/19005EA58E851EF9",
   "https://www.ticketmaster.com/the-chainsmokers-everett-massachusetts-06-06-2023/event/01005EA414A7A0F1",
