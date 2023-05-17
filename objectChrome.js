@@ -62,36 +62,29 @@ console.log(`Event details saved.`);
 // FUNCTION THAT OPENS LINKS
 
 const links = [
-  "https://www.ticketmaster.com/the-gangs-all-here-tour-skid-suquamish-washington-10-06-2023/event/0F005E91A2BA884C",
-  "https://concerts.livenation.com/event/04005E94BCCC2670",
-  "https://www.ticketmaster.com/ava-max-on-tour-finally-nashville-tennessee-06-12-2023/event/1B005E8E813B2068",
   "https://www.ticketmaster.com/owl-city-nashville-tennessee-10-15-2023/event/1B005E8DD4608F6C",
-  "https://www.ticketmaster.com/ripe-asbury-park-new-jersey-07-12-2023/event/00005E999F2529D9",
   "https://www.ticketmaster.com/dramarama-asbury-park-new-jersey-08-12-2023/event/00005EA4A463C6CD",
   "https://concerts.livenation.com/have-a-nice-life-chicago-illinois-08-24-2023/event/04005EA8B765183C",
   "https://concerts.livenation.com/insomniac-presents-william-black-18-santa-ana-california-08-18-2023/event/09005EA8DC9E4653",
   "https://concerts.livenation.com/yngwie-malmsteen-sacramento-california-09-07-2023/event/1C005EAA8F2028DD",
-  "https://www.ticketmaster.com/kany-garcia-usa-tour-2023-boston-massachusetts-09-16-2023/event/01005EA58B323D51",
-  "https://www.ticketmaster.com/bassrush-presents-dirt-monkey-washington-district-of-columbia-05-31-2023/event/15005EAA8FF91FB6",
   "https://www.ticketmaster.com/black-country-new-road-los-angeles-california-09-01-2023/event/09005EA9980E2F79",
-  "https://www.ticketmaster.com/florist-skullcrusher-191-toole-tucson-arizona-08-13-2023/event/19005EA58E851EF9",
-];
-const links2 = [
   "https://www.ticketmaster.com/the-chainsmokers-everett-massachusetts-06-06-2023/event/01005EA414A7A0F1",
   "https://www.ticketmaster.com/ludacris-music-by-dj-infamous-boston-massachusetts-05-19-2023/event/01005EA978D1125F",
-  "https://www.ticketmaster.com/musiq-soulchild-new-york-new-york-05-31-2023/event/00005EA9A90C3C0D",
   "https://concerts.livenation.com/bowling-for-soup-boston-massachusetts-09-11-2023/event/01005EA3C7765747",
   "https://concerts.livenation.com/charlotte-cardin-boston-massachusetts-10-25-2023/event/01005E95AE53445A",
-  "https://www.ticketmaster.com/dvbbs-washington-district-of-columbia-07-20-2023/event/15005EAA1D4F7E4B",
-  "https://concerts.livenation.com/dizzy-los-angeles-california-11-15-2023/event/09005EA5ACDA6639",
-  "https://www.ticketmaster.com/sam-feldt-boston-massachusetts-08-11-2023/event/01005EA41828A220",
   "https://www.ticketmaster.com/bowling-for-soup-atlanta-georgia-09-05-2023/event/0E005EA19D022591",
-  "https://www.ticketmaster.com/kflay-albany-new-york-08-11-2023/event/30005EA5EA6932DE",
   "https://www.ticketmaster.com/wolfmother-seattle-washington-09-22-2023/event/0F005EA896A81747",
-  "https://concerts.livenation.com/tim-atlas-philadelphia-pennsylvania-09-19-2023/event/02005EAAABB1660D",
   "https://concerts.livenation.com/charlotte-cardin-philadelphia-pennsylvania-10-28-2023/event/02005EA1D9586118",
-  "https://concerts.livenation.com/attila-about-that-life-10-year-new-york-new-york-09-12-2023/event/00005E9AEC2575CF",
+  "https://concerts.livenation.com/toosii-naujour-tour-chicago-illinois-08-30-2023/event/04005EAC18654F8A",
+  "https://www.ticketmaster.com/concrete-jungle-ent-presents-red-store-los-angeles-california-07-01-2023/event/09005EACDDB05FB3",
+  "https://www.ticketmaster.com/bar-italia-madison-wisconsin-12-13-2023/event/07005EAA83860E37",
+  "https://concerts.livenation.com/bar-italia-boston-massachusetts-12-05-2023/event/01005EA9F2519CCB",
+  "https://www.ticketmaster.com/bar-italia-new-york-new-york-12-04-2023/event/00005EA9FB2D9088",
+  "https://www.ticketmaster.com/dogwood-tales-with-deau-eyes-and-charlottesville-virginia-06-09-2023/event/01005EAE8E9B3288",
+  "https://www.ticketmaster.com/tom-sandoval-the-most-extras-cincinnati-ohio-05-31-2023/event/16005EACA9B54126",
+  "https://www.ticketmaster.com/death-warmed-over-covington-kentucky-07-29-2023/event/16005EACC49B56B8",
 ];
+const links2 = [];
 
 async function openLinks() {
   for (let i = 0; i < links.length; i++) {
