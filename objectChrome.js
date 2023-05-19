@@ -83,6 +83,8 @@ const links = [
   "https://www.ticketmaster.com/dogwood-tales-with-deau-eyes-and-charlottesville-virginia-06-09-2023/event/01005EAE8E9B3288",
   "https://www.ticketmaster.com/tom-sandoval-the-most-extras-cincinnati-ohio-05-31-2023/event/16005EACA9B54126",
   "https://www.ticketmaster.com/death-warmed-over-covington-kentucky-07-29-2023/event/16005EACC49B56B8",
+  "https://www.ticketmaster.com/black-sherif-atlanta-georgia-05-24-2023/event/0E005EAFE63548C2",
+  "https://www.ticketmaster.com/los-cafres-atlanta-georgia-08-19-2023/event/0E005EACEAE25875",
 ];
 const links2 = [];
 
