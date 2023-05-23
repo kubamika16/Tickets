@@ -80,9 +80,9 @@ const links = [
   "https://concerts.livenation.com/dyl-dion-los-angeles-california-08-16-2023/event/09005EACDA185EB0",
   "https://concerts.livenation.com/gavin-degraw-chicago-illinois-08-17-2023/event/04005EABCCC13226",
   "https://www.ticketmaster.com/the-moss-washington-district-of-columbia-11-29-2023/event/15005EA42F3773A3",
-  "https://www.ticketmaster.com/steve-earle-alone-again-tour-solo-alexandria-virginia-08-23-2023/event/15005EABB1C939BE",
 ];
 const links2 = [
+  "https://www.ticketmaster.com/steve-earle-alone-again-tour-solo-alexandria-virginia-08-23-2023/event/15005EABB1C939BE",
   "https://www.ticketmaster.com/the-moss-charlottesville-virginia-12-05-2023/event/01005EAABC157CA3",
   "https://www.ticketmaster.com/dreamstate-presents-paul-oakenfold-washington-district-of-columbia-07-22-2023/event/15005EB22C8A7F4A",
   "https://concerts.livenation.com/everclear-with-the-ataris-new-york-new-york-09-18-2023/event/00005EABAEA646CB",
