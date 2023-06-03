@@ -76,6 +76,21 @@ const links = [
   "https://concerts.livenation.com/blessthefall-hollow-bodies-10-year-anniversary-santa-ana-california-08-03-2023/event/09005EB6F4473EFF",
   "https://concerts.livenation.com/blessthefall-hollow-bodies-10-year-anniversary-new-york-new-york-08-18-2023/event/00005EB7B9434821",
   "https://www.ticketmaster.com/ridgeway-los-angeles-california-06-22-2023/event/09005EB3C7B96CFE",
+  "https://www.ticketmaster.com/hotel-ugly-houston-texas-06-24-2023/event/3A005EBEA21224DC",
+  "https://concerts.livenation.com/freak-show-jordana-with-dev-lemons-santa-ana-california-10-06-2023/event/09005EB3F77C8B89",
+  "https://concerts.livenation.com/pluko-los-angeles-california-09-08-2023/event/09005EBA4D8785A4",
+  "https://concerts.livenation.com/akthesavior-los-angeles-california-07-19-2023/event/09005EBF9E672B2B",
+  "https://concerts.livenation.com/freak-show-jordana-with-dev-lemons-boston-massachusetts-10-20-2023/event/01005EB2E98982E0",
+  "https://concerts.livenation.com/miya-folick-the-roach-tour-san-diego-california-09-22-2023/event/0A005EB2B791314A",
+  "https://www.ticketmaster.com/pluko-new-york-new-york-09-23-2023/event/00005EBACA93983A",
+  "https://www.ticketmaster.com/chris-webby-hampton-new-hampshire-07-27-2023/event/01005EBA8AF81CAC",
+  "https://www.ticketmaster.com/the-happy-fits-under-the-shade-tucson-arizona-10-06-2023/event/19005EAFAA321D70",
+  "https://www.ticketmaster.com/chris-webby-portland-maine-07-28-2023/event/01005EBA8C1F1CDF",
+  "https://www.ticketmaster.com/chris-webby-portland-maine-07-28-2023/event/01005EBA8C1F1CDF",
+  "https://www.ticketmaster.com/the-happy-fits-albany-new-york-09-20-2023/event/30005EB2BF541D2D",
+  "https://www.ticketmaster.com/the-happy-fits-albany-new-york-09-20-2023/event/30005EB2BF541D2D",
+  "https://www.ticketmaster.com/the-happy-fits-under-the-shade-charlottesville-virginia-10-24-2023/event/01005EB89EA54294",
+  "https://www.ticketmaster.com/the-happy-fits-under-the-shade-charlottesville-virginia-10-24-2023/event/01005EB89EA54294",
 ];
 const links2 = [];
 
