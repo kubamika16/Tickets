@@ -108,8 +108,8 @@ async function printResults() {
     aws.uploadFilesToS3("./concerts");
     aws.dynamoDBFunction("./concerts");
   };
-  // pricesToConcertsSave();
-  // awsWorkload();
+  pricesToConcertsSave();
+  awsWorkload();
 }
 
 printResults();
